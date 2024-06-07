@@ -23,6 +23,12 @@ services:
         generateValue: true
       - key: WEB_CONCURRENCY
         value: 4
+      - key: DJANGO_SUPERUSER_EMAIL
+        value: "kcharlesmark@gmail.com"
+      - key: DJANGO_SUPERUSER_USERNAME
+        value: "Kojo"
+      - key: DJANGO_SUPERUSER_PASSWORD
+        value: "C@password"
       # Add the remaining environment variables
       - key: EMAIL_HOST_USER
         value: markcharleskojo@gmail.com
