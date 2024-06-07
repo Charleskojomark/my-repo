@@ -51,13 +51,17 @@
                         </li>
 
                         <li class="nav_item">
-                            <a href="{%url 'userauth:sign %}" class="nav_link">
-                                {%if request.user.is_authenticated%}
-                                <i class="uil uil-setting nav_icon"></i>Settings
-                                {%else%}
-                                <i class="uil uil-user-plus nav_icon"></i> <span
-                                    class="flex"><span>Join</span><span>Us</span></span>
-                            </a>{%endif%}
+                            {%if request.user.is_authenticated%}
+
+                            <a href="{% url 'ojm_core:dashboard' %}" class="nav_link">
+                            <i class="uil uil-setting nav_icon"></i>Settings
+                            </a>
+                            {%else%}
+                            <a href="{% url 'userauth:sign' %}" class="nav_link">
+                            <i class="uil uil-user-plus nav_icon"></i> <span class="flex"><span>Join</span><span>Us</span></span>
+                                </a>
+                            </li>
+                            {% endif %}
                         </li>
 
                         <li class="nav_item">
