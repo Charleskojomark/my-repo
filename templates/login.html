@@ -51,7 +51,7 @@
                         </li>
 
                         <li class="nav_item">
-                            <a href="sign.html" class="nav_link">
+                            <a href="{%url 'userauth:sign %}" class="nav_link">
                                 {%if request.user.is_authenticated%}
                                 <i class="uil uil-setting nav_icon"></i>Settings
                                 {%else%}
