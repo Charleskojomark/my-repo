@@ -2,7 +2,7 @@ databases:
   - name: ojm_script
     plan: free
     databaseName: ojm_script
-    user: postgres
+    user: ojm_script
 
 services:
   - type: web
