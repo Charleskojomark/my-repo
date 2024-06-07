@@ -28,7 +28,10 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = ['http://ojm-script.onrender.com','https://ojm-script.onrender.com','ojm-script.onrender.com','localhost']
+# settings.py
+
+ALLOWED_HOSTS = ['ojm-script.onrender.com', 'localhost', '127.0.0.1']
+
 
 
 # Application definition
