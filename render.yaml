@@ -10,7 +10,8 @@ services:
     name: ojm_script
     runtime: python
     buildCommand: "./build.sh"  # Adjust this if you have a build script
-    startCommand: "python -m gunicorn ojm_script.asgi:application -k uvicorn.workers.UvicornWorker"
+    # startCommand: "python -m gunicorn ojm_script.asgi:application -k uvicorn.workers.UvicornWorker"
+    startCommand: uvicorn ojm_script.asgi:application --workers 4 --port $PORT
     # startCommand: "gunicorn ojm_script.asgi:application -k uvicorn.workers.UvicornH11Worker"
     envVars:
       - key: DATABASE_URL
