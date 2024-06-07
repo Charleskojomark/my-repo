@@ -23,7 +23,10 @@ services:
         generateValue: true
       - key: WEB_CONCURRENCY
         value: 4
-        
+      - key: MEDIA_URL
+        value: "/media/"
+      - key: MEDIA_ROOT
+        value: "os.path.join(BASE_DIR, 'media')"
       # Add the remaining environment variables
       - key: EMAIL_HOST_USER
         value: markcharleskojo@gmail.com
