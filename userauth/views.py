@@ -57,7 +57,7 @@ def signup(request):
             to_email = form.cleaned_data.get('email')
             send_mail(mail_subject, message, 'Ojm Electrical', [to_email])
             username = form.cleaned_data.get('username')
-            messages.success(request, f"{username}, Your registration was successful, Please check your email to confirm your address")
+            messages.success(request, f"Welcome {username}, Please check your email to confirm your address")
             return redirect('ojm_core:index')
     else:
         form = CustomerSignUpForm()
@@ -101,7 +101,7 @@ def prof_signup(request):
             to_email = form.cleaned_data.get('email')
             send_mail(mail_subject, message, 'Ojm Electrical', [to_email])
             username = form.cleaned_data.get('username')
-            messages.success(request, f"{username}, Your registration was successful, Please check your email to confirm your address")
+            messages.success(request, f"Welcome {username}, Please check your email to confirm your address")
             return redirect('ojm_core:index')
     else:
         form = ElectricianSignUpForm()
@@ -121,7 +121,7 @@ def activate(request, uidb64, token):
         user.is_active = True
         user.save()
         login(request, user)
-        messages.success(request, f"Congratulations, Your account has been verified")
+        messages.success(request, f"Congratulations, Your account has been activated")
         return redirect('ojm_core:index')
     else:
         return HttpResponse('Activation link is invalid!')
