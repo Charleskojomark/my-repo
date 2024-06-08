@@ -1,0 +1,192 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    background-color: rgb(243, 182, 18, 0.1);
+}
+
+::-webkit-scrollbar {
+    width: 10px; 
+    height: 10px; 
+}
+
+::-webkit-scrollbar-track {
+    background: #fff; 
+    border-radius: 10px; 
+}
+::-webkit-scrollbar-thumb {
+    background: var(--main-color-two); 
+    border-radius: 10px; 
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--main-color-one); 
+}
+
+
+::-webkit-scrollbar-corner {
+    background: #f1f1f1; 
+}
+:root {
+    /*========== Font and typography ==========*/
+    --body-font: 'Poppins', sans-serif;
+
+    --header-height: 3rem;
+    --main-color-one: rgb(243, 182, 18);
+    --main-color-two: rgb(22, 31, 59);
+    --main-color-three: rgb(243, 182, 18);
+    --heading-color: rgb(51, 51, 51);
+    --light-color: rgb(102, 102, 102);
+    --extra-light-color: rgb(153, 153, 153);
+
+    --heading-font: Lato, sans-serif;
+    --body-font: Lato, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+.main-container{
+    display: flex;
+    flex-direction: column;
+}
+.top{
+    position: relative;
+}
+.top img{
+    width: 100%;
+    height: 30vh;
+    object-fit: cover;
+}
+.top h2{
+    text-align: center;
+    position: absolute;
+    color: var(--main-color-two);
+    text-shadow: #fff;
+    left: 0;
+    right: 0;
+    top: 20%;
+    font-size: 1.8rem;
+}
+.service-box{
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    top: 70%;
+    left: 0;
+    right: 0;
+    position: absolute;
+    margin: auto;
+}
+.service-box .image{
+    display: flex;
+    gap: 1rem;
+}
+.service-box img{
+    border-radius: 5px;
+    width: 50%;
+    height: 20vh;
+}
+.service-box .description .rating{
+    font-size: 2.5rem;
+}
+.service-box .description .text{
+    color: var(--main-color-two);
+}
+.price{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.price s{
+    color: red;
+}
+.price span{
+    color: var(--main-color-one);
+    font-size: 1rem;
+}
+.price button{
+    background: var(--main-color-one);
+    color: var(--main-color-two);
+    border: 0;
+    padding: 5px;
+    border-radius: 5px; 
+    font-weight: 600;
+}
+.price button:hover{
+    cursor: pointer;
+}
+@media screen and (min-width: 750px){
+    .price button{
+        font-size: 1.2rem;
+        padding: 10px;
+    }
+    .price span, .price s{
+        font-size: 1.2rem;
+    }
+}
+
+.tab-container {
+    width: 90%;
+    margin: auto;
+    margin-top: 120px;
+}
+.tab-container h3{
+    text-align: center;
+    color: var(--main-color-two);
+}
+.tabs {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(243, 182, 18, 0.5);
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    position: relative; 
+}
+
+.tab {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: color 0.3s ease; 
+    position: relative; 
+}
+
+.tab:hover {
+    color: var(--main-color-two); 
+}
+
+.line {
+    height: 3px;
+    border-radius: 5px;
+    background-color: var(--main-color-two);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.contents {
+    border: 1px solid #ddd;
+    border-top: none;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 0 0 5px 5px;
+}
+
+.content {
+    display: none;
+}
+
+.content.active {
+    display: block;
+}

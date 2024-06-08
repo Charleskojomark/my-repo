@@ -1,0 +1,249 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    background-color: rgb(243, 182, 18, 0.1);
+}
+
+::-webkit-scrollbar {
+    width: 10px; 
+    height: 10px; 
+}
+
+::-webkit-scrollbar-track {
+    background: #fff; 
+    border-radius: 10px; 
+}
+::-webkit-scrollbar-thumb {
+    background: var(--main-color-two); 
+    border-radius: 10px; 
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--main-color-one); 
+}
+
+
+::-webkit-scrollbar-corner {
+    background: #f1f1f1; 
+}
+:root {
+    /*========== Font and typography ==========*/
+    --body-font: 'Poppins', sans-serif;
+
+    --header-height: 3rem;
+    --main-color-one: rgb(243, 182, 18);
+    --main-color-two: rgb(22, 31, 59);
+    --main-color-three: rgb(243, 182, 18);
+    --heading-color: rgb(51, 51, 51);
+    --light-color: rgb(102, 102, 102);
+    --extra-light-color: rgb(153, 153, 153);
+
+    --heading-font: Lato, sans-serif;
+    --body-font: Lato, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+h2,h3{
+    text-align: center;
+    color: var(--main-color-two);
+}
+section{
+    width: 100%;
+    height: auto;
+}
+.service-container{
+    width: 100%;
+    margin: auto;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+.service{
+    background: #fff;
+    height: 220px;
+    width: 380px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    position: relative;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+.service .discount{
+    position: absolute;
+    background: var(--main-color-one);
+    color: var(--main-color-two);
+    border-radius: 5px;
+    padding: 7px;
+    font-size: medium;
+    font-weight: 600;
+    left: 0;
+    top: 0;    
+}
+.service:hover{
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+.service img{
+    height: 55%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+}
+.service .info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+.service .price{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.service .name{
+    color: var(--main-color-two);
+    font-weight: 700;
+    font-size: .9rem;
+}
+.starts-from small{
+    font-size: 11px;
+    font-weight: 600;
+}
+.starts-from s{
+    color: red;
+}
+.starts-from span{
+    color: var(--main-color-one);
+}
+.book-service input{
+    background: var(--main-color-one);
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+}
+@media screen and (max-width: 1050px){
+    .service{
+        width: 380px;
+    }        
+}
+@media screen and (max-width: 950px){
+    .service{
+        width: 250px;
+    }        
+}
+@media screen and (max-width: 900px){
+    .service{
+        width: 220px;
+    }        
+}
+@media screen and (max-width: 850px){
+    .service{
+        width: 220px;
+    }        
+}
+@media screen and (max-width: 800px){
+    .service{
+        width: 200px;
+    }        
+}
+@media screen and (max-width: 750px){
+    .service{
+        width: 190px;
+    }        
+}
+@media screen and (max-width: 700px){
+    .service{
+        width: 190px;
+    }        
+}
+@media screen and (max-width: 690px){
+    .service{
+        width: 170px;
+    }        
+}
+@media screen and (max-width: 450px){
+    .service{
+        width: 170px;
+    }
+            
+}
+@media screen and (min-width: 750px){
+    .service .name{
+        color: var(--main-color-two);
+        font-weight: 700;
+        font-size: 1.2rem;
+    }
+    .starts-from small{
+        font-size: 15px;
+        font-weight: 600;
+    }
+    .starts-from s{
+        color: red;
+    }
+    .starts-from span{
+        color: var(--main-color-one);
+    }
+    .book-service input{
+        background: var(--main-color-one);
+        border: none;
+        padding: 5px;
+        border-radius: 5px;
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 430px){
+    .service{
+        width: 160px;
+    }
+    .service .name{
+        color: var(--main-color-two);
+        font-weight: 700;
+        font-size: .9rem;
+    }
+    .starts-from small{
+        font-size: 11px;
+        font-weight: 600;
+    }
+    .starts-from s{
+        color: red;
+    }
+    .starts-from span{
+        color: var(--main-color-one);
+    }
+    .book-service input{
+        background: var(--main-color-one);
+        border: none;
+        padding: 5px;
+        border-radius: 5px;
+    }        
+}
+@media screen and (max-width: 410px){
+    .service{
+        width: 150px;
+        margin: 10px;
+    }        
+}
+@media screen and (max-width: 390px){
+    .service{
+        width: 140px;
+        margin: 5px;
+    }        
+}
+@media screen and (max-width: 350px){
+    .service{
+        padding: 7px;
+    }        
+}
+
