@@ -82,3 +82,11 @@ def search_view(request):
             return render(request, 'flow.html', context)
     else:
         return render(request, 'index.html')
+    
+def categories(request):
+    return render(request,'services.html')
+
+def services(request):
+    return render(request,'service.html')
+def service_detail(request):
+    return render(request,'single.html')

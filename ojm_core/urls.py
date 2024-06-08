@@ -9,8 +9,10 @@ urlpatterns = [
     path('all',views.all_users,name="all"),
     path('single/<int:pk>',views.single_user,name="single"),
     
-    path('search',views.search_view,name="search")
-    
+    path('search',views.search_view,name="search"),
+    path('categories', views.categories,name="categories"),
+    path('services', views.services,name="services"),
+    path('service-detail', views.service_detail,name="service_detail"),
 ]
 
 

@@ -1,0 +1,295 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Categories</title>
+    <link rel="stylesheet" href="{% static 'Css/services.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h2>Service Categories</h2>
+        <div class="slider">
+            
+            <div class="card" onclick="showSubCategory(this)" data-category="category1">
+                <div class="main-content">
+                    <img src="{% static 'Assest/Img/switch1.jpeg' %}" alt="">
+                    <p class="desc">description</p>
+                </div>
+                <div class="sub-category">
+                    <a href="{%url 'ojm_core:services'%}">
+                        <div class="sub-card">
+                            <img src="{% static '/Assest/Img/electrical-repair.jpeg' %}" alt="Electrical repair">
+                            <div class="details">
+                                <span class="name">Wiring</span>
+                                <small class="info">We are well equipped and prepared with experts to offer you the best services</small>
+                                <span class="count">2 services</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="{%url 'ojm_core:services'%}">
+                        <div class="sub-card">
+                            <img src="{% static '/Assest/Img/electrical-repair.jpeg' %}" alt="Electrical repair">
+                            <div class="details">
+                                <span class="name">Wiring</span>
+                                <small class="info">We are well equipped and prepared with experts to offer you the best services</small>
+                                <span class="count">2 services</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="{%url 'ojm_core:services'%}">
+                        <div class="sub-card">
+                            <img src="{% static '/Assest/Img/electrical-repair.jpeg' %}" alt="Electrical repair">
+                            <div class="details">
+                                <span class="name">Wiring</span>
+                                <small class="info">We are well equipped and prepared with experts to offer you the best services</small>
+                                <span class="count">2 services</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="{%url 'ojm_core:services'%}">
+                        <div class="sub-card">
+                            <img src="{% static '/Assest/Img/electrical-repair.jpeg' %}" alt="Electrical repair">
+                            <div class="details">
+                                <span class="name">Wiring</span>
+                                <small class="info">We are well equipped and prepared with experts to offer you the best services</small>
+                                <span class="count">2 services</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="{%url 'ojm_core:services'%}">
+                        <div class="sub-card">
+                            <img src="{% static '/Assest/Img/electrical-repair.jpeg' %}" alt="Electrical repair">
+                            <div class="details">
+                                <span class="name">Wiring</span>
+                                <small class="info">We are well equipped and prepared with experts to offer you the best services</small>
+                                <span class="count">2 services</span>
+                            </div>
+                        </div>
+                    </a>
+                    
+                </div>
+            </div>
+            <div class="card" onclick="showSubCategory(this)" data-category="category2">
+                <div class="main-content">
+                    <img src="{% static 'Assest/Img/solar1.jpeg' %}" alt="">
+                    <p class="desc">description</p>
+                </div>
+                <div class="sub-category">
+                    <a href="{%url 'ojm_core:services'%}">
+                        <div class="sub-card">
+                            <img src="{% static '/Assest/Img/electrical-repair.jpeg' %}" alt="Electrical repair">
+                            <div class="details">
+                                <span class="name">Wiring</span>
+                                <small class="info">We are well equipped and prepared with experts to offer you the best services</small>
+                                <span class="count">2 services</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="{%url 'ojm_core:services'%}">
+                        <div class="sub-card">
+                            <img src="{% static '/Assest/Img/electrical-repair.jpeg' %}" alt="Electrical repair">
+                            <div class="details">
+                                <span class="name">Wiring</span>
+                                <small class="info">We are well equipped and prepared with experts to offer you the best services</small>
+                                <span class="count">2 services</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="{%url 'ojm_core:services'%}">
+                        <div class="sub-card">
+                            <img src="{% static '/Assest/Img/electrical-repair.jpeg' %}" alt="Electrical repair">
+                            <div class="details">
+                                <span class="name">Wiring</span>
+                                <small class="info">We are well equipped and prepared with experts to offer you the best services</small>
+                                <span class="count">2 services</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="card" onclick="showSubCategory(this)" data-category="category1">
+                <div class="main-content">
+                    <img src="{% static 'Assest/Img/cctv1.jpeg' %}" alt="">
+                    <p class="desc">description</p>
+                </div>
+                <div class="sub-category">
+                    <a href="{%url 'ojm_core:services'%}">
+                        <div class="sub-card">
+                            <img src="{% static '/Assest/Img/electrical-repair.jpeg' %}" alt="Electrical repair">
+                            <div class="details">
+                                <span class="name">Wiring</span>
+                                <small class="info">We are well equipped and prepared with experts to offer you the best services</small>
+                                <span class="count">2 services</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="{%url 'ojm_core:services'%}">
+                        <div class="sub-card">
+                            <img src="{% static '/Assest/Img/electrical-repair.jpeg' %}" alt="Electrical repair">
+                            <div class="details">
+                                <span class="name">Wiring</span>
+                                <small class="info">We are well equipped and prepared with experts to offer you the best services</small>
+                                <span class="count">2 services</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="{%url 'ojm_core:services'%}">
+                        <div class="sub-card">
+                            <img src="{% static '/Assest/Img/electrical-repair.jpeg' %}" alt="Electrical repair">
+                            <div class="details">
+                                <span class="name">Wiring</span>
+                                <small class="info">We are well equipped and prepared with experts to offer you the best services</small>
+                                <span class="count">2 services</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="{%url 'ojm_core:services'%}">
+                        <div class="sub-card">
+                            <img src="{% static '/Assest/Img/electrical-repair.jpeg' %}" alt="Electrical repair">
+                            <div class="details">
+                                <span class="name">Wiring</span>
+                                <small class="info">We are well equipped and prepared with experts to offer you the best services</small>
+                                <span class="count">2 services</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="{%url 'ojm_core:services'%}">
+                        <div class="sub-card">
+                            <img src="{% static '/Assest/Img/electrical-repair.jpeg' %}" alt="Electrical repair">
+                            <div class="details">
+                                <span class="name">Wiring</span>
+                                <small class="info">We are well equipped and prepared with experts to offer you the best services</small>
+                                <span class="count">2 services</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="{%url 'ojm_core:services'%}">
+                        <div class="sub-card">
+                            <img src="{% static '/Assest/Img/electrical-repair.jpeg' %}" alt="Electrical repair">
+                            <div class="details">
+                                <span class="name">Wiring</span>
+                                <small class="info">We are well equipped and prepared with experts to offer you the best services</small>
+                                <span class="count">2 services</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="card" onclick="showSubCategory(this)" data-category="category1">
+                <div class="main-content">Card 1</div>
+                <div class="sub-category">
+                    <div class="sub-card">Sub-category 1.1</div>
+                    <div class="sub-card">Sub-category 1.2</div>
+                    <!-- Add more sub-cards here -->
+                </div>
+            </div>
+            <div class="card" onclick="showSubCategory(this)" data-category="category1">
+                <div class="main-content">Card 0</div>
+                <div class="sub-category">
+                    <div class="sub-card">Sub-category 0.1</div>
+                    <div class="sub-card">Sub-category 0.2</div>
+                    <!-- Add more sub-cards here -->
+                </div>
+            </div>
+            <div class="card" onclick="showSubCategory(this)" data-category="category1">
+                <div class="main-content">Card 1</div>
+                <div class="sub-category">
+                    <div class="sub-card">Sub-category 1.1</div>
+                    <div class="sub-card">Sub-category 1.2</div>
+                    <!-- Add more sub-cards here -->
+                </div>
+            </div>
+            <div class="card" onclick="showSubCategory(this)" data-category="category1">
+                <div class="main-content">Card 0</div>
+                <div class="sub-category">
+                    <div class="sub-card">Sub-category 0.1</div>
+                    <div class="sub-card">Sub-category 0.2</div>
+                    <!-- Add more sub-cards here -->
+                </div>
+            </div>
+            <div class="card" onclick="showSubCategory(this)" data-category="category1">
+                <div class="main-content">Card 1</div>
+                <div class="sub-category">
+                    <div class="sub-card">Sub-category 1.1</div>
+                    <div class="sub-card">Sub-category 1.2</div>
+                    <!-- Add more sub-cards here -->
+                </div>
+            </div>
+            <div class="card" onclick="showSubCategory(this)" data-category="category1">
+                <div class="main-content">Card 0</div>
+                <div class="sub-category">
+                    <div class="sub-card">Sub-category 0.1</div>
+                    <div class="sub-card">Sub-category 0.2</div>
+                    <!-- Add more sub-cards here -->
+                </div>
+            </div>
+            <div class="card" onclick="showSubCategory(this)" data-category="category1">
+                <div class="main-content">Card 1</div>
+                <div class="sub-category">
+                    <div class="sub-card">Sub-category 1.1</div>
+                    <div class="sub-card">Sub-category 1.2</div>
+                    <!-- Add more sub-cards here -->
+                </div>
+            </div>
+            <div class="card" onclick="showSubCategory(this)" data-category="category1">
+                <div class="main-content">Card 0</div>
+                <div class="sub-category">
+                    <div class="sub-card">Sub-category 0.1</div>
+                    <div class="sub-card">Sub-category 0.2</div>
+                    <!-- Add more sub-cards here -->
+                </div>
+            </div>
+            <div class="card" onclick="showSubCategory(this)" data-category="category1">
+                <div class="main-content">Card 1</div>
+                <div class="sub-category">
+                    <div class="sub-card">Sub-category 1.1</div>
+                    <div class="sub-card">Sub-category 1.2</div>
+                    <!-- Add more sub-cards here -->
+                </div>
+            </div>
+            <div class="card" onclick="showSubCategory(this)" data-category="category1">
+                <div class="main-content">Card 0</div>
+                <div class="sub-category">
+                    <div class="sub-card">Sub-category 0.1</div>
+                    <div class="sub-card">Sub-category 0.2</div>
+                    <!-- Add more sub-cards here -->
+                </div>
+            </div>
+            <div class="card" onclick="showSubCategory(this)" data-category="category1">
+                <div class="main-content">Card 1</div>
+                <div class="sub-category">
+                    <div class="sub-card">Sub-category 1.1</div>
+                    <div class="sub-card">Sub-category 1.2</div>
+                    <!-- Add more sub-cards here -->
+                </div>
+            </div>
+            <div class="card" onclick="showSubCategory(this)" data-category="category1">
+                <div class="main-content">Card 0</div>
+                <div class="sub-category">
+                    <div class="sub-card">Sub-category 0.1</div>
+                    <div class="sub-card">Sub-category 0.2</div>
+                    <!-- Add more sub-cards here -->
+                </div>
+            </div>
+            <div class="card" onclick="showSubCategory(this)" data-category="category1">
+                <div class="main-content">Card 1</div>
+                <div class="sub-category">
+                    <div class="sub-card">Sub-category 1.1</div>
+                    <div class="sub-card">Sub-category 1.2</div>
+                    <!-- Add more sub-cards here -->
+                </div>
+            </div>
+            <!-- Repeat for other cards -->
+        </div>
+        <h3>Sub Categories</h3>
+        <div class="sub-category-display">
+            <div class="sub-category-content"></div>
+        </div>
+    </div>
+    <script src="{% static 'Js/services.js' %}"></script>
+</body>
+</html>

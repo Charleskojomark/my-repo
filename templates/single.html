@@ -1,0 +1,99 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Details</title>
+    <link rel="stylesheet" href="{% static 'Css/single.css' %}">
+</head>
+<body>
+    <section>
+        <div class="main-container">
+            <div class="top">
+                <h2>Service Description</h2>
+                <img src="{% static '/Assest/Img/ac2.jpeg' %}" alt="">
+                <div class="service-box">
+                    <div class="image">
+                        <img src="{% static '/Assest/Img/ad6.jpg' %}" alt="">
+                        <div class="description">
+                            <div class="rating">
+                                *****
+                            </div>
+                            <div class="text">
+                                We are well equipped with the best electricians for you.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="price">
+                        <div class="amount">
+                            <s>#9000.00</s>
+                            <span>#7000.00</span>
+                        </div>
+                        <div class="book-now">
+                            <form method="GET" action="{%url 'ojm_core:search'%}">
+                                <input type="hidden" name="query" placeholder="What service do you need?" value="Service Description">
+                                <button type="submit">Book now</button>
+                              </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-container">
+                <div class="tabs">
+                    <div class="tab" data-tab="content1">Service Overview</div>
+                    <div class="tab" data-tab="content2">FAQs</div>
+                    <div class="tab" data-tab="content3">Reviews</div>
+                    <div class="line"></div>
+                </div>
+                <div class="contents">
+                    <div class="content" id="content1">
+                        <h3>Overview of Service</h3>
+                        <p>When do you need this particular service?</p>
+                        <ul>
+                            <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum nam distinctio id possimus voluptas, corrupti delectus quasi nisi blanditiis autem explicabo repellat! Temporibus pariatur voluptatibus quidem error earum, ex doloribus!</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit consectetur saepe facilis suscipit autem quibusdam dicta. Nesciunt veniam dolores, ad maxime voluptas eaque commodi ducimus. Quod, reiciendis temporibus. Eius, laborum?</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore eaque aliquid velit explicabo blanditiis consequatur, provident quos! Porro, explicabo aperiam! Qui nihil vero id sint quia iusto molestiae voluptas debitis!</li>
+                        </ul>
+                        <p>What's Included?</p>
+                        <ul>
+                            <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum nam distinctio id possimus voluptas, corrupti delectus quasi nisi blanditiis autem explicabo repellat! Temporibus pariatur voluptatibus quidem error earum, ex doloribus!</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit consectetur saepe facilis suscipit autem quibusdam dicta. Nesciunt veniam dolores, ad maxime voluptas eaque commodi ducimus. Quod, reiciendis temporibus. Eius, laborum?</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore eaque aliquid velit explicabo blanditiis consequatur, provident quos! Porro, explicabo aperiam! Qui nihil vero id sint quia iusto molestiae voluptas debitis!</li>
+                        </ul>
+                        <p>Whats's Excluded?</p>
+                        <ul>
+                            <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum nam distinctio id possimus voluptas, corrupti delectus quasi nisi blanditiis autem explicabo repellat! Temporibus pariatur voluptatibus quidem error earum, ex doloribus!</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit consectetur saepe facilis suscipit autem quibusdam dicta. Nesciunt veniam dolores, ad maxime voluptas eaque commodi ducimus. Quod, reiciendis temporibus. Eius, laborum?</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore eaque aliquid velit explicabo blanditiis consequatur, provident quos! Porro, explicabo aperiam! Qui nihil vero id sint quia iusto molestiae voluptas debitis!</li>
+                        </ul>
+                        <p>Note to customer</p>
+                        <ul>
+                            <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum nam distinctio id possimus voluptas, corrupti delectus quasi nisi blanditiis autem explicabo repellat! Temporibus pariatur voluptatibus quidem error earum, ex doloribus!</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit consectetur saepe facilis suscipit autem quibusdam dicta. Nesciunt veniam dolores, ad maxime voluptas eaque commodi ducimus. Quod, reiciendis temporibus. Eius, laborum?</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore eaque aliquid velit explicabo blanditiis consequatur, provident quos! Porro, explicabo aperiam! Qui nihil vero id sint quia iusto molestiae voluptas debitis!</li>
+                        </ul>
+                    </div>
+                    <div class="content" id="content2">
+                        <h3>Frequently asked questions about this service</h3>
+                        <ul>
+                            <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum nam distinctio id possimus voluptas, corrupti delectus quasi nisi blanditiis autem explicabo repellat! Temporibus pariatur voluptatibus quidem error earum, ex doloribus!</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit consectetur saepe facilis suscipit autem quibusdam dicta. Nesciunt veniam dolores, ad maxime voluptas eaque commodi ducimus. Quod, reiciendis temporibus. Eius, laborum?</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore eaque aliquid velit explicabo blanditiis consequatur, provident quos! Porro, explicabo aperiam! Qui nihil vero id sint quia iusto molestiae voluptas debitis!</li>
+                        </ul>
+                        <ul>
+                            <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum nam distinctio id possimus voluptas, corrupti delectus quasi nisi blanditiis autem explicabo repellat! Temporibus pariatur voluptatibus quidem error earum, ex doloribus!</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit consectetur saepe facilis suscipit autem quibusdam dicta. Nesciunt veniam dolores, ad maxime voluptas eaque commodi ducimus. Quod, reiciendis temporibus. Eius, laborum?</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore eaque aliquid velit explicabo blanditiis consequatur, provident quos! Porro, explicabo aperiam! Qui nihil vero id sint quia iusto molestiae voluptas debitis!</li>
+                        </ul>
+                    </div>
+                    <div class="content" id="content3">
+                        <h3>No Reviews Yet</h3>
+                    </div>
+                </div>
+            </div>
+            <script src="{% static 'Js/single.js' %}"></script>
+        </div>
+    </section>
+</body>
+</html>

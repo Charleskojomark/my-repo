@@ -45,18 +45,18 @@
     <header class="header" id="header">
       <nav class="nav contanier">
 
-        <a href="index.html" class="nav_logo"><img src="{% static 'Assest/Img/ojm.png' %}" alt="" /></a>
+        <a href="{%url 'ojm_core:index'%}" class="nav_logo"><img src="{% static 'Assest/Img/ojm.png' %}" alt="" /></a>
 
         <div class="nav_menu" id="nav-menu">
           <ul class="nav_list">
             <li class="nav_item">
-              <a href="index.html" class="nav_link active_link" style="color: rgb(243, 182, 18);">
+              <a href="{%url 'ojm_core:index'%}" class="nav_link active_link" style="color: rgb(243, 182, 18);">
                 <i class="uil uil-estate nav_icon"></i> Home
               </a>
             </li>
 
             <li class="nav_item">
-              <a href="" class="nav_link">
+              <a href="{%url 'ojm_core:services'%}" class="nav_link">
                 <i class="uil uil-briefcase-alt nav_icon"></i> Services
               </a>
             </li>

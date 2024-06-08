@@ -33,18 +33,18 @@
     <header class="header" id="header">
       <nav class="nav contanier">
 
-        <a href="index.html" class="nav_logo"><img src="{% static 'Assest/Img/ojm.png' %}" alt="" /></a>
+        <a href="{%url 'ojm_core:index'%}" class="nav_logo"><img src="{% static 'Assest/Img/ojm.png' %}" alt="" /></a>
 
         <div class="nav_menu" id="nav-menu">
           <ul class="nav_list">
             <li class="nav_item">
-              <a href="index.html" class="nav_link active_link" style="color: rgb(243, 182, 18);">
+              <a href="{%url 'ojm_core:index'%}" class="nav_link active_link" style="color: rgb(243, 182, 18);">
                 <i class="uil uil-estate nav_icon"></i> Home
               </a>
             </li>
 
             <li class="nav_item">
-              <a href="" class="nav_link">
+              <a href="{%url 'ojm_core:services'%}" class="nav_link">
                 <i class="uil uil-briefcase-alt nav_icon"></i> Services
               </a>
             </li>
@@ -123,7 +123,7 @@
     <section class="category_section">
       <div class="category_header">
         <h2>All Categories</h2>
-        <a href="" class="cart_link">View All</a>
+        <a href="{%url 'ojm_core:categories'%}" class="cart_link">View All</a>
       </div>
       <div class="categories">
         <div class="carts">
@@ -201,7 +201,7 @@
   <section class="services_section swiper">
     <div class="service-heading">
       <h2>Recommended Services </h2>
-      <a href="">View All</a>
+      <a href="{%url 'ojm_core:services'%}">View All</a>
     </div>
     <div class="swiper-wrapper wrapers">
 
@@ -494,7 +494,7 @@
   <section class="trending_services swiper">
     <div class="trend_heading">
       <h2>Trending Services</h2>
-      <a href="">View All</a>
+      <a href="{%url 'ojm_core:services'%}">View All</a>
     </div>
     <div class="swiper-wrapper">
 
@@ -507,7 +507,10 @@
             <div class="trend-discount">10% off</div>
             <img src="{% static 'Assest/Img/solar2.jpeg' %}" alt="">
             <h3>Solar Installation</h3>
-            <button type="submit" class="trend-btn">Book Service <i class="uil uil-message"></i></button>
+            <form method="GET" action="{%url 'ojm_core:search'%}">
+              <input type="hidden" name="query" placeholder="What service do you need?" value="Solar Installation">
+              <button type="submit" class="trend-btn">Book Service <i class="uil uil-message"></i></button>
+            </form>
           </div>
 
         </div>
@@ -521,7 +524,10 @@
             <div class="trend-discount">10% off</div>
             <img src="{% static 'Assest/Img/cctv2.jpeg' %}" alt="">
             <h3>CCTV Camera Installation</h3>
-            <button type="submit" class="trend-btn">Book Service <i class="uil uil-message"></i></button>
+            <form method="GET" action="{%url 'ojm_core:search'%}">
+              <input type="hidden" name="query" placeholder="What service do you need?" value="CCTV Camera Installation">
+              <button type="submit" class="trend-btn">Book Service <i class="uil uil-message"></i></button>
+            </form>
           </div>
 
         </div>
@@ -535,7 +541,10 @@
             <div class="trend-discount">10% off</div>
             <img src="{% static 'Assest/Img/wiring5.jpeg' %}" alt="">
             <h3>House Wiring Services</h3>
-            <button type="submit" class="trend-btn">Book Service <i class="uil uil-message"></i></button>
+            <form method="GET" action="{%url 'ojm_core:search'%}">
+              <input type="hidden" name="query" placeholder="What service do you need?" value="House Wiring Services">
+              <button type="submit" class="trend-btn">Book Service <i class="uil uil-message"></i></button>
+            </form>
           </div>
 
         </div>
@@ -549,7 +558,10 @@
             <div class="trend-discount">10% off</div>
             <img src="{% static 'Assest/Img/ac2.jpeg' %}" alt="">
             <h3>AC Installation</h3>
-            <button type="submit" class="trend-btn">Book Service <i class="uil uil-message"></i></button>
+            <form method="GET" action="{%url 'ojm_core:search'%}">
+              <input type="hidden" name="query" placeholder="What service do you need?" value="AC Installation">
+              <button type="submit" class="trend-btn">Book Service <i class="uil uil-message"></i></button>
+            </form>
           </div>
 
         </div>
@@ -659,8 +671,8 @@
       <div>
         <h3>Community</h3>
         <ul>
-          <li><a href="prof-signup.html">Become A Smart Electrician</a></li>
-          <li><a href="signup.html">Become A Smart Customer</a></li>
+          <li><a href="{%url 'userauth:prof-signup'%}">Become An Electrician</a></li>
+          <li><a href="{%url 'userauth:signup'%}">Become A Customer</a></li>
         </ul>
       </div>
 
