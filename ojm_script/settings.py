@@ -219,4 +219,9 @@ PUSHER_CLUSTER = os.getenv('PUSHER_CLUSTER')
 SSL = os.getenv('SSL', 'False') == 'True'
 
 
+
+PAYSTACK_PUBLIC_KEY = os.getenv('PAYSTACK_PUBLIC_KEY')
+PAYSTACK_SECRET_KEY = os.getenv('PAYSTACK_SECRET_KEY')
+
+
 AUTH_USER_MODEL = 'userauth.User'

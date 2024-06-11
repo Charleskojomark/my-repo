@@ -42,6 +42,10 @@ services:
         value: 'eu'
       - key: SSL
         value: 'True'
+      - key: PAYSTACK_SECRET_KEY
+        value: 'sk_live_8e7738fff56cb42305a9aa431cea8d503eaca9ba'
+      - key: PAYSTACK_PUBLIC_KEY
+        value: 'pk_live_b016d393faa62fe82075d75db9b87ba9272320ab'
       - key: DEBUG
         value: 'False'
       - key: PORT

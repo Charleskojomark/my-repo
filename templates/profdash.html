@@ -38,7 +38,7 @@
                     <i class="uil uil-envelopes"></i> Messages
                 </a>
 
-                <a href="pay.html" class="">
+                <a href="{% url 'payment:pay' %}" class="">
                     <i class="uil uil-money-bill"></i>Pricing
                 </a>
 
@@ -77,13 +77,13 @@
                 </div>
                 <hr>
                 <div class="bottom">
-                    <a href="pay.html">
+                    <a href="{% url 'payment:pay' %}">
                         <div class="subscribe">
                             <i class="uil uil-folder-check"></i>
                             <p>Subscribe</p>
                         </div>
                     </a>
-                    <a href="pay.html">
+                    <a href="{% url 'payment:pay' %}">
                         <div class="fund-wallet">
                             <i class="uil uil-wallet"></i>
                             <p>Fund wallet</p>
