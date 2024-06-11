@@ -15,6 +15,7 @@ from django.contrib.auth.models import Group
 from .models import Request
 from django.core.exceptions import ValidationError
 from datetime import datetime
+from payment.models import Wallet,Payment
 
 
 
@@ -47,6 +48,7 @@ def user_dashboard(request):
 def prof_dashboard(request):
     profile = get_object_or_404(ElectricianProfile, user=request.user)
     user = request.user
+    wallet = get_object_or_404(Wallet, user=user)
     profile_pic_form = UpdatePicture(instance=profile)
     business_form = UpdateBusinessInfo(instance=profile)
     location_form = UpdateLocation(instance=profile)
@@ -63,6 +65,7 @@ def prof_dashboard(request):
         'prices_form':prices_form,
         'qualification_form':qualification_form,
         'form':form,
+        'wallet':wallet,
     }
     return render(request, 'profdash.html',context)
 

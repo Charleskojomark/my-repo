@@ -71,7 +71,7 @@ def paystack_webhook(request):
         
         response_data = {
             'message': 'Wallet balance updated successfully',
-            'new_balance': wallet.balance  # Include the updated balance in the response
+            'new_balance': wallet.balance  
         }
         return JsonResponse(response_data, status=200)
 
