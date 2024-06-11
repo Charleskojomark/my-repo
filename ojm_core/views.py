@@ -191,7 +191,14 @@ def user_post(request):
         service_description = request.POST['serviceDescription']
         additional_files = request.FILES.get('additionalFiles', None)
         job_start = request.POST.get('jobStart', None)
-        start_date = request.POST.get('startDate', None)
+        start_date_str = request.POST.get('startDate', None)
+        
+        start_date = None
+        if start_date_str:
+            try:
+                start_date = datetime.strptime(start_date_str, '%Y-%m-%d').date()
+            except ValueError:
+                raise ValidationError("Invalid date format. Please use YYYY-MM-DD.")
 
         # Create request
         request_data = {
