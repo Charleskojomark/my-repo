@@ -100,6 +100,7 @@ INSTALLED_APPS = [
     'ojm_core',
     'userauth',
     'chatapp',
+    'payment',
 ]
 
 MIDDLEWARE = [

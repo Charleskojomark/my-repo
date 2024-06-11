@@ -24,6 +24,7 @@ urlpatterns = [
     path('', include('ojm_core.urls',namespace="ojm_core")),
     path('user/', include('userauth.urls',namespace="userauth")),
     path('chat/', include('chatapp.urls',namespace="chatapp")),
+    path('pay/', include('payment.urls',namespace="payment")),
     path('accounts/', include('django.contrib.auth.urls')), 
 ]
 if settings.DEBUG:
