@@ -215,3 +215,7 @@ def user_post(request):
         return redirect('ojm_core:index')
 
     return render(request, 'flow1.html')
+
+@login_required
+def post_job(request):
+    return render(request, 'post_job.html')

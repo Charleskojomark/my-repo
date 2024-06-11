@@ -16,6 +16,7 @@ urlpatterns = [
     
     path('post-request', views.post_request, name="post_request"),
     path('user-post', views.user_post, name="user_post"),
+    path('post-job', views.post_job, name="post_job"),
 ]
 
 
