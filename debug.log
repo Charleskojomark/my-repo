@@ -9219,3 +9219,80 @@ DEBUG 2024-06-11 10:46:10,096 utils (0.000) SELECT "django_content_type"."id", "
 DEBUG 2024-06-11 10:46:10,098 utils (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'payment' AND "django_content_type"."model" = 'wallet') LIMIT 21; args=('payment', 'wallet'); alias=default
 DEBUG 2024-06-11 10:46:10,100 utils (0.000) SELECT "auth_permission"."content_type_id", "auth_permission"."codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ("auth_permission"."content_type_id" = "django_content_type"."id") WHERE "auth_permission"."content_type_id" IN (12, 13) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, "auth_permission"."codename" ASC; args=(12, 13); alias=default
 DEBUG 2024-06-11 10:46:10,102 utils (0.015) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'payment'; args=('payment',); alias=default
+DEBUG 2024-06-11 10:57:49,137 autoreload File C:\Users\OWNER\Desktop\new\templates\pay.html previous mtime: 1718098392.7692027, current mtime: 1718099868.1325078
+DEBUG 2024-06-11 10:57:49,137 autoreload File C:\Users\OWNER\Desktop\new\templates\pay.html previous mtime: 1718098392.7692027, current mtime: 1718099868.1325078
+DEBUG 2024-06-11 10:57:49,139 autoreload C:\Users\OWNER\Desktop\new\templates\pay.html notified as changed. Signal results: [(<function template_changed at 0x00000236C90A80E0>, True), (<function translation_file_changed at 0x00000236CA1BE020>, None)].
+DEBUG 2024-06-11 10:57:49,139 autoreload C:\Users\OWNER\Desktop\new\templates\pay.html notified as changed. Signal results: [(<function template_changed at 0x00000236C90A80E0>, True), (<function translation_file_changed at 0x00000236CA1BE020>, None)].
+DEBUG 2024-06-11 10:57:50,236 autoreload File C:\Users\OWNER\Desktop\new\templates\pay.html previous mtime: 1718099868.1325078, current mtime: 1718099870.0717156
+DEBUG 2024-06-11 10:57:50,236 autoreload File C:\Users\OWNER\Desktop\new\templates\pay.html previous mtime: 1718099868.1325078, current mtime: 1718099870.0717156
+DEBUG 2024-06-11 10:57:50,239 autoreload C:\Users\OWNER\Desktop\new\templates\pay.html notified as changed. Signal results: [(<function template_changed at 0x00000236C90A80E0>, True), (<function translation_file_changed at 0x00000236CA1BE020>, None)].
+DEBUG 2024-06-11 10:57:50,239 autoreload C:\Users\OWNER\Desktop\new\templates\pay.html notified as changed. Signal results: [(<function template_changed at 0x00000236C90A80E0>, True), (<function translation_file_changed at 0x00000236CA1BE020>, None)].
+DEBUG 2024-06-11 10:57:55,785 autoreload File C:\Users\OWNER\Desktop\new\templates\pay.html previous mtime: 1718099870.0717156, current mtime: 1718099875.3765712
+DEBUG 2024-06-11 10:57:55,785 autoreload File C:\Users\OWNER\Desktop\new\templates\pay.html previous mtime: 1718099870.0717156, current mtime: 1718099875.3765712
+DEBUG 2024-06-11 10:57:55,786 autoreload C:\Users\OWNER\Desktop\new\templates\pay.html notified as changed. Signal results: [(<function template_changed at 0x00000236C90A80E0>, True), (<function translation_file_changed at 0x00000236CA1BE020>, None)].
+DEBUG 2024-06-11 10:57:55,786 autoreload C:\Users\OWNER\Desktop\new\templates\pay.html notified as changed. Signal results: [(<function template_changed at 0x00000236C90A80E0>, True), (<function translation_file_changed at 0x00000236CA1BE020>, None)].
+DEBUG 2024-06-11 10:57:59,080 autoreload File C:\Users\OWNER\Desktop\new\templates\pay.html previous mtime: 1718099875.3765712, current mtime: 1718099878.1410546
+DEBUG 2024-06-11 10:57:59,080 autoreload File C:\Users\OWNER\Desktop\new\templates\pay.html previous mtime: 1718099875.3765712, current mtime: 1718099878.1410546
+DEBUG 2024-06-11 10:57:59,081 autoreload C:\Users\OWNER\Desktop\new\templates\pay.html notified as changed. Signal results: [(<function template_changed at 0x00000236C90A80E0>, True), (<function translation_file_changed at 0x00000236CA1BE020>, None)].
+DEBUG 2024-06-11 10:57:59,081 autoreload C:\Users\OWNER\Desktop\new\templates\pay.html notified as changed. Signal results: [(<function template_changed at 0x00000236C90A80E0>, True), (<function translation_file_changed at 0x00000236CA1BE020>, None)].
+DEBUG 2024-06-11 10:58:00,248 autoreload File C:\Users\OWNER\Desktop\new\templates\pay.html previous mtime: 1718099878.1410546, current mtime: 1718099879.2115853
+DEBUG 2024-06-11 10:58:00,248 autoreload File C:\Users\OWNER\Desktop\new\templates\pay.html previous mtime: 1718099878.1410546, current mtime: 1718099879.2115853
+DEBUG 2024-06-11 10:58:00,250 autoreload C:\Users\OWNER\Desktop\new\templates\pay.html notified as changed. Signal results: [(<function template_changed at 0x00000236C90A80E0>, True), (<function translation_file_changed at 0x00000236CA1BE020>, None)].
+DEBUG 2024-06-11 10:58:00,250 autoreload C:\Users\OWNER\Desktop\new\templates\pay.html notified as changed. Signal results: [(<function template_changed at 0x00000236C90A80E0>, True), (<function translation_file_changed at 0x00000236CA1BE020>, None)].
+DEBUG 2024-06-11 10:58:34,336 autoreload File C:\Users\OWNER\Desktop\new\templates\pay.html previous mtime: 1718099879.2115853, current mtime: 1718099913.4478528
+DEBUG 2024-06-11 10:58:34,336 autoreload File C:\Users\OWNER\Desktop\new\templates\pay.html previous mtime: 1718099879.2115853, current mtime: 1718099913.4478528
+DEBUG 2024-06-11 10:58:34,338 autoreload C:\Users\OWNER\Desktop\new\templates\pay.html notified as changed. Signal results: [(<function template_changed at 0x00000236C90A80E0>, True), (<function translation_file_changed at 0x00000236CA1BE020>, None)].
+DEBUG 2024-06-11 10:58:34,338 autoreload C:\Users\OWNER\Desktop\new\templates\pay.html notified as changed. Signal results: [(<function template_changed at 0x00000236C90A80E0>, True), (<function translation_file_changed at 0x00000236CA1BE020>, None)].
+DEBUG 2024-06-11 10:58:37,642 autoreload File C:\Users\OWNER\Desktop\new\templates\pay.html previous mtime: 1718099913.4478528, current mtime: 1718099917.5047214
+DEBUG 2024-06-11 10:58:37,642 autoreload File C:\Users\OWNER\Desktop\new\templates\pay.html previous mtime: 1718099913.4478528, current mtime: 1718099917.5047214
+DEBUG 2024-06-11 10:58:37,645 autoreload C:\Users\OWNER\Desktop\new\templates\pay.html notified as changed. Signal results: [(<function template_changed at 0x00000236C90A80E0>, True), (<function translation_file_changed at 0x00000236CA1BE020>, None)].
+DEBUG 2024-06-11 10:58:37,645 autoreload C:\Users\OWNER\Desktop\new\templates\pay.html notified as changed. Signal results: [(<function template_changed at 0x00000236C90A80E0>, True), (<function translation_file_changed at 0x00000236CA1BE020>, None)].
+DEBUG 2024-06-11 10:59:21,055 autoreload File C:\Users\OWNER\Desktop\new\templates\profdash.html previous mtime: 1718098351.7566535, current mtime: 1718099960.302057
+DEBUG 2024-06-11 10:59:21,055 autoreload File C:\Users\OWNER\Desktop\new\templates\profdash.html previous mtime: 1718098351.7566535, current mtime: 1718099960.302057
+DEBUG 2024-06-11 10:59:21,056 autoreload C:\Users\OWNER\Desktop\new\templates\profdash.html notified as changed. Signal results: [(<function template_changed at 0x00000236C90A80E0>, True), (<function translation_file_changed at 0x00000236CA1BE020>, None)].
+DEBUG 2024-06-11 10:59:21,056 autoreload C:\Users\OWNER\Desktop\new\templates\profdash.html notified as changed. Signal results: [(<function template_changed at 0x00000236C90A80E0>, True), (<function translation_file_changed at 0x00000236CA1BE020>, None)].
+DEBUG 2024-06-11 10:59:23,278 autoreload File C:\Users\OWNER\Desktop\new\templates\profdash.html previous mtime: 1718099960.302057, current mtime: 1718099962.720464
+DEBUG 2024-06-11 10:59:23,278 autoreload File C:\Users\OWNER\Desktop\new\templates\profdash.html previous mtime: 1718099960.302057, current mtime: 1718099962.720464
+DEBUG 2024-06-11 10:59:23,280 autoreload C:\Users\OWNER\Desktop\new\templates\profdash.html notified as changed. Signal results: [(<function template_changed at 0x00000236C90A80E0>, True), (<function translation_file_changed at 0x00000236CA1BE020>, None)].
+DEBUG 2024-06-11 10:59:23,280 autoreload C:\Users\OWNER\Desktop\new\templates\profdash.html notified as changed. Signal results: [(<function template_changed at 0x00000236C90A80E0>, True), (<function translation_file_changed at 0x00000236CA1BE020>, None)].
+DEBUG 2024-06-11 10:59:33,185 autoreload File C:\Users\OWNER\Desktop\new\templates\profdash.html previous mtime: 1718099962.720464, current mtime: 1718099972.8032873
+DEBUG 2024-06-11 10:59:33,185 autoreload File C:\Users\OWNER\Desktop\new\templates\profdash.html previous mtime: 1718099962.720464, current mtime: 1718099972.8032873
+DEBUG 2024-06-11 10:59:33,187 autoreload C:\Users\OWNER\Desktop\new\templates\profdash.html notified as changed. Signal results: [(<function template_changed at 0x00000236C90A80E0>, True), (<function translation_file_changed at 0x00000236CA1BE020>, None)].
+DEBUG 2024-06-11 10:59:33,187 autoreload C:\Users\OWNER\Desktop\new\templates\profdash.html notified as changed. Signal results: [(<function template_changed at 0x00000236C90A80E0>, True), (<function translation_file_changed at 0x00000236CA1BE020>, None)].
+DEBUG 2024-06-11 10:59:37,619 autoreload File C:\Users\OWNER\Desktop\new\templates\profdash.html previous mtime: 1718099972.8032873, current mtime: 1718099977.373883
+DEBUG 2024-06-11 10:59:37,619 autoreload File C:\Users\OWNER\Desktop\new\templates\profdash.html previous mtime: 1718099972.8032873, current mtime: 1718099977.373883
+DEBUG 2024-06-11 10:59:37,620 autoreload C:\Users\OWNER\Desktop\new\templates\profdash.html notified as changed. Signal results: [(<function template_changed at 0x00000236C90A80E0>, True), (<function translation_file_changed at 0x00000236CA1BE020>, None)].
+DEBUG 2024-06-11 10:59:37,620 autoreload C:\Users\OWNER\Desktop\new\templates\profdash.html notified as changed. Signal results: [(<function template_changed at 0x00000236C90A80E0>, True), (<function translation_file_changed at 0x00000236CA1BE020>, None)].
+DEBUG 2024-06-11 10:59:48,890 autoreload File C:\Users\OWNER\Desktop\new\templates\profdash.html previous mtime: 1718099977.373883, current mtime: 1718099988.6874137
+DEBUG 2024-06-11 10:59:48,890 autoreload File C:\Users\OWNER\Desktop\new\templates\profdash.html previous mtime: 1718099977.373883, current mtime: 1718099988.6874137
+DEBUG 2024-06-11 10:59:48,891 autoreload C:\Users\OWNER\Desktop\new\templates\profdash.html notified as changed. Signal results: [(<function template_changed at 0x00000236C90A80E0>, True), (<function translation_file_changed at 0x00000236CA1BE020>, None)].
+DEBUG 2024-06-11 10:59:48,891 autoreload C:\Users\OWNER\Desktop\new\templates\profdash.html notified as changed. Signal results: [(<function template_changed at 0x00000236C90A80E0>, True), (<function translation_file_changed at 0x00000236CA1BE020>, None)].
+DEBUG 2024-06-11 11:00:26,891 autoreload File C:\Users\OWNER\Desktop\new\payment\views.py previous mtime: 1718098161.417433, current mtime: 1718100026.7850034
+DEBUG 2024-06-11 11:00:26,891 autoreload File C:\Users\OWNER\Desktop\new\payment\views.py previous mtime: 1718098161.417433, current mtime: 1718100026.7850034
+DEBUG 2024-06-11 11:00:26,893 autoreload C:\Users\OWNER\Desktop\new\payment\views.py notified as changed. Signal results: [(<function template_changed at 0x00000236C90A80E0>, None), (<function translation_file_changed at 0x00000236CA1BE020>, None)].
+DEBUG 2024-06-11 11:00:26,893 autoreload C:\Users\OWNER\Desktop\new\payment\views.py notified as changed. Signal results: [(<function template_changed at 0x00000236C90A80E0>, None), (<function translation_file_changed at 0x00000236CA1BE020>, None)].
+INFO 2024-06-11 11:00:26,894 autoreload C:\Users\OWNER\Desktop\new\payment\views.py changed, reloading.
+INFO 2024-06-11 11:00:26,894 autoreload C:\Users\OWNER\Desktop\new\payment\views.py changed, reloading.
+INFO 2024-06-11 11:00:32,602 autoreload Watching for file changes with StatReloader
+INFO 2024-06-11 11:00:32,602 autoreload Watching for file changes with StatReloader
+DEBUG 2024-06-11 11:00:32,604 autoreload Waiting for apps ready_event.
+DEBUG 2024-06-11 11:00:32,604 autoreload Waiting for apps ready_event.
+DEBUG 2024-06-11 11:00:33,615 autoreload Apps ready_event triggered. Sending autoreload_started signal.
+DEBUG 2024-06-11 11:00:33,615 autoreload Apps ready_event triggered. Sending autoreload_started signal.
+DEBUG 2024-06-11 11:00:33,990 autoreload Watching dir C:\Users\OWNER\Desktop\new\templates with glob **/*.
+DEBUG 2024-06-11 11:00:33,990 autoreload Watching dir C:\Users\OWNER\Desktop\new\templates with glob **/*.
+DEBUG 2024-06-11 11:00:33,991 autoreload Watching dir C:\Users\OWNER\Desktop\new\locale with glob **/*.mo.
+DEBUG 2024-06-11 11:00:33,991 autoreload Watching dir C:\Users\OWNER\Desktop\new\locale with glob **/*.mo.
+DEBUG 2024-06-11 11:00:33,992 autoreload Watching dir C:\Users\OWNER\Desktop\new\ojm_core\locale with glob **/*.mo.
+DEBUG 2024-06-11 11:00:33,992 autoreload Watching dir C:\Users\OWNER\Desktop\new\ojm_core\locale with glob **/*.mo.
+DEBUG 2024-06-11 11:00:33,994 autoreload Watching dir C:\Users\OWNER\Desktop\new\userauth\locale with glob **/*.mo.
+DEBUG 2024-06-11 11:00:33,994 autoreload Watching dir C:\Users\OWNER\Desktop\new\userauth\locale with glob **/*.mo.
+DEBUG 2024-06-11 11:00:33,994 autoreload Watching dir C:\Users\OWNER\Desktop\new\chatapp\locale with glob **/*.mo.
+DEBUG 2024-06-11 11:00:33,994 autoreload Watching dir C:\Users\OWNER\Desktop\new\chatapp\locale with glob **/*.mo.
+DEBUG 2024-06-11 11:00:33,996 autoreload Watching dir C:\Users\OWNER\Desktop\new\payment\locale with glob **/*.mo.
+DEBUG 2024-06-11 11:00:33,996 autoreload Watching dir C:\Users\OWNER\Desktop\new\payment\locale with glob **/*.mo.
+DEBUG 2024-06-11 11:00:34,116 utils (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None; alias=default
+DEBUG 2024-06-11 11:00:34,124 utils (0.000) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=(); alias=default

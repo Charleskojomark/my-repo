@@ -83,4 +83,4 @@ def web(request):
     context={
         'wallet':wallet
     }
-    return render(request, 'web.html', context)
+    return render(request, 'profdash.html', context)
