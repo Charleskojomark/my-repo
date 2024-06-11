@@ -63,3 +63,64 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+      const specificDateCheckbox = document.getElementById('specificDate');
+      const specificDateContainer = document.getElementById('specificDateContainer');
+      const asapCheckbox = document.getElementById('asap');
+      const flexibleCheckbox = document.getElementById('flexible');
+      // const termsCheckbox = document.getElementById('terms');
+      // const termsError = document.getElementById('termsError'); 
+  
+      // Initially hide the specific date container
+      specificDateContainer.style.display = 'none';
+  
+      specificDateCheckbox.addEventListener('change', function() {
+          if (this.checked) {
+              specificDateContainer.style.display = 'block';
+              // Uncheck other checkboxes
+              asapCheckbox.checked = false;
+              flexibleCheckbox.checked = false;
+          } else {
+              specificDateContainer.style.display = 'none';
+          }
+      });
+  
+      // Listen to change event on other checkboxes to manage unchecking
+      asapCheckbox.addEventListener('change', function() {
+          if (this.checked) {
+              specificDateContainer.style.display = 'none';
+              // Uncheck specificDate if asap is checked
+              specificDateCheckbox.checked = false;
+              flexibleCheckbox.checked = false;
+          }
+      });
+  
+      flexibleCheckbox.addEventListener('change', function() {
+          if (this.checked) {
+              specificDateContainer.style.display = 'none';
+              // Uncheck specificDate if flexible is checked
+              specificDateCheckbox.checked = false;
+              asapCheckbox.checked = false;
+          }
+      });
+  
+      // Validate passwords
+      
+  
+      // Validate terms checkbox
+      // function validateTerms() {
+      //     if (!termsCheckbox.checked) {
+      //         termsError.innerText = 'You must agree to the terms and conditions';
+      //         return false;
+      //     } else {
+      //         termsError.innerText = ''; // Clear error message
+      //         return true;
+      //     }
+      // }
+  
+      // Handle form submission
+      // document.getElementById('signupForm').addEventListener('submit', function(event) {
+      //     if (!validateTerms()) {
+      //         event.preventDefault(); // Prevent form submission if validation fails
+      //     }
+      // });
+  

@@ -106,7 +106,8 @@
         <div class="step" id="step3">3</div>
       </div>
     
-      <form id="signupForm">
+      <form id="signupForm" method="post" action="{%url 'ojm_core:user_post'%}">
+        {% csrf_token %}
         <div class="form-step" id="step1Form">
           <h2>Let's connect you to the best electricians near you</h2>
           <h3>What electrical service do you need?</h3>
@@ -128,11 +129,25 @@
         </div>
     
         <div class="form-step" id="step3Form">
+          <h2>When would you like the job to start?</h2>
           <div class="checkbox">
-            <input type="checkbox" id="terms" name="terms" required>
-            <label for="terms">I agree to the terms and conditions</label>
+            <input type="checkbox" id="asap" name="jobStart" value="asap" checked>
+            <label for="asap">As soon as possible</label><br>
+          </div>  
+          <div class="checkbox">
+            <input type="checkbox" id="specificDate" name="jobStart" value="specificDate">
+            <label for="specificDate">On a specific date</label><br>
           </div>
-          <small></small>
+          <div class="checkbox">
+            <input type="checkbox" id="flexible" name="jobStart" value="flexible">
+            <label for="flexible">I'm flexible</label>
+          </div>
+
+          <div id="specificDateContainer" style="display: none;">
+              <label for="startDate">Choose a specific date:</label>
+              <input type="date" id="startDate" name="startDate">
+          </div>
+          
           <button type="button" onclick="previousStep(2)">Previous</button>
           <button type="submit">Submit</button>
         </div>

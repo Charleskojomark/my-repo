@@ -101,155 +101,152 @@
 
     <div class="container">
       <div class="step-indicator">
-        <div class="step" id="step1">1</div>
-        <div class="step" id="step2">2</div>
-        <div class="step" id="step3">3</div>
-        <div class="step" id="step3">4</div>
-        <div class="step" id="step4">5</div>
+          <div class="step" id="step1">1</div>
+          <div class="step" id="step2">2</div>
+          <div class="step" id="step3">3</div>
+          <div class="step" id="step4">4</div>
+          <div class="step" id="step5">5</div>
       </div>
-
-      <form id="signupForm">
-        <div class="form-step" id="step1Form">
-            
-          <h2>Let's connect you to the best electricians near you</h2>
-          <h3>What electrical service do you need?</h3>
-          <input type="text" value="{{ query }}" required>
-          <small></small>
-
-
-          
-
-          <button type="button" onclick="nextStep(1)">Next</button>
-        </div>
-
-
-        <div class="form-step" id="step2Form">
-            <h2>Where do you need it?</h2>
-          <select id="country" name="country" required data-country="Country">
-            <option value="">Select a country</option>
-            <option value="nigeria">Nigeria</option>
-            <option value="benin">Benin</option>
-            <option value="burkina-faso">Burkina Faso</option>
-            <option value="cape-verde">Cape Verde</option>
-            <option value="cote-divoire">Côte d'Ivoire (Ivory Coast)</option>
-            <option value="gambia">Gambia</option>
-            <option value="ghana">Ghana</option>
-            <option value="guinea">Guinea</option>
-            <option value="guinea-bissau">Guinea-Bissau</option>
-            <option value="liberia">Liberia</option>
-            <option value="mali">Mali</option>
-            <option value="mauritania">Mauritania</option>
-            <option value="niger">Niger</option>
-            <option value="nigeria">Nigeria</option>
-            <option value="senegal">Senegal</option>
-            <option value="sierra-leone">Sierra Leone</option>
-            <option value="togo">Togo</option>
-          </select>
-          <small></small>
-
-          <select id="state" name="state" required data-state="State">
-            <option value="">Select a state</option>
-            <option value="abia">Abia</option>
-            <option value="adamawa">Adamawa</option>
-            <option value="akwa-ibom">Akwa Ibom</option>
-            <option value="anambra">Anambra</option>
-            <option value="bauchi">Bauchi</option>
-            <option value="bayelsa">Bayelsa</option>
-            <option value="benue">Benue</option>
-            <option value="borno">Borno</option>
-            <option value="cross-river">Cross River</option>
-            <option value="delta">Delta</option>
-            <option value="ebonyi">Ebonyi</option>
-            <option value="edo">Edo</option>
-            <option value="ekiti">Ekiti</option>
-            <option value="enugu">Enugu</option>
-            <option value="gombe">Gombe</option>
-            <option value="imo">Imo</option>
-            <option value="jigawa">Jigawa</option>
-            <option value="kaduna">Kaduna</option>
-            <option value="kano">Kano</option>
-            <option value="katsina">Katsina</option>
-            <option value="kebbi">Kebbi</option>
-            <option value="kogi">Kogi</option>
-            <option value="kwara">Kwara</option>
-            <option value="lagos">Lagos</option>
-            <option value="nasarawa">Nasarawa</option>
-            <option value="niger">Niger</option>
-            <option value="ogun">Ogun</option>
-            <option value="ondo">Ondo</option>
-            <option value="osun">Osun</option>
-            <option value="oyo">Oyo</option>
-            <option value="plateau">Plateau</option>
-            <option value="rivers">Rivers</option>
-            <option value="sokoto">Sokoto</option>
-            <option value="taraba">Taraba</option>
-            <option value="yobe">Yobe</option>
-            <option value="zamfara">Zamfara</option>
-            <option value="fct">Federal Capital Territory (FCT)</option>
-          </select>
-          <small></small>
-          
-          <input type="text" name="city" required placeholder="Enter city" data-address="city">
-          <small></small>
-
-          
-          <input type="text" name="address" required placeholder="Enter Address" data-address="Address">
-          <small></small>
-          
-          <button type="button" onclick="previousStep(1)">Previous</button>
-          <button type="button" onclick="nextStep(2)">Next</button>
-        </div>
-
-        <div class="form-step" id="step3Form">
-            <h2>Briefly describe what you need in detail.</h2>
-          
-          <textarea id="serviceDescription" rows="6"  name="serviceDescription" placeholder="Please try to describe what you need in detail." required></textarea>
-          <small></small>
-          <label for="businessProfilePicture">Additional files(Optional)</label>
-          <small>Upload any file that may help electricians better understand your need</small>
-          <input type="file" id="businessProfilePicture" name="businessProfilePicture" accept="image/*">
-          <small></small>
-          
-          
-          
-
-          <button type="button" onclick="previousStep(2)">Previous</button>
-          <button type="button" onclick="nextStep(3)">Next</button>
-        </div>
-
-
-
-        <div class="form-step" id="step4Form">
-          
-            <h2>Kindly enter your contact details</h2>
-            <input type="text" id="userName" name="userName" placeholder="Username" required>
-            <small></small>
   
-            <input type="email" id="email" name="email" placeholder="Email address" required>
-            <small></small>
-  
-            <input type="tel" id="phone" name="phone" placeholder="Phone number" required>
-            <small></small>
-          <button type="button" onclick="previousStep(3)">Previous</button>
-          <button type="button" onclick="nextStep(4)">Next</button>
-        </div>
-
-        <div class="form-step" id="step4Form">
-            
-          <h2>Please set your password</h2>
-          <input type="password" id="password" name="password" placeholder="Enter password" required>
-          <small></small>
-
-          <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm password" required>
-          <small></small>
-          <div class="checkbox">
-            <input type="checkbox" id="terms" name="terms" required> 
-            <label for="terms">I agree to the terms and conditions</label>
+      <form id="signupForm" method="post" action="{% url 'ojm_core:post_request' %}">
+        {% csrf_token %}
+          <div class="form-step" id="step1Form">
+              <h2>Let's connect you to the best electricians near you</h2>
+              <h3>What electrical service do you need?</h3>
+              <input type="text" value="{{ query }}" name="query" required>
+              <small></small>
+              <button type="button" onclick="nextStep(1)">Next</button>
           </div>
-          <small></small>
-
-          <button type="button" onclick="previousStep(4)">Previous</button>
-          <button type="submit">Submit</button>
+  
+          <div class="form-step" id="step2Form">
+              <h2>Where do you need it?</h2>
+              <select id="country" name="country" required data-country="Country">
+                <option value="">Select a country</option>
+                <option value="nigeria">Nigeria</option>
+                <option value="benin">Benin</option>
+                <option value="burkina-faso">Burkina Faso</option>
+                <option value="cape-verde">Cape Verde</option>
+                <option value="cote-divoire">Côte d'Ivoire (Ivory Coast)</option>
+                <option value="gambia">Gambia</option>
+                <option value="ghana">Ghana</option>
+                <option value="guinea">Guinea</option>
+                <option value="guinea-bissau">Guinea-Bissau</option>
+                <option value="liberia">Liberia</option>
+                <option value="mali">Mali</option>
+                <option value="mauritania">Mauritania</option>
+                <option value="niger">Niger</option>
+                <option value="nigeria">Nigeria</option>
+                <option value="senegal">Senegal</option>
+                <option value="sierra-leone">Sierra Leone</option>
+                <option value="togo">Togo</option>
+                <!-- Country options here -->
+              </select>
+              <small></small>
+              <select id="state" name="state" required data-state="State">
+                <option value="">Select a state</option>
+                <option value="abia">Abia</option>
+                <option value="adamawa">Adamawa</option>
+                <option value="akwa-ibom">Akwa Ibom</option>
+                <option value="anambra">Anambra</option>
+                <option value="bauchi">Bauchi</option>
+                <option value="bayelsa">Bayelsa</option>
+                <option value="benue">Benue</option>
+                <option value="borno">Borno</option>
+                <option value="cross-river">Cross River</option>
+                <option value="delta">Delta</option>
+                <option value="ebonyi">Ebonyi</option>
+                <option value="edo">Edo</option>
+                <option value="ekiti">Ekiti</option>
+                <option value="enugu">Enugu</option>
+                <option value="gombe">Gombe</option>
+                <option value="imo">Imo</option>
+                <option value="jigawa">Jigawa</option>
+                <option value="kaduna">Kaduna</option>
+                <option value="kano">Kano</option>
+                <option value="katsina">Katsina</option>
+                <option value="kebbi">Kebbi</option>
+                <option value="kogi">Kogi</option>
+                <option value="kwara">Kwara</option>
+                <option value="lagos">Lagos</option>
+                <option value="nasarawa">Nasarawa</option>
+                <option value="niger">Niger</option>
+                <option value="ogun">Ogun</option>
+                <option value="ondo">Ondo</option>
+                <option value="osun">Osun</option>
+                <option value="oyo">Oyo</option>
+                <option value="plateau">Plateau</option>
+                <option value="rivers">Rivers</option>
+                <option value="sokoto">Sokoto</option>
+                <option value="taraba">Taraba</option>
+                <option value="yobe">Yobe</option>
+                <option value="zamfara">Zamfara</option>
+                <option value="fct">Federal Capital Territory (FCT)</option>
+                  <!-- State options here -->
+              </select>
+              <small></small>
+              <input type="text" name="city" required placeholder="Enter city" data-address="city">
+              <small></small>
+              <input type="text" name="address" required placeholder="Enter Address" data-address="Address">
+              <small></small>
+              <button type="button" onclick="previousStep(1)">Previous</button>
+              <button type="button" onclick="nextStep(2)">Next</button>
+          </div>
+  
+          <div class="form-step" id="step3Form">
+              <h2>Briefly describe what you need in detail.</h2>
+              <textarea id="serviceDescription" rows="6"  name="serviceDescription" placeholder="Please try to describe what you need in detail." required></textarea>
+              <small></small>
+              <label for="businessProfilePicture">Additional files (Optional)</label>
+              <small>Upload any file that may help electricians better understand your need</small>
+              <input type="file" id="businessProfilePicture" name="additionalFiles" accept="image/*">
+              <small></small>
+              <button type="button" onclick="previousStep(2)">Previous</button>
+              <button type="button" onclick="nextStep(3)">Next</button>
+          </div>
+  
+          <div class="form-step" id="step4Form">
+              <h2>Kindly enter your contact details</h2>
+              <input type="text" id="userName" name="username" placeholder="Username" required>
+              <small></small>
+              <input type="email" id="email" name="email" placeholder="Email address" required>
+              <small></small>
+              <input type="tel" id="phone" name="phone" placeholder="Phone number" required>
+              <small></small>
+              <button type="button" onclick="previousStep(3)">Previous</button>
+              <button type="button" onclick="nextStep(4)">Next</button>
+          </div>
+  
+          <div class="form-step" id="step5Form">
+              <h2>When would you like the job to start?</h2>
+              <div class="checkbox">
+                <input type="checkbox" id="asap" name="jobStart" value="asap" checked>
+                <label for="asap">As soon as possible</label><br>
+              </div>  
+              <div class="checkbox">
+                <input type="checkbox" id="specificDate" name="jobStart" value="specificDate">
+                <label for="specificDate">On a specific date</label><br>
+              </div>
+              <div class="checkbox">
+                <input type="checkbox" id="flexible" name="jobStart" value="flexible">
+                <label for="flexible">I'm flexible</label>
+              </div>
+  
+              <div id="specificDateContainer" style="display: none;">
+                  <label for="startDate">Choose a specific date:</label>
+                  <input type="date" id="startDate" name="startDate">
+              </div>
+  
+              <h2>Please set your password</h2>
+              <input type="password" id="password" name="password" placeholder="Enter password" required>
+              <small></small>
+              <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm password" required>
+              <small id="termsError"></small>
+              <div class="checkbox">
+                  <input type="checkbox" id="terms" name="terms" required> 
+                  <label for="terms">I agree to the terms and conditions</label>
+              </div>
+              <button type="button" onclick="previousStep(4)">Previous</button>
+              <button type="submit">Submit</button>
         </div>
       </form>
       <div class="already">

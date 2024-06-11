@@ -13,6 +13,9 @@ urlpatterns = [
     path('categories', views.categories,name="categories"),
     path('services', views.services,name="services"),
     path('service-detail', views.service_detail,name="service_detail"),
+    
+    path('post-request', views.post_request, name="post_request"),
+    path('user-post', views.user_post, name="user_post"),
 ]
 
 
