@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!input.checkValidity()) {
           isValid = false;
           input.classList.add('input-error');
-          errorTag.innerText = `${input.name} is required`;
+          errorTag.innerText = `${capitalize(input.name)} is required`;
         } else if (input.type === 'email' && !validateEmail(input.value)) {
           isValid = false;
           input.classList.add('input-error');
@@ -89,63 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return re.test(String(email).toLowerCase());
     }
   
-    // window.updateStates = () => {
-    //   const country = document.getElementById('country').value;
-    //   const stateSelect = document.getElementById('state');
-    //   const citySelect = document.getElementById('city');
-    //   const areaSelect = document.getElementById('area');
-      
-    //   stateSelect.innerHTML = '<option value="">Select a state</option>';
-    //   citySelect.innerHTML = '<option value="">Select a city</option>';
-    //   areaSelect.innerHTML = '<option value="">Select an area</option>';
-      
-    //   if (country && locations[country]) {
-    //     Object.keys(locations[country]).forEach(state => {
-    //       const option = document.createElement('option');
-    //       option.value = state;
-    //       option.text = capitalize(state);
-    //       stateSelect.add(option);
-    //     });
-    //   }
-    // };
-  
-    // window.updateCities = () => {
-    //   const country = document.getElementById('country').value;
-    //   const state = document.getElementById('state').value;
-    //   const citySelect = document.getElementById('city');
-    //   const areaSelect = document.getElementById('area');
-      
-    //   citySelect.innerHTML = '<option value="">Select a city</option>';
-    //   areaSelect.innerHTML = '<option value="">Select an area</option>';
-      
-    //   if (country && state && locations[country][state]) {
-    //     Object.keys(locations[country][state]).forEach(city => {
-    //       const option = document.createElement('option');
-    //       option.value = city;
-    //       option.text = capitalize(city);
-    //       citySelect.add(option);
-    //     });
-    //   }
-    // };
-  
-    // window.updateAreas = () => {
-    //   const country = document.getElementById('country').value;
-    //   const state = document.getElementById('state').value;
-    //   const city = document.getElementById('city').value;
-    //   const areaSelect = document.getElementById('area');
-      
-    //   areaSelect.innerHTML = '<option value="">Select an area</option>';
-      
-    //   if (country && state && city && locations[country][state][city]) {
-    //     locations[country][state][city].forEach(area => {
-    //       const option = document.createElement('option');
-    //       option.value = area;
-    //       option.text = capitalize(area);
-    //       areaSelect.add(option);
-    //     });
-    //   }
-    // };
-  
+    
     function capitalize(str) {
       return str.charAt(0).toUpperCase() + str.slice(1);
     }

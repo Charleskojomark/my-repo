@@ -9,4 +9,5 @@ urlpatterns = [
     path('initiate-payment/update/', views.paystack_webhook, name='webhook'),
     path('web/', views.web, name='web'),
     path('', views.pay, name='pay'),
+    path('subscription/detail/', views.subscription_detail, name='subscription_detail'),
 ]

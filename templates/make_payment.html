@@ -1,12 +1,9 @@
-<div class="bg-white border rounded-5">
+<div class="">
 
-    <section class="w-100 p-4 d-flex justify-content-center pb-4">
+    <section class="">
 
-          <transaction>You are about to fund your wallet with {{ payment.amount }} and transaction reference {{ payment.ref }}</p>
-
-
-          {% comment %} <button onclick="payWithPaystack()" class="btn btn-primary btn-block mb-4">Fund</button> {% endcomment %}
-      </section>
+          <p>You are about to fund your wallet with {{ payment.amount }} and transaction reference {{ payment.ref }}</p>
+    </section>
 
   </div>
 <form id="paymentForm">
@@ -43,14 +40,14 @@ function payWithPaystack(e) {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            amount: '{{ payment.amount }}' // Send payment amount to server
+            amount: '{{ payment.amount }}',
+            payment_type: '{{payment.payment_type}}' 
         })
     })
     .then(response => {
         if (!response.ok) {
             throw new Error('Failed to update wallet balance');
         }
-        // Handle success response from server (if needed)
     })
     .catch(error => {
         console.error('Error updating wallet balance:', error);
@@ -58,7 +55,7 @@ function payWithPaystack(e) {
     });
     
     // Redirect after payment
-    window.location.href = "{% url 'payment:web' %}";
+    window.location.href = "{% url 'payment:verify_payment' payment.ref %}";
     }
   });
 
@@ -70,25 +67,3 @@ function payWithPaystack(e) {
 
 
 
-{% comment %} <script>
-    function payWithPaystack() {
-        let currency = "NGN";
-        let handler = PaystackPop.setup({
-            
-		    let plan = "";
-            key: '{{ paystack_pub_key }}', // Replace with your public key
-            email: '{{ payment.email }}',
-            amount: '{{ amount_value }}',
-            ref: '{{ payment.ref }}', // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
-            
-            callback: function(response){
-                let message = 'Payment complete! Reference: ' + response.reference;
-                alert(message);
-            }
-        });
-        if (Boolean(currency)) {
-			obj.currency = currency.toUpperCase();
-		}
-        handler.openIframe();
-    }
-</script> {% endcomment %}

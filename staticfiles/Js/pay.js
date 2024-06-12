@@ -43,4 +43,5 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('selected-plan-price').innerText = priceText;
         document.getElementById('selected-plan-save').innerText = `${discountedPrice} (${savings})`;
     };
+    
 });

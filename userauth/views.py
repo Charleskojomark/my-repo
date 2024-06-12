@@ -142,9 +142,9 @@ def login_view(request):
 
         if user is not None:
             if signed_in:
-                request.session.set_expiry(36000)
+                request.session.set_expiry(360000)
             else:    
-                request.session.set_expiry(900)
+                request.session.set_expiry(36000)
             login(request,user)
             messages.success(request,f"You're logged in")
             return redirect('ojm_core:index')

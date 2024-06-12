@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Detail</title>
+</head>
+<body>
+    <h1>Requests</h1>
+    {% if requests %}
+    {%for r in requests%}
+        <p>User: {{ r.user }}</p>
+        <p>Request title: {{ r.query }}</p>
+        <p>Request Description {{ r.description }}</p>
+        <p>When needed: {{ r.job_start }}</p>
+        {%if r.start_date%}
+        <p>Start date: {{ r.start_date }}</p>
+        {%endif%}
+        <p>Posted date: {{ r.created_at }}</p>
+        <a href="{%url 'chatapp:chat' r.user.username%}">Chat with customer</a>
+        <hr>
+    {%endfor%}
+    {% else %}
+        <p>No requests for now</p>
+    {% endif %}
+</body>
+</html>

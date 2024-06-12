@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
           isValid = false;
           input.classList.add('input-error');
           if (errorTag) { // Check if errorTag exists
-            errorTag.innerText = `${input.name} is required`;
+            errorTag.innerText = `${capitalize(input.name)} is required`;
           }
           // errorTag.innerText = `${input.name} is required`;
         } else if (input.type === 'email' && !validateEmail(input.value)) {

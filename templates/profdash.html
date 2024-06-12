@@ -29,7 +29,7 @@
         <div class="heading">
             <a href="index.html" class="nav_logo"><img src="{% static 'Assest/Img/ojm.png' %}" alt="Ojm" /></a>
             <div class="nav">
-                <a href="index.html" class="">
+                <a href="{%url 'ojm_core:requests'%}" class="">
                     <i class="uil uil-comment-add"></i> Requests
                 </a>
 
@@ -67,7 +67,11 @@
                     <div class="subscription-status">
                         <div class="status">
                             <p>Subscription Status</p>
-                            <span>Active</span>
+                            {% if subscription %}
+                            <span>{{ subscription.status }}</span>
+                            {%else%}
+                            <span>Inactive</span>
+                            {%endif%}
                         </div>
                         <div class="wallet">
                             <p>Wallet Balance</p>
@@ -357,7 +361,7 @@
     <div id="qualificationModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h2>Business Info</h2>
+            <h2>Qualifications</h2>
             <form id="businessInfoForm" method="post", action="{% url 'userauth:qualification'%}">
                 {%csrf_token%}
                 <label for="qualification">Qualification</label>
@@ -433,7 +437,7 @@
     <div id="passwordModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h2>Business Info</h2>
+            <h2>Change Password</h2>
             <form id="businessInfoForm" method="post" action="{%url 'userauth:change_password'%}">
                 {% csrf_token %}
                 <div>
@@ -461,6 +465,19 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <h2>All Orders</h2>
+            {% if payments %}
+            {%for p in payments%}
+                <p>User: {{ p.user }}</p>
+                <p>Amount: ₦{{ p.amount }}</p>
+                <p>Reference: {{ pref|slice:":30" }}</p>
+                <p>Email: {{ p.email }}</p>
+                <p>Date: {{ p.date_created }}</p>
+                <p>Payment Type: {{ p.payment_type }}</p>
+                <hr>
+            {%endfor%}
+            {% else %}
+                <p>No orders found</p>
+            {% endif %}
         </div>
     </div>
 
@@ -468,7 +485,16 @@
     <div id="subscriptionModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h2>Subscription Packages</h2>
+            <h2>Subscription Package</h2>
+            {% if subscription %}
+                <p>User: {{ subscription.user }}</p>
+                <p>Subscription Name: {{ subscription.name }}</p>
+                <p>Status: {{ subscription.status }}</p>
+                <p>Created At: {{ subscription.created_at }}</p>
+                <p>Expiry: {{ subscription.expiry }}</p>
+            {% else %}
+                <p>No subscriptions found</p>
+            {% endif %}
         </div>
     </div>
 
@@ -477,6 +503,15 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <h2>Wallet Transactions</h2>
+            {% if payments %}
+            {%for p in payments%}
+                <p>Amount Deposited: ₦{{ p.amount }}</p>
+                <p>Date: {{ p.date_created }}</p>
+                <hr>
+            {%endfor%}
+            {% else %}
+                <p>No Transactions found</p>
+            {% endif %}
         </div>
     </div>
 

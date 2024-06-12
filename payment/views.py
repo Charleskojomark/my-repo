@@ -3,32 +3,59 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 import json
 from userauth.models import User
-from .models import Wallet,Payment
+from .models import Wallet,Payment,Subscription
 from django.conf import settings
 from django.contrib import messages
 import decimal
 import requests,string,random
-# Create your views here.
+from django.contrib.auth.decorators import login_required
+from django.utils import timezone
+from datetime import timedelta
 
 
 def pay(request):
-    return render(request, 'pay.html')
-
+    plan1 = Subscription.objects.filter(name="1 month")
+    plan2 = Subscription.objects.filter(name="2 months")
+    plan3 = Subscription.objects.filter(name="3 months")
+    
+    for p in plan1:
+        p.calc = p.get_old_price() - p.get_price()  
+    for p in plan2:
+        p.calc = p.get_old_price() - p.get_price()  
+    for p in plan3:
+        p.calc = p.get_old_price() - p.get_price()  
+    
+    context = {
+        'plan1': plan1,
+        'plan2': plan2,
+        'plan3': plan3,
+        'initial_amount1': plan1.first().get_price(),
+        'initial_price1': plan1.first().get_price(),
+        'initial_amount2': plan2.first().get_price(),
+        'initial_price2': plan2.first().get_price(),
+        'initial_amount3': plan3.first().get_price(),
+        'initial_price3': plan3.first().get_price(),
+    }
+    
+    return render(request, 'pay.html', context)
 
 
 def initiate_payment(request):
     if request.method == "POST":
         amount = request.POST['amount']
         email = request.POST['email']
+        payment_type = request.POST['payment_type']
 
         pk = settings.PAYSTACK_PUBLIC_KEY
 
-        payment = Payment.objects.create(amount=amount, email=email, user=request.user)
+        payment = Payment.objects.create(amount=amount, email=email, user=request.user, payment_type=payment_type)
         payment.save()
-        user = get_object_or_404(User, email=email) 
-        wallet = get_object_or_404(Wallet, user=user)
+        
+        user = get_object_or_404(User, email=email)
+        wallet, created = Wallet.objects.get_or_create(user=user)
+        
         context = {
-            'wallet':wallet,
+            'wallet': wallet,
             'payment': payment,
             'field_values': request.POST,
             'paystack_pub_key': pk,
@@ -38,42 +65,64 @@ def initiate_payment(request):
 
     return render(request, 'pay.html')
 
-
 def verify_payment(request, ref):
-    payment = Payment.objects.get(ref=ref)
-    verified = payment.verify_payment()
-
-    if verified:
-        user_wallet = Wallet.objects.get(user=request.user)
-        user_wallet.balance += payment.amount
-        user_wallet.save()
-        messages(request, " funded wallet successfully")
-        return render(request, "index.html")
-    return render(request, "index.html")
-
-
+    payment, created = Payment.objects.get_or_create(ref=ref)
+    messages.success(request, "Successful transaction")
+    return redirect('ojm_core:dashboard')
 
 
 
 @csrf_exempt
 def paystack_webhook(request):
-    
-    user = request.user
-    wallet = get_object_or_404(Wallet, user=user)
-    context={
-        'wallet':wallet
-    }
     if request.method == 'POST':
         data = json.loads(request.body)
+        payment_type = data.get('payment_type')
         amount = data.get('amount')
-        wallet.balance += int(amount)
-        wallet.save()
-        
-        response_data = {
-            'message': 'Wallet balance updated successfully',
-            'new_balance': wallet.balance  
-        }
+        user = request.user
+        if payment_type == 'payg':
+            wallet = get_object_or_404(Wallet, user=user)
+            wallet.balance += int(amount)
+            wallet.save()
+            response_data = {
+                'message': 'Wallet balance updated successfully',
+                'new_balance': wallet.balance
+            }
+        elif payment_type == 'subscription':
+            subscription, created = Subscription.objects.get_or_create(user=user, defaults={'status': 'Inactive'})
+
+            if created or subscription.status != 'Active' or subscription.status == 'Active'  :
+                # Activate the subscription based on the price paid
+                price_ranges = {
+                    1000: "1 month",
+                    2000: "2 months",
+                    3000: "3 months",
+                }
+                subscription_name = price_ranges.get(int(amount))
+
+                if subscription_name:
+                    subscription.name = subscription_name
+                    subscription.status = 'Active'
+                    subscription.created_at = timezone.now()
+                    subscription.expiry = subscription.calculate_expiry()
+                    subscription.save()
+                    
+                    response_data = {
+                        'message': 'Subscription activated successfully',
+                        'subscription_status': subscription.status
+                    }
+                    return JsonResponse(response_data, status=200)
         return JsonResponse(response_data, status=200)
+
+
+@login_required
+def subscription_detail(request):
+    user = request.user
+    subscription = Subscription.objects.filter(user=user).first()
+
+    context = {'subscription': subscription}
+    return render(request, 'subscription_detail.html', context)
+
+
 
 
 def web(request):
