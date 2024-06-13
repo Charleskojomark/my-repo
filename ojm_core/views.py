@@ -50,7 +50,7 @@ def prof_dashboard(request):
     user = request.user
     wallet, created = Wallet.objects.get_or_create(user=user)
     subscription = Subscription.objects.filter(user=user).first()
-    payments = Payment.objects.filter(user=user)
+    payments = Payment.objects.filter(user=user,verified=True)
     # wallet = get_object_or_404(Wallet, user=user)
     profile_pic_form = UpdatePicture(instance=profile)
     business_form = UpdateBusinessInfo(instance=profile)

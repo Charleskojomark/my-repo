@@ -29,12 +29,12 @@ def pay(request):
         'plan1': plan1,
         'plan2': plan2,
         'plan3': plan3,
-        'initial_amount1': plan1.first().get_price(),
-        'initial_price1': plan1.first().get_price(),
-        'initial_amount2': plan2.first().get_price(),
-        'initial_price2': plan2.first().get_price(),
-        'initial_amount3': plan3.first().get_price(),
-        'initial_price3': plan3.first().get_price(),
+        'initial_amount1': plan1.first().get_price() if plan1.exists() else 0,
+        'initial_amount2': plan2.first().get_price() if plan2.exists() else 0,
+        'initial_amount3': plan3.first().get_price() if plan3.exists() else 0,
+        'initial_price1': plan1.first().get_price() if plan1.exists() else 0,
+        'initial_price2': plan2.first().get_price() if plan2.exists() else 0,
+        'initial_price3': plan3.first().get_price() if plan3.exists() else 0,
     }
     
     return render(request, 'pay.html', context)
@@ -67,6 +67,8 @@ def initiate_payment(request):
 
 def verify_payment(request, ref):
     payment, created = Payment.objects.get_or_create(ref=ref)
+    payment.verified = True
+    payment.save()
     messages.success(request, "Successful transaction")
     return redirect('ojm_core:dashboard')
 
@@ -105,7 +107,6 @@ def paystack_webhook(request):
                     subscription.created_at = timezone.now()
                     subscription.expiry = subscription.calculate_expiry()
                     subscription.save()
-                    
                     response_data = {
                         'message': 'Subscription activated successfully',
                         'subscription_status': subscription.status
