@@ -81,8 +81,12 @@
 
         <div class="nav_btns">
           <div class="dot-container">
-            <i class="uil uil-bell"></i>
-            <div class="dot">1</div>
+            <a href="{% url 'ojm_core:notifications' %}"><i class="uil uil-bell"></i></a>
+            {%if unread_count%}
+            <div class="dot">{{unread_count}}</div>
+            {%else%}
+            <div class="dot">0</div>
+            {%endif%}
           </div>
 
           <div class="icon-container">

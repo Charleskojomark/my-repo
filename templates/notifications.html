@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications</title>
+</head>
+<body>
+    <h1>Notifications</h1>
+    <div id="notification-area">
+        <!-- Notifications will be displayed here dynamically -->
+        
+        {% if notifications %}
+        {% for notification in notifications %}
+        <p>{{ notification.message }}</p>
+        {% endfor %}
+        {% else %}
+        <p>No Notifications</p>
+        {% endif %}
+            
+    </div>
+
+</body>
+</html>

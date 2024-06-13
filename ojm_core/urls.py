@@ -18,6 +18,9 @@ urlpatterns = [
     path('user-post', views.user_post, name="user_post"),
     path('post-job', views.post_job, name="post_job"),
     path('requests', views.all_requests, name="requests"),
+    
+    
+    path('notifications/', views.get_notifications, name='notifications'),
 ]
 
 

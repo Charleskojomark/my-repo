@@ -166,6 +166,9 @@ img {
     position: relative;
     display: inline-block;
 }
+.dot-container a{
+    color: var(--main-color-two);
+}
 
 .dot {
     position: absolute;

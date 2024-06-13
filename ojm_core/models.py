@@ -12,3 +12,20 @@ class Request(models.Model):
 
     def __str__(self):
         return self.query
+    
+    
+class Notification(models.Model):
+    TYPE_CHOICES = [
+        ('payment', 'Payment'),
+        ('account', 'Account'),
+        ('chat', 'Chat'),
+    ]
+    
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    message = models.TextField()
+    notification_type = models.CharField(max_length=20, choices=TYPE_CHOICES)
+    created_at = models.DateTimeField(auto_now_add=True)
+    read = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f"{self.get_notification_type_display()} Notification for {self.user}"

@@ -11,6 +11,17 @@ import requests,string,random
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone
 from datetime import timedelta
+from ojm_core.models import Notification
+from django.conf import settings
+from pusher import Pusher
+
+pusher = Pusher(
+    app_id=settings.PUSHER_APP_ID,
+    key=settings.PUSHER_KEY,
+    secret=settings.PUSHER_SECRET,
+    cluster=settings.PUSHER_CLUSTER,
+    ssl=True
+)
 
 
 def pay(request):
@@ -85,10 +96,20 @@ def paystack_webhook(request):
             wallet = get_object_or_404(Wallet, user=user)
             wallet.balance += int(amount)
             wallet.save()
+            Notification.objects.create(
+                user=user,
+                message=f'Wallet balance updated by {amount}',
+                notification_type='payment'
+            )
+            pusher.trigger(f'private-user-{user.id}', 'new-notification', {
+                'message': f'Wallet balance updated by {amount}',
+                'notification_type': 'payment'
+            })
             response_data = {
                 'message': 'Wallet balance updated successfully',
                 'new_balance': wallet.balance
             }
+            
         elif payment_type == 'subscription':
             subscription, created = Subscription.objects.get_or_create(user=user, defaults={'status': 'Inactive'})
 
@@ -107,6 +128,15 @@ def paystack_webhook(request):
                     subscription.created_at = timezone.now()
                     subscription.expiry = subscription.calculate_expiry()
                     subscription.save()
+                    Notification.objects.create(
+                        user=user,
+                        message=f'Subscription activated for {subscription_name}',
+                        notification_type='account'
+                    )
+                    pusher.trigger(f'private-user-{user.id}', 'new-notification', {
+                        'message': f'Subscription activated for {subscription_name}',
+                        'notification_type': 'account'
+                    })
                     response_data = {
                         'message': 'Subscription activated successfully',
                         'subscription_status': subscription.status

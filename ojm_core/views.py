@@ -12,15 +12,29 @@ from django.contrib import messages
 from django.core.mail import send_mail
 from django.contrib.auth.models import Group
 
-from .models import Request
+from django.http import JsonResponse
+from .models import Request, Notification
 from django.core.exceptions import ValidationError
 from datetime import datetime
 from payment.models import Wallet,Payment,Subscription
 
+from django.conf import settings
+from pusher import Pusher
 
+pusher = Pusher(
+    app_id=settings.PUSHER_APP_ID,
+    key=settings.PUSHER_KEY,
+    secret=settings.PUSHER_SECRET,
+    cluster=settings.PUSHER_CLUSTER,
+    ssl=True
+)
 
 def index(request):
-    return render(request, 'index.html')
+    unread_count = Notification.objects.filter(user=request.user, read=False).count()
+    context={
+        'unread_count':unread_count
+    }
+    return render(request, 'index.html', context)
 
 def dashboard(request):
     if request.user.groups.filter(name='customers').exists():
@@ -234,3 +248,20 @@ def all_requests(request):
         'requests':requests
     }
     return render(request, 'request.html', context)
+
+
+@login_required
+def get_notifications(request):
+    user = request.user
+    notifications = Notification.objects.filter(user=user)
+    count = Notification.objects.filter(user=user).count()
+
+    # Update notifications to read=True
+    notifications.update(read=True)
+
+    context = {
+        'notifications': notifications,
+        'count':count
+    }
+    return render(request, 'notifications.html', context)
+

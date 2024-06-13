@@ -8,6 +8,7 @@ from django.conf import settings
 import logging
 from .models import Conversation, Message
 from userauth.models import User
+from ojm_core.models import Notification
 
 pusher = Pusher(
     app_id=settings.PUSHER_APP_ID,
@@ -60,6 +61,13 @@ def send(request):
             conversation = get_object_or_404(Conversation, conversation_id=conversation_id)
             message = Message.objects.create(sender=sender, content=content, conversation=conversation)
 
+            recipient_user = conversation.participants.exclude(id=request.user.id).first()
+            Notification.objects.create(
+                user=recipient_user,
+                message=f"New message from {sender.username}: {content}",
+                notification_type='chat'
+            )
+            
             pusher.trigger('new-channel', 'new-message', {
                 'sender': message.sender.username,
                 'content': message.content,
