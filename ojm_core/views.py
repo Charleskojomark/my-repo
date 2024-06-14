@@ -255,8 +255,10 @@ def user_post(request):
 def post_job(request):
     return render(request, 'post_job.html')
 
+
 def all_requests(request):
-    requests = Request.objects.all()
+    customers_group = Group.objects.get(name="customers")
+    requests = Request.objects.filter(user__groups=customers_group)
     context = {
         'requests':requests
     }

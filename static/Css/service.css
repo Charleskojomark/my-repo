@@ -204,6 +204,14 @@ section{
 }
 
 @media screen and (max-width: 430px){
+    .service-container{
+        align-items: center;
+        justify-content: center;
+    }
+    .starts-from{
+        height: 30px;
+        line-height: .8;
+    }
     .service{
         width: 160px;
     }
