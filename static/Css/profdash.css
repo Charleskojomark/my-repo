@@ -288,29 +288,29 @@ input[type="file"] {
     background: var(--main-color-two);
     color: var(--main-color-one);
 }
-#businessInfoForm{
+#businessInfoForm, #cacForm{
     display: flex;
     flex-direction: column;
     gap: .8rem;
 }
-#businessInfoForm .modal-content{
+#businessInfoForm .modal-content, #cacForm .modal-content{
     background: #f4f4f4;
 }
 
-#businessInfoForm label{
+#businessInfoForm label,#cacForm label{
     font-size: medium;
     display: block;
     text-align: left;
     color: var(--main-color-two);
     font-weight: 700;
 }
-#businessInfoForm input{
+#businessInfoForm input, #cacForm input{
     width: 100%;
     border: 1px solid var(--main-color-one);
     padding: 8px 12px;
     border-radius: 10px;
 }
-#businessInfoForm textarea{
+#businessInfoForm textarea, #cacForm textarea{
     width: 100%;
     border: 1px solid var(--main-color-one);
     padding: 8px 12px;

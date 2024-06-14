@@ -9,6 +9,12 @@
     <link rel="stylesheet" href="{% static 'Css/profdash.css' %}">
     <link rel="stylesheet" href="{% static 'Css/signup.css' %}">
     <title>Account</title>
+    <style>
+        #error-message {
+            color: red;
+            display: none;  /* Hide the error message by default */
+        }
+    </style>
 </head>
 
 <body>
@@ -430,11 +436,12 @@
             <p>Not Verified</p>
             {% endif %}
             {% else %}
-            <form id="businessInfoForm" method="post" action="{% url 'userauth:cac' %}">
+            <form id="cacForm" method="post" action="{% url 'userauth:cac' %}">
                 {% csrf_token %}
                 <input type="text" id="cac" name="cac" value="" placeholder="Enter Your RC/BN for verification">
-                <button class="btn" type="submit">Request Verification</button>
-                <small>Verifications might take upto 2 to 3 working days </small>
+                <button class="btn" type="button" onclick="validateForm(event)">Request Verification</button>
+                <small>Verifications might take up to 2 to 3 working days</small>
+                <div id="error-message"></div>
             </form>
             {%endif%}
             {%endfor%}
@@ -535,8 +542,9 @@
             {% endif %}
         </div>
     </div>
-
+    
 <script src="{% static 'Js/prof.js' %}"></script>
+
 
 </body>
 

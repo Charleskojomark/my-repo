@@ -284,3 +284,27 @@ function removeDiv(id) {
     // autoHideDiv('error-container');
   }
   
+
+function validateForm(event) {
+    event.preventDefault();  // Prevent form submission
+
+    var cacInput = document.getElementById('cac').value.trim();
+    var errorMessage = '';
+
+    if (!(cacInput.startsWith('RC') || cacInput.startsWith('BN'))) {
+        errorMessage = 'Invalid business registration number. It must start with "RC" or "BN".';
+    } else if (cacInput === '') {
+        errorMessage = 'Business registration number cannot be empty.';
+    } 
+
+    var errorDiv = document.getElementById('error-message');
+    if (errorMessage !== '') {
+        errorDiv.innerText = errorMessage;
+        errorDiv.style.display = 'block';
+    } else {
+        errorDiv.style.display = 'none';
+        // Submit the form if validation passes
+        document.getElementById('cacForm').submit();
+    }
+}
+      
