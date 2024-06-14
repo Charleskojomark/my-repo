@@ -372,3 +372,14 @@ def update_customer_picture(request):
         'profile':profile
     }
     return render(request, 'userdash.html',context)
+
+
+def cac_verification(request):
+    user = request.user
+    electrician = ElectricianProfile.objects.filter(user=user)
+    if request.method == 'POST':
+        cac = request.POST['cac']
+        electrician.update(cac=cac)
+        messages.success(request, 'Verification requested')
+        return redirect('ojm_core:dashboard')
+    return render(request, 'profdash.html')

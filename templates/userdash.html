@@ -26,10 +26,10 @@
   {% endif %}
     <section>
         <div class="heading">
-            <a href="index.html" class="nav_logo"><img src="{% static 'Assest/Img/ojm.png' %}" alt="Ojm" /></a>
+            <a href="{%url 'ojm_core:index'%}" class="nav_logo"><img src="{% static 'Assest/Img/ojm.png' %}" alt="Ojm" /></a>
             <div class="nav">
                 <a href="index.html" class="">
-                    <i class="uil uil-comment-add"></i> <span class="newflex"><span>Post</span><span>Job</span></span>
+                    <i class="{%url 'ojm_core:post_job'%}"></i> <span class="newflex"><span>Post</span><span>Job</span></span>
                 </a>
 
 

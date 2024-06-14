@@ -30,10 +30,19 @@ pusher = Pusher(
 )
 
 def index(request):
-    unread_count = Notification.objects.filter(user=request.user, read=False).count()
-    context={
-        'unread_count':unread_count
-    }
+    if request.user.is_authenticated:
+        notifications = Notification.objects.filter(user=request.user)
+        unread_count = notifications.filter(read=False).count()
+        read_count = notifications.filter(read=True).count()
+
+        context = {
+            'notifications': notifications,
+            'unread_count': unread_count,
+            'read_count': read_count
+        }
+    else:
+        context = {}
+    
     return render(request, 'index.html', context)
 
 def dashboard(request):
@@ -72,6 +81,8 @@ def prof_dashboard(request):
     prices_form = UpdatePrices(instance=profile)
     qualification_form = UpdateQualification(instance=profile)
     form = UserUpdateForm(instance=user)
+    notifications = Notification.objects.filter(user=user)
+    electrician = ElectricianProfile.objects.filter(user=user)
     
     
     context = {
@@ -84,7 +95,9 @@ def prof_dashboard(request):
         'form':form,
         'wallet':wallet,
         'subscription':subscription,
-        'payments':payments
+        'payments':payments,
+        'notifications': notifications,
+        'electrician':electrician
     }
     return render(request, 'profdash.html',context)
 

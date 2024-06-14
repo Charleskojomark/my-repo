@@ -27,7 +27,7 @@
   {% endif %}
     <section>
         <div class="heading">
-            <a href="index.html" class="nav_logo"><img src="{% static 'Assest/Img/ojm.png' %}" alt="Ojm" /></a>
+            <a href="{%url 'ojm_core:index'%}" class="nav_logo"><img src="{% static 'Assest/Img/ojm.png' %}" alt="Ojm" /></a>
             <div class="nav">
                 <a href="{%url 'ojm_core:requests'%}" class="">
                     <i class="uil uil-comment-add"></i> Requests
@@ -409,9 +409,10 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <h2>Bank Details</h2>
-            <form id="businessInfoForm">
-                <p>Yet to be implemented</p>
-                <button class="btn" type="submit">Update</button>
+            <form id="businessInfoForm" >
+                {% csrf_token %}
+                <input type="text" id="cac" name="cac" value="">
+                <button class="btn" type="submit">Request Verification</button>
             </form>
         </div>
     </div>
@@ -420,17 +421,37 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <h2>Verifications</h2>
-            <form id="businessInfoForm">
-                <p>Yet to be implemented</p>
-                <button class="btn" type="submit">Update</button>
+            {%for e in electrician%}
+            {% if e.cac%}
+            <p>Registration Number: {{e.cac}}</p>
+            {% if e.verified %}
+            <p>Verified</p>
+            {% else %}
+            <p>Not Verified</p>
+            {% endif %}
+            {% else %}
+            <form id="businessInfoForm" method="post" action="{% url 'userauth:cac' %}">
+                {% csrf_token %}
+                <input type="text" id="cac" name="cac" value="" placeholder="Enter Your RC/BN for verification">
+                <button class="btn" type="submit">Request Verification</button>
+                <small>Verifications might take upto 2 to 3 working days </small>
             </form>
+            {%endif%}
+            {%endfor%}
         </div>
     </div>
 
     <div id="notificationModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h2>All Notifications</h2>
+            <h2>Notifications</h2>
+            {% if notifications %}
+            {% for notification in notifications %}
+            <p>{{ notification.message }}</p>
+            {% endfor %}
+            {% else %}
+            <p>No Notifications</p>
+            {% endif %}
         </div>
     </div>
 

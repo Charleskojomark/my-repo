@@ -81,11 +81,15 @@
 
         <div class="nav_btns">
           <div class="dot-container">
-            <a href="{% url 'ojm_core:notifications' %}"><i class="uil uil-bell"></i></a>
+            {%if request.user.is_authenticated%}
             {%if unread_count%}
+            <a href="{% url 'ojm_core:notifications' %}"><i class="uil uil-bell"></i></a>
             <div class="dot">{{unread_count}}</div>
             {%else%}
-            <div class="dot">0</div>
+            <a href="{% url 'ojm_core:notifications' %}"><i class="uil uil-bell"></i></a>
+            {%endif%}
+            {%else%}
+            <a href="{% url 'ojm_core:notifications' %}"><i class="uil uil-bell"></i></a>
             {%endif%}
           </div>
 

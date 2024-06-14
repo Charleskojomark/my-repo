@@ -99,6 +99,10 @@ class ElectricianProfile(models.Model):
     prices = models.TextField(blank=True, null=True)
     qualification = models.TextField(blank=True, null=True)
     
+    verified = models.BooleanField(default=False)
+    cac = models.CharField(max_length=200, blank=True, null=True)
+    
+    
     class Meta:
         verbose_name_plural = "Electricians"
     def __str__(self):
