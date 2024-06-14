@@ -14265,3 +14265,162 @@ DEBUG 2024-06-14 13:07:50,646 utils (0.000) UPDATE "ojm_core_notification" SET "
 DEBUG 2024-06-14 13:07:50,664 utils (0.000) SELECT "ojm_core_notification"."id", "ojm_core_notification"."user_id", "ojm_core_notification"."message", "ojm_core_notification"."notification_type", "ojm_core_notification"."created_at", "ojm_core_notification"."read" FROM "ojm_core_notification" WHERE "ojm_core_notification"."user_id" = 26 ORDER BY "ojm_core_notification"."created_at" DESC; args=(26,); alias=default
 INFO 2024-06-14 13:07:50,668 basehttp "GET /notifications/ HTTP/1.1" 200 1221
 INFO 2024-06-14 13:07:50,668 basehttp "GET /notifications/ HTTP/1.1" 200 1221
+DEBUG 2024-06-14 13:37:22,011 utils (0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2024-06-14 12:37:22.006521' AND "django_session"."session_key" = 'nc83uif2lw6w09hl74w67pjwlw3qzjub') LIMIT 21; args=('2024-06-14 12:37:22.006521', 'nc83uif2lw6w09hl74w67pjwlw3qzjub'); alias=default
+DEBUG 2024-06-14 13:37:22,017 utils (0.000) SELECT "userauth_user"."id", "userauth_user"."password", "userauth_user"."last_login", "userauth_user"."is_superuser", "userauth_user"."username", "userauth_user"."is_staff", "userauth_user"."is_active", "userauth_user"."date_joined", "userauth_user"."email", "userauth_user"."first_name", "userauth_user"."last_name", "userauth_user"."phone_number", "userauth_user"."whatsapp_number" FROM "userauth_user" WHERE "userauth_user"."id" = 29 LIMIT 21; args=(29,); alias=default
+DEBUG 2024-06-14 13:37:22,020 utils (0.000) SELECT "userauth_electricianprofile"."id", "userauth_electricianprofile"."user_id", "userauth_electricianprofile"."business_name", "userauth_electricianprofile"."service_description", "userauth_electricianprofile"."profile_picture", "userauth_electricianprofile"."founded_date", "userauth_electricianprofile"."registered", "userauth_electricianprofile"."country", "userauth_electricianprofile"."state", "userauth_electricianprofile"."city", "userauth_electricianprofile"."address", "userauth_electricianprofile"."terms", "userauth_electricianprofile"."number_of_employees", "userauth_electricianprofile"."website_url", "userauth_electricianprofile"."youtube_url", "userauth_electricianprofile"."prices", "userauth_electricianprofile"."qualification", "userauth_electricianprofile"."verified", "userauth_electricianprofile"."cac" FROM "userauth_electricianprofile" WHERE "userauth_electricianprofile"."user_id" = 29 LIMIT 21; args=(29,); alias=default
+DEBUG 2024-06-14 13:37:22,023 utils (0.000) SELECT "payment_wallet"."id", "payment_wallet"."user_id", "payment_wallet"."balance" FROM "payment_wallet" WHERE "payment_wallet"."user_id" = 29 LIMIT 21; args=(29,); alias=default
+DEBUG 2024-06-14 13:37:22,032 utils (0.000) SELECT "payment_subscription"."id", "payment_subscription"."name", "payment_subscription"."user_id", "payment_subscription"."created_at", "payment_subscription"."expiry", "payment_subscription"."status" FROM "payment_subscription" WHERE "payment_subscription"."user_id" = 29 ORDER BY "payment_subscription"."id" ASC LIMIT 1; args=(29,); alias=default
+DEBUG 2024-06-14 13:37:22,111 utils (0.000) SELECT "userauth_electricianprofile"."id", "userauth_electricianprofile"."user_id", "userauth_electricianprofile"."business_name", "userauth_electricianprofile"."service_description", "userauth_electricianprofile"."profile_picture", "userauth_electricianprofile"."founded_date", "userauth_electricianprofile"."registered", "userauth_electricianprofile"."country", "userauth_electricianprofile"."state", "userauth_electricianprofile"."city", "userauth_electricianprofile"."address", "userauth_electricianprofile"."terms", "userauth_electricianprofile"."number_of_employees", "userauth_electricianprofile"."website_url", "userauth_electricianprofile"."youtube_url", "userauth_electricianprofile"."prices", "userauth_electricianprofile"."qualification", "userauth_electricianprofile"."verified", "userauth_electricianprofile"."cac" FROM "userauth_electricianprofile" WHERE "userauth_electricianprofile"."user_id" = 29; args=(29,); alias=default
+DEBUG 2024-06-14 13:37:22,116 utils (0.000) SELECT "ojm_core_notification"."id", "ojm_core_notification"."user_id", "ojm_core_notification"."message", "ojm_core_notification"."notification_type", "ojm_core_notification"."created_at", "ojm_core_notification"."read" FROM "ojm_core_notification" WHERE "ojm_core_notification"."user_id" = 29 ORDER BY "ojm_core_notification"."created_at" DESC; args=(29,); alias=default
+DEBUG 2024-06-14 13:37:22,119 utils (0.000) SELECT "payment_payment"."id", "payment_payment"."user_id", "payment_payment"."amount", "payment_payment"."ref", "payment_payment"."email", "payment_payment"."verified", "payment_payment"."date_created", "payment_payment"."payment_type" FROM "payment_payment" WHERE ("payment_payment"."user_id" = 29 AND "payment_payment"."verified") ORDER BY "payment_payment"."date_created" DESC; args=(29,); alias=default
+DEBUG 2024-06-14 13:37:22,124 utils (0.000) SELECT "userauth_user"."id", "userauth_user"."password", "userauth_user"."last_login", "userauth_user"."is_superuser", "userauth_user"."username", "userauth_user"."is_staff", "userauth_user"."is_active", "userauth_user"."date_joined", "userauth_user"."email", "userauth_user"."first_name", "userauth_user"."last_name", "userauth_user"."phone_number", "userauth_user"."whatsapp_number" FROM "userauth_user" WHERE "userauth_user"."id" = 29 LIMIT 21; args=(29,); alias=default
+DEBUG 2024-06-14 13:37:22,128 utils (0.000) SELECT "userauth_user"."id", "userauth_user"."password", "userauth_user"."last_login", "userauth_user"."is_superuser", "userauth_user"."username", "userauth_user"."is_staff", "userauth_user"."is_active", "userauth_user"."date_joined", "userauth_user"."email", "userauth_user"."first_name", "userauth_user"."last_name", "userauth_user"."phone_number", "userauth_user"."whatsapp_number" FROM "userauth_user" WHERE "userauth_user"."id" = 29 LIMIT 21; args=(29,); alias=default
+DEBUG 2024-06-14 13:37:22,130 utils (0.000) SELECT "userauth_user"."id", "userauth_user"."password", "userauth_user"."last_login", "userauth_user"."is_superuser", "userauth_user"."username", "userauth_user"."is_staff", "userauth_user"."is_active", "userauth_user"."date_joined", "userauth_user"."email", "userauth_user"."first_name", "userauth_user"."last_name", "userauth_user"."phone_number", "userauth_user"."whatsapp_number" FROM "userauth_user" WHERE "userauth_user"."id" = 29 LIMIT 21; args=(29,); alias=default
+DEBUG 2024-06-14 13:37:22,133 utils (0.000) SELECT "userauth_user"."id", "userauth_user"."password", "userauth_user"."last_login", "userauth_user"."is_superuser", "userauth_user"."username", "userauth_user"."is_staff", "userauth_user"."is_active", "userauth_user"."date_joined", "userauth_user"."email", "userauth_user"."first_name", "userauth_user"."last_name", "userauth_user"."phone_number", "userauth_user"."whatsapp_number" FROM "userauth_user" WHERE "userauth_user"."id" = 29 LIMIT 21; args=(29,); alias=default
+DEBUG 2024-06-14 13:37:22,134 utils (0.000) SELECT "userauth_user"."id", "userauth_user"."password", "userauth_user"."last_login", "userauth_user"."is_superuser", "userauth_user"."username", "userauth_user"."is_staff", "userauth_user"."is_active", "userauth_user"."date_joined", "userauth_user"."email", "userauth_user"."first_name", "userauth_user"."last_name", "userauth_user"."phone_number", "userauth_user"."whatsapp_number" FROM "userauth_user" WHERE "userauth_user"."id" = 29 LIMIT 21; args=(29,); alias=default
+DEBUG 2024-06-14 13:37:22,125 base Exception while resolving variable 'pref' in template 'profdash.html'.
+Traceback (most recent call last):
+  File "C:\Users\OWNER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "C:\Users\OWNER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'pref'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\OWNER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 881, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ^^^^^^^^
+AttributeError: type object 'RequestContext' has no attribute 'pref'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\OWNER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'pref'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\OWNER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 898, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [pref] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'lnZV7AKXFBgUzYTK33uly7Ic7WY5ZC22Edp3cW0qGcerMOuDccXYAdquPgarVYCz'>, 'request': <WSGIRequest: GET '/prof-dashboard'>, 'user': <SimpleLazyObject: <User: KOJO>>, 'perms': PermWrapper(<SimpleLazyObject: <User: KOJO>>), 'messages': <FallbackStorage: request=<WSGIRequest: GET '/prof-dashboard'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'profile': <ElectricianProfile: Gillian Dunn>, 'profile_pic_form': <UpdatePicture bound=False, valid=False, fields=(profile_picture)>, 'business_form': <UpdateBusinessInfo bound=False, valid=False, fields=(business_name;service_description;registered;founded_date;number_of_employees;website_url;youtube_url)>, 'location_form': <UpdateLocation bound=False, valid=False, fields=(country;state;city;address)>, 'prices_form': <UpdatePrices bound=False, valid=False, fields=(prices)>, 'qualification_form': <UpdateQualification bound=False, valid=False, fields=(qualification)>, 'form': <UserUpdateForm bound=False, valid=False, fields=(first_name;last_name;phone_number;whatsapp_number)>, 'wallet': <Wallet: KOJO's Wallet>, 'subscription': <Subscription: 2 months Subscription for KOJO>, 'payments': <QuerySet [<Payment: Payment: 30000>]>, 'notifications': <QuerySet [<Notification: Payment Notification for KOJO>, <Notification: Chat Notification for KOJO>]>, 'electrician': <QuerySet [<ElectricianProfile: Gillian Dunn>]>}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 1, 'revcounter0': 0, 'first': True, 'last': True}, 'p': <Payment: Payment: 30000>}]
+DEBUG 2024-06-14 13:37:22,125 base Exception while resolving variable 'pref' in template 'profdash.html'.
+Traceback (most recent call last):
+  File "C:\Users\OWNER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 875, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "C:\Users\OWNER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'pref'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\OWNER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 881, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ^^^^^^^^
+AttributeError: type object 'RequestContext' has no attribute 'pref'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\OWNER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[int(bit)]
+                      ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'pref'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\OWNER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\base.py", line 898, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [pref] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'lnZV7AKXFBgUzYTK33uly7Ic7WY5ZC22Edp3cW0qGcerMOuDccXYAdquPgarVYCz'>, 'request': <WSGIRequest: GET '/prof-dashboard'>, 'user': <SimpleLazyObject: <User: KOJO>>, 'perms': PermWrapper(<SimpleLazyObject: <User: KOJO>>), 'messages': <FallbackStorage: request=<WSGIRequest: GET '/prof-dashboard'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'profile': <ElectricianProfile: Gillian Dunn>, 'profile_pic_form': <UpdatePicture bound=False, valid=False, fields=(profile_picture)>, 'business_form': <UpdateBusinessInfo bound=False, valid=False, fields=(business_name;service_description;registered;founded_date;number_of_employees;website_url;youtube_url)>, 'location_form': <UpdateLocation bound=False, valid=False, fields=(country;state;city;address)>, 'prices_form': <UpdatePrices bound=False, valid=False, fields=(prices)>, 'qualification_form': <UpdateQualification bound=False, valid=False, fields=(qualification)>, 'form': <UserUpdateForm bound=False, valid=False, fields=(first_name;last_name;phone_number;whatsapp_number)>, 'wallet': <Wallet: KOJO's Wallet>, 'subscription': <Subscription: 2 months Subscription for KOJO>, 'payments': <QuerySet [<Payment: Payment: 30000>]>, 'notifications': <QuerySet [<Notification: Payment Notification for KOJO>, <Notification: Chat Notification for KOJO>]>, 'electrician': <QuerySet [<ElectricianProfile: Gillian Dunn>]>}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 1, 'revcounter0': 0, 'first': True, 'last': True}, 'p': <Payment: Payment: 30000>}]
+INFO 2024-06-14 13:37:22,143 basehttp "GET /prof-dashboard HTTP/1.1" 200 22426
+INFO 2024-06-14 13:37:22,143 basehttp "GET /prof-dashboard HTTP/1.1" 200 22426
+INFO 2024-06-14 13:37:23,311 basehttp "GET /media/user_29/20221208_013417.jpg HTTP/1.1" 304 0
+INFO 2024-06-14 13:37:23,311 basehttp "GET /media/user_29/20221208_013417.jpg HTTP/1.1" 304 0
+DEBUG 2024-06-14 13:37:28,721 utils (0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2024-06-14 12:37:28.718189' AND "django_session"."session_key" = 'nc83uif2lw6w09hl74w67pjwlw3qzjub') LIMIT 21; args=('2024-06-14 12:37:28.718189', 'nc83uif2lw6w09hl74w67pjwlw3qzjub'); alias=default
+DEBUG 2024-06-14 13:37:28,723 utils (0.000) SELECT "userauth_user"."id", "userauth_user"."password", "userauth_user"."last_login", "userauth_user"."is_superuser", "userauth_user"."username", "userauth_user"."is_staff", "userauth_user"."is_active", "userauth_user"."date_joined", "userauth_user"."email", "userauth_user"."first_name", "userauth_user"."last_name", "userauth_user"."phone_number", "userauth_user"."whatsapp_number" FROM "userauth_user" WHERE "userauth_user"."id" = 29 LIMIT 21; args=(29,); alias=default
+DEBUG 2024-06-14 13:37:28,726 utils (0.000) SELECT COUNT(*) AS "__count" FROM "ojm_core_notification" WHERE ("ojm_core_notification"."user_id" = 29 AND NOT "ojm_core_notification"."read"); args=(29,); alias=default
+DEBUG 2024-06-14 13:37:28,728 utils (0.000) SELECT COUNT(*) AS "__count" FROM "ojm_core_notification" WHERE ("ojm_core_notification"."user_id" = 29 AND "ojm_core_notification"."read"); args=(29,); alias=default
+INFO 2024-06-14 13:37:28,777 basehttp "GET / HTTP/1.1" 200 23491
+INFO 2024-06-14 13:37:28,777 basehttp "GET / HTTP/1.1" 200 23491
+INFO 2024-06-14 13:37:29,392 basehttp "GET /static/Css/style.css HTTP/1.1" 200 58130
+INFO 2024-06-14 13:37:29,392 basehttp "GET /static/Css/style.css HTTP/1.1" 200 58130
+INFO 2024-06-14 13:37:29,421 basehttp "GET /static/Js/index.js HTTP/1.1" 200 4091
+INFO 2024-06-14 13:37:29,421 basehttp "GET /static/Js/index.js HTTP/1.1" 200 4091
+INFO 2024-06-14 13:37:29,519 basehttp "GET /static/Assest/Img/cctv1.jpeg HTTP/1.1" 200 42806
+INFO 2024-06-14 13:37:29,519 basehttp "GET /static/Assest/Img/cctv1.jpeg HTTP/1.1" 200 42806
+INFO 2024-06-14 13:37:29,545 basehttp "GET /static/Assest/Img/wiring2.png HTTP/1.1" 200 109635
+INFO 2024-06-14 13:37:29,545 basehttp "GET /static/Assest/Img/wiring2.png HTTP/1.1" 200 109635
+INFO 2024-06-14 13:37:29,548 basehttp "GET /static/Assest/Img/advert2.jpg HTTP/1.1" 200 241231
+INFO 2024-06-14 13:37:29,548 basehttp "GET /static/Assest/Img/advert2.jpg HTTP/1.1" 200 241231
+INFO 2024-06-14 13:37:29,588 basehttp "GET /static/Assest/Img/solar1.jpeg HTTP/1.1" 200 210091
+INFO 2024-06-14 13:37:29,588 basehttp "GET /static/Assest/Img/solar1.jpeg HTTP/1.1" 200 210091
+INFO 2024-06-14 13:37:29,661 basehttp "GET /static/Assest/Img/repairs1.png HTTP/1.1" 200 81980
+INFO 2024-06-14 13:37:29,661 basehttp "GET /static/Assest/Img/repairs1.png HTTP/1.1" 200 81980
+INFO 2024-06-14 13:37:29,688 basehttp "GET /static/Assest/Img/installation6.png HTTP/1.1" 200 99090
+INFO 2024-06-14 13:37:29,688 basehttp "GET /static/Assest/Img/installation6.png HTTP/1.1" 200 99090
+INFO 2024-06-14 13:37:29,834 basehttp "GET /static/Assest/Img/maintenance3.png HTTP/1.1" 200 56082
+INFO 2024-06-14 13:37:29,834 basehttp "GET /static/Assest/Img/maintenance3.png HTTP/1.1" 200 56082
+INFO 2024-06-14 13:37:29,915 basehttp "GET /static/Assest/Img/faults1.png HTTP/1.1" 200 91215
+INFO 2024-06-14 13:37:29,915 basehttp "GET /static/Assest/Img/faults1.png HTTP/1.1" 200 91215
+INFO 2024-06-14 13:37:30,145 basehttp "GET /static/Assest/Img/consultation1.png HTTP/1.1" 200 190146
+INFO 2024-06-14 13:37:30,145 basehttp "GET /static/Assest/Img/consultation1.png HTTP/1.1" 200 190146
+INFO 2024-06-14 13:37:30,255 basehttp "GET /static/Assest/Img/flame5.jpeg HTTP/1.1" 200 112108
+INFO 2024-06-14 13:37:30,255 basehttp "GET /static/Assest/Img/flame5.jpeg HTTP/1.1" 200 112108
+INFO 2024-06-14 13:37:30,586 basehttp "GET /static/Assest/Img/hdmi1.jpeg HTTP/1.1" 200 211340
+INFO 2024-06-14 13:37:30,586 basehttp "GET /static/Assest/Img/hdmi1.jpeg HTTP/1.1" 200 211340
+INFO 2024-06-14 13:37:30,613 basehttp "GET /static/Assest/Img/switch1.jpeg HTTP/1.1" 200 96594
+INFO 2024-06-14 13:37:30,613 basehttp "GET /static/Assest/Img/switch1.jpeg HTTP/1.1" 200 96594
+INFO 2024-06-14 13:37:31,046 basehttp "GET /static/Assest/Img/cctv2.jpeg HTTP/1.1" 200 38691
+INFO 2024-06-14 13:37:31,046 basehttp "GET /static/Assest/Img/cctv2.jpeg HTTP/1.1" 200 38691
+INFO 2024-06-14 13:37:31,360 basehttp "GET /static/Assest/Img/solar2.jpeg HTTP/1.1" 200 302086
+INFO 2024-06-14 13:37:31,360 basehttp "GET /static/Assest/Img/solar2.jpeg HTTP/1.1" 200 302086
+INFO 2024-06-14 13:37:31,430 basehttp "GET /static/Assest/Img/ac2.jpeg HTTP/1.1" 200 44571
+INFO 2024-06-14 13:37:31,430 basehttp "GET /static/Assest/Img/ac2.jpeg HTTP/1.1" 200 44571
+INFO 2024-06-14 13:37:31,611 basehttp "GET /static/Assest/Img/ojmelectrical_background%209.jpg HTTP/1.1" 200 73165
+INFO 2024-06-14 13:37:31,611 basehttp "GET /static/Assest/Img/ojmelectrical_background%209.jpg HTTP/1.1" 200 73165
+INFO 2024-06-14 13:37:31,836 basehttp "GET /static/Assest/Img/electrical-troubleshooting.jpg HTTP/1.1" 200 52536
+INFO 2024-06-14 13:37:31,836 basehttp "GET /static/Assest/Img/electrical-troubleshooting.jpg HTTP/1.1" 200 52536
+INFO 2024-06-14 13:37:31,941 basehttp "GET /static/Assest/Img/electrical-maintenance.jpg HTTP/1.1" 200 200309
+INFO 2024-06-14 13:37:31,941 basehttp "GET /static/Assest/Img/electrical-maintenance.jpg HTTP/1.1" 200 200309
+INFO 2024-06-14 13:37:32,145 basehttp "GET /static/Assest/Img/wiring5.jpeg HTTP/1.1" 200 701339
+INFO 2024-06-14 13:37:32,145 basehttp "GET /static/Assest/Img/wiring5.jpeg HTTP/1.1" 200 701339
+INFO 2024-06-14 13:37:32,175 basehttp "GET /static/Assest/Img/expert1.jpg HTTP/1.1" 200 36803
+INFO 2024-06-14 13:37:32,175 basehttp "GET /static/Assest/Img/expert1.jpg HTTP/1.1" 200 36803
+INFO 2024-06-14 13:37:32,310 basehttp "GET /static/Assest/Img/expert2.jpg HTTP/1.1" 200 8742
+INFO 2024-06-14 13:37:32,310 basehttp "GET /static/Assest/Img/expert2.jpg HTTP/1.1" 200 8742
+INFO 2024-06-14 13:37:32,348 basehttp "GET /static/Assest/Img/expert3.png HTTP/1.1" 200 488746
+INFO 2024-06-14 13:37:32,348 basehttp "GET /static/Assest/Img/expert3.png HTTP/1.1" 200 488746
+INFO 2024-06-14 13:37:32,514 basehttp "GET /static/Assest/Img/custom.png HTTP/1.1" 200 54390
+INFO 2024-06-14 13:37:32,514 basehttp "GET /static/Assest/Img/custom.png HTTP/1.1" 200 54390
+INFO 2024-06-14 13:37:32,727 basehttp "GET /static/Assest/Img/pay.png HTTP/1.1" 200 11544
+INFO 2024-06-14 13:37:32,727 basehttp "GET /static/Assest/Img/pay.png HTTP/1.1" 200 11544
+INFO 2024-06-14 13:37:33,469 basehttp "GET /static/Assest/Img/ojm%20log.png HTTP/1.1" 200 21733
+INFO 2024-06-14 13:37:33,469 basehttp "GET /static/Assest/Img/ojm%20log.png HTTP/1.1" 200 21733
+INFO 2024-06-14 13:37:34,021 basehttp - Broken pipe from ('127.0.0.1', 53391)
+INFO 2024-06-14 13:37:34,021 basehttp - Broken pipe from ('127.0.0.1', 53391)
+INFO 2024-06-14 13:37:34,036 basehttp "GET /categories HTTP/1.1" 200 15731
+INFO 2024-06-14 13:37:34,036 basehttp "GET /categories HTTP/1.1" 200 15731
+INFO 2024-06-14 13:37:34,371 basehttp "GET /static/Css/services.css HTTP/1.1" 200 4272
+INFO 2024-06-14 13:37:34,371 basehttp "GET /static/Css/services.css HTTP/1.1" 200 4272
+INFO 2024-06-14 13:37:34,462 basehttp "GET /static/Js/services.js HTTP/1.1" 200 1886
+INFO 2024-06-14 13:37:34,462 basehttp "GET /static/Js/services.js HTTP/1.1" 200 1886
+INFO 2024-06-14 13:37:35,145 basehttp "GET /static/Assest/Img/electrical-repair.jpeg HTTP/1.1" 200 151576
+INFO 2024-06-14 13:37:35,145 basehttp "GET /static/Assest/Img/electrical-repair.jpeg HTTP/1.1" 200 151576
+INFO 2024-06-14 13:37:36,559 basehttp "GET /services HTTP/1.1" 200 3928
+INFO 2024-06-14 13:37:36,559 basehttp "GET /services HTTP/1.1" 200 3928
+INFO 2024-06-14 13:37:36,730 basehttp "GET /static/Css/service.css HTTP/1.1" 200 5174
+INFO 2024-06-14 13:37:36,730 basehttp "GET /static/Css/service.css HTTP/1.1" 200 5174
+INFO 2024-06-14 13:37:36,908 basehttp "GET /static/Js/service.js HTTP/1.1" 200 0
+INFO 2024-06-14 13:37:36,908 basehttp "GET /static/Js/service.js HTTP/1.1" 200 0
+INFO 2024-06-14 13:37:37,647 basehttp "GET /static/Assest/Img/electrical-installation.jpg HTTP/1.1" 200 2018802
+INFO 2024-06-14 13:37:37,647 basehttp "GET /static/Assest/Img/electrical-installation.jpg HTTP/1.1" 200 2018802
+INFO 2024-06-14 13:37:44,547 basehttp "GET /static/Css/service.css HTTP/1.1" 304 0
+INFO 2024-06-14 13:37:44,547 basehttp "GET /static/Css/service.css HTTP/1.1" 304 0
