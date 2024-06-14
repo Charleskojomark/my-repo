@@ -14424,3 +14424,27 @@ INFO 2024-06-14 13:37:37,647 basehttp "GET /static/Assest/Img/electrical-install
 INFO 2024-06-14 13:37:37,647 basehttp "GET /static/Assest/Img/electrical-installation.jpg HTTP/1.1" 200 2018802
 INFO 2024-06-14 13:37:44,547 basehttp "GET /static/Css/service.css HTTP/1.1" 304 0
 INFO 2024-06-14 13:37:44,547 basehttp "GET /static/Css/service.css HTTP/1.1" 304 0
+DEBUG 2024-06-14 13:43:29,547 autoreload File C:\Users\OWNER\Desktop\new\templates\login.html previous mtime: 1717828759.4898043, current mtime: 1718369008.9703386
+DEBUG 2024-06-14 13:43:29,547 autoreload File C:\Users\OWNER\Desktop\new\templates\login.html previous mtime: 1717828759.4898043, current mtime: 1718369008.9703386
+DEBUG 2024-06-14 13:43:29,552 autoreload C:\Users\OWNER\Desktop\new\templates\login.html notified as changed. Signal results: [(<function template_changed at 0x00000182AD1480E0>, True), (<function translation_file_changed at 0x00000182AE25E020>, None)].
+DEBUG 2024-06-14 13:43:29,552 autoreload C:\Users\OWNER\Desktop\new\templates\login.html notified as changed. Signal results: [(<function template_changed at 0x00000182AD1480E0>, True), (<function translation_file_changed at 0x00000182AE25E020>, None)].
+DEBUG 2024-06-14 13:43:42,973 autoreload File C:\Users\OWNER\Desktop\new\templates\login.html previous mtime: 1718369008.9703386, current mtime: 1718369022.62253
+DEBUG 2024-06-14 13:43:42,973 autoreload File C:\Users\OWNER\Desktop\new\templates\login.html previous mtime: 1718369008.9703386, current mtime: 1718369022.62253
+DEBUG 2024-06-14 13:43:42,974 autoreload C:\Users\OWNER\Desktop\new\templates\login.html notified as changed. Signal results: [(<function template_changed at 0x00000182AD1480E0>, True), (<function translation_file_changed at 0x00000182AE25E020>, None)].
+DEBUG 2024-06-14 13:43:42,974 autoreload C:\Users\OWNER\Desktop\new\templates\login.html notified as changed. Signal results: [(<function template_changed at 0x00000182AD1480E0>, True), (<function translation_file_changed at 0x00000182AE25E020>, None)].
+DEBUG 2024-06-14 13:44:07,745 autoreload File C:\Users\OWNER\Desktop\new\templates\post_job.html previous mtime: 1718092648.790623, current mtime: 1718369047.3135984
+DEBUG 2024-06-14 13:44:07,745 autoreload File C:\Users\OWNER\Desktop\new\templates\post_job.html previous mtime: 1718092648.790623, current mtime: 1718369047.3135984
+DEBUG 2024-06-14 13:44:07,747 autoreload C:\Users\OWNER\Desktop\new\templates\post_job.html notified as changed. Signal results: [(<function template_changed at 0x00000182AD1480E0>, True), (<function translation_file_changed at 0x00000182AE25E020>, None)].
+DEBUG 2024-06-14 13:44:07,747 autoreload C:\Users\OWNER\Desktop\new\templates\post_job.html notified as changed. Signal results: [(<function template_changed at 0x00000182AD1480E0>, True), (<function translation_file_changed at 0x00000182AE25E020>, None)].
+DEBUG 2024-06-14 13:44:25,883 autoreload File C:\Users\OWNER\Desktop\new\templates\prof-signup.html previous mtime: 1718196431.9195638, current mtime: 1718369064.8870893
+DEBUG 2024-06-14 13:44:25,883 autoreload File C:\Users\OWNER\Desktop\new\templates\prof-signup.html previous mtime: 1718196431.9195638, current mtime: 1718369064.8870893
+DEBUG 2024-06-14 13:44:25,885 autoreload C:\Users\OWNER\Desktop\new\templates\prof-signup.html notified as changed. Signal results: [(<function template_changed at 0x00000182AD1480E0>, True), (<function translation_file_changed at 0x00000182AE25E020>, None)].
+DEBUG 2024-06-14 13:44:25,885 autoreload C:\Users\OWNER\Desktop\new\templates\prof-signup.html notified as changed. Signal results: [(<function template_changed at 0x00000182AD1480E0>, True), (<function translation_file_changed at 0x00000182AE25E020>, None)].
+DEBUG 2024-06-14 13:44:54,005 autoreload File C:\Users\OWNER\Desktop\new\templates\sign.html previous mtime: 1717828846.5108223, current mtime: 1718369093.5798988
+DEBUG 2024-06-14 13:44:54,005 autoreload File C:\Users\OWNER\Desktop\new\templates\sign.html previous mtime: 1717828846.5108223, current mtime: 1718369093.5798988
+DEBUG 2024-06-14 13:44:54,007 autoreload C:\Users\OWNER\Desktop\new\templates\sign.html notified as changed. Signal results: [(<function template_changed at 0x00000182AD1480E0>, True), (<function translation_file_changed at 0x00000182AE25E020>, None)].
+DEBUG 2024-06-14 13:44:54,007 autoreload C:\Users\OWNER\Desktop\new\templates\sign.html notified as changed. Signal results: [(<function template_changed at 0x00000182AD1480E0>, True), (<function translation_file_changed at 0x00000182AE25E020>, None)].
+DEBUG 2024-06-14 13:45:06,554 autoreload File C:\Users\OWNER\Desktop\new\templates\signup.html previous mtime: 1718052278.8052816, current mtime: 1718369105.5641906
+DEBUG 2024-06-14 13:45:06,554 autoreload File C:\Users\OWNER\Desktop\new\templates\signup.html previous mtime: 1718052278.8052816, current mtime: 1718369105.5641906
+DEBUG 2024-06-14 13:45:06,585 autoreload C:\Users\OWNER\Desktop\new\templates\signup.html notified as changed. Signal results: [(<function template_changed at 0x00000182AD1480E0>, True), (<function translation_file_changed at 0x00000182AE25E020>, None)].
+DEBUG 2024-06-14 13:45:06,585 autoreload C:\Users\OWNER\Desktop\new\templates\signup.html notified as changed. Signal results: [(<function template_changed at 0x00000182AD1480E0>, True), (<function translation_file_changed at 0x00000182AE25E020>, None)].

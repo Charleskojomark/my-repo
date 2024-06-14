@@ -1,69 +1,92 @@
-<div class="">
+{%load static%}
+<!DOCTYPE html>
 
-    <section class="">
-
-          <p>You are about to fund your wallet with {{ payment.amount }} and transaction reference {{ payment.ref }}</p>
-    </section>
-
-  </div>
-<form id="paymentForm">
-    {% csrf_token %}
-    <input type="hidden" id="email-address" value="{{ payment.email }}"/>
-    <input type="hidden" id="amount" value="{{ payment.amount }}"/>
-    <button type="submit" onclick="payWithPaystack()" class="btn btn-primary btn-block mb-4">Fund</button>
-</form>
-<script src="https://js.paystack.co/v1/inline.js"></script>
-
-
-
-
-<script>
-    const paymentForm = document.getElementById('paymentForm');
-paymentForm.addEventListener("submit", payWithPaystack, false);
-
-function payWithPaystack(e) {
-  e.preventDefault();
-
-  let handler = PaystackPop.setup({
-    key: '{{ paystack_pub_key }}', // Replace with your public key
-    email: document.getElementById("email-address").value,
-    amount: document.getElementById("amount").value * 100,
-    ref: '{{ payment.ref }}', // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
-    // label: "Optional string that replaces customer email"
-    onClose: function(){
-      alert('Window closed.');
-    },
-    callback: function(response){
-      fetch('update/', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            amount: '{{ payment.amount }}',
-            payment_type: '{{payment.payment_type}}' 
-        })
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Failed to update wallet balance');
-        }
-    })
-    .catch(error => {
-        console.error('Error updating wallet balance:', error);
-        // Handle error (if needed)
-    });
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+    <title>Proceed with payment</title>
+    <link rel="stylesheet" href="{% static 'Css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'Css/pay.css' %}">
+  </head>
+  <body>
     
-    // Redirect after payment
-    window.location.href = "{% url 'payment:verify_payment' payment.ref %}";
-    }
-  });
+    <div class="">
 
-  handler.openIframe();
-}
+      <section class="">
+  
+            <h2>You are about make a transaction of: ₦{{ payment.amount }}</h2> 
+            <p>Your transaction reference: {{ payment.ref }}</p>
+      </section>
+  
+    </div>
+  <form id="paymentForm">
+      {% csrf_token %}
+      <input type="hidden" id="email-address" value="{{ payment.email }}"/>
+      <input type="hidden" id="amount" value="{{ payment.amount }}"/>
+      <button type="submit" onclick="payWithPaystack()" class="btn btn-primary btn-block mb-4">Proceed</button>
+  </form>
+  <script src="https://js.paystack.co/v1/inline.js"></script>
+  
+  
+  
+  
+  <script>
+      const paymentForm = document.getElementById('paymentForm');
+  paymentForm.addEventListener("submit", payWithPaystack, false);
+  
+  function payWithPaystack(e) {
+    e.preventDefault();
+  
+    let handler = PaystackPop.setup({
+      key: '{{ paystack_pub_key }}', // Replace with your public key
+      email: document.getElementById("email-address").value,
+      amount: document.getElementById("amount").value * 100,
+      ref: '{{ payment.ref }}', // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
+      // label: "Optional string that replaces customer email"
+      onClose: function(){
+        alert('Window closed.');
+      },
+      callback: function(response){
+        fetch('update/', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+              amount: '{{ payment.amount }}',
+              payment_type: '{{payment.payment_type}}' 
+          })
+      })
+      .then(response => {
+          if (!response.ok) {
+              throw new Error('Failed to update wallet balance');
+          }
+      })
+      .catch(error => {
+          console.error('Error updating wallet balance:', error);
+          // Handle error (if needed)
+      });
+      
+      // Redirect after payment
+      window.location.href = "{% url 'payment:verify_payment' payment.ref %}";
+      }
+    });
+  
+    handler.openIframe();
+  }
+  
+  </script>
+  
+  
+  
+  
+      
 
-</script>
-
-
-
+  </body>
+</html>
 
