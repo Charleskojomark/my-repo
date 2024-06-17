@@ -83,6 +83,7 @@ def prof_dashboard(request):
     form = UserUpdateForm(instance=user)
     notifications = Notification.objects.filter(user=user)
     electrician = ElectricianProfile.objects.filter(user=user)
+    user_profile = ElectricianProfile.objects.get(user=request.user)
     
     
     context = {
@@ -97,7 +98,8 @@ def prof_dashboard(request):
         'subscription':subscription,
         'payments':payments,
         'notifications': notifications,
-        'electrician':electrician
+        'electrician':electrician,
+        'user_profile': user_profile
     }
     return render(request, 'profdash.html',context)
 
@@ -157,6 +159,7 @@ def post_request(request):
         terms = request.POST.get('terms', False) == 'on'
         job_start = request.POST.get('jobStart', '')
         start_date_str = request.POST.get('startDate', None)
+        readiness = request.POST.get('readiness', None)
         
         start_date = None
         if start_date_str:
@@ -207,7 +210,8 @@ def post_request(request):
             'service_description': service_description,
             'additional_files': additional_files,
             'job_start': job_start,
-            'start_date': start_date
+            'start_date': start_date,
+            'readiness':readiness
         }
         Request.objects.create(**request_data)
 
@@ -227,6 +231,7 @@ def user_post(request):
         additional_files = request.FILES.get('additionalFiles', None)
         job_start = request.POST.get('jobStart', None)
         start_date_str = request.POST.get('startDate', None)
+        readiness = request.POST.get('readiness', None)
         
         start_date = None
         if start_date_str:
@@ -242,7 +247,8 @@ def user_post(request):
             'service_description': service_description,
             'additional_files': additional_files,
             'job_start': job_start,
-            'start_date': start_date
+            'start_date': start_date,
+            'readiness':readiness
         }
         Request.objects.create(**request_data)
 
@@ -258,7 +264,8 @@ def post_job(request):
 
 def all_requests(request):
     customers_group = Group.objects.get(name="customers")
-    requests = Request.objects.filter(user__groups=customers_group)
+    # requests = Request.objects.filter(user__groups=customers_group)
+    requests = Request.objects.all()
     context = {
         'requests':requests
     }

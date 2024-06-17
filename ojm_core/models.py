@@ -7,6 +7,7 @@ class Request(models.Model):
     service_description = models.TextField()
     additional_files = models.FileField(upload_to='additional_files/', blank=True, null=True)
     job_start = models.CharField(max_length=20, blank=True, null=True)
+    readiness = models.CharField(max_length=20, blank=True, null=True)
     start_date = models.DateField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     class Meta:
