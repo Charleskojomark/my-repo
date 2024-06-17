@@ -453,3 +453,10 @@ select:focus {
     border: 0;
     font-size: 1rem;
 }
+.newflex{
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    width: 80%;
+    margin-top: 10px;
+}
