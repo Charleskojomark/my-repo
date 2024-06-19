@@ -22,6 +22,7 @@ urlpatterns = [
     path('update-user',views.update_user,name="update_user"),
     path('change-password',views.change_password,name="change_password"),
     path('cac',views.cac_verification,name="cac"),
+    path('verify-id',views.id_verification,name="id_verify"),
     
     
     

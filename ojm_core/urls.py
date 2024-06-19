@@ -18,8 +18,8 @@ urlpatterns = [
     path('user-post', views.user_post, name="user_post"),
     path('post-job', views.post_job, name="post_job"),
     path('requests', views.all_requests, name="requests"),
-    
-    
+    path('request/<int:request_id>/', views.request_detail, name='request_detail'),
+    path('request/<int:request_id>/send-quote/', views.send_quote, name='send_quote'),
     path('notifications/', views.get_notifications, name='notifications'),
 ]
 

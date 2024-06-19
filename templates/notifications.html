@@ -4,23 +4,109 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notifications</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        :root {
+            --main-color-one: rgb(243, 182, 18);
+            --main-color-two: rgb(22, 31, 59);
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background: #fff;
+            width: 90%;
+            max-width: 600px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            margin: 0;
+            color: var(--main-color-two);
+        }
+        .notification {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .notification:last-child {
+            border-bottom: none;
+        }
+        .notification p {
+            margin: 0 0 5px;
+            color: #555;
+        }
+        .notification small {
+            display: block;
+            color: #aaa;
+        }
+        .no-notifications {
+            text-align: center;
+            color: #999;
+            padding: 20px;
+        }
+        .icon {
+            margin-right: 10px;
+            color: var(--main-color-one);
+        }
+        .notification hr {
+            margin: 10px 0;
+            border: none;
+            border-top: 1px solid #eee;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: var(--main-color-one);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .button:hover {
+            background-color: var(--main-color-two);
+        }
+    </style>
 </head>
 <body>
-    <h1>Notifications</h1>
-    <div id="notification-area">
-        <!-- Notifications will be displayed here dynamically -->
-        
-        {% if notifications %}
-        {% for notification in notifications %}
-        <p>{{ notification.message }}</p>
-        <small>{{notification.created_at}}</small>
-        <hr>
-        {% endfor %}
-        {% else %}
-        <p>No Notifications</p>
-        {% endif %}
-            
+    <div class="container">
+        <div class="header">
+            <h1>Notifications</h1>
+        </div>
+        <div id="notification-area">
+            <!-- Notifications will be displayed here dynamically -->
+            {% if notifications %}
+                {% for notification in notifications %}
+                <div class="notification">
+                    <i class="fas fa-bell icon"></i>
+                    <p>{{ notification.message }}</p>
+                    <small>{{ notification.created_at }}</small>
+                    <hr>
+                </div>
+                {% endfor %}
+            {% else %}
+                <div class="no-notifications">
+                    <i class="fas fa-inbox icon"></i>
+                    <p>No Notifications</p>
+                </div>
+            {% endif %}
+        </div>
+        <a href="#" class="button">Mark All as Read</a>
     </div>
-
 </body>
 </html>

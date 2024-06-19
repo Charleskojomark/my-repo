@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css" />
+    <link rel="stylesheet" href="{% static 'Css/requests.css' %}">
+    <title>Account</title>
+
+</head>
+
+<body>
+    <section>
+        <div class="heading">
+            <a href="{%url 'ojm_core:index'%}" class="nav_logo"><img src="{% static 'Assest/Img/ojm.png' %}" alt="Ojm" /></a>
+            <div class="nav">
+                <a href="index.html" class="">
+                    <i class="uil uil-comment-add"></i> <span class="newflex"><span>Post</span><span>Job</span></span>
+                </a>
+
+
+                <a href="" class="">
+                    <i class="uil uil-envelopes"></i> Messages
+                </a>
+
+                <a href="pay.html" class="">
+                    <i class="uil uil-user-md"></i><span class="newflex"><span>Find</span><span>Experts</span></span>
+                </a>
+
+                <a href="new.html" class="">
+                    <i class="uil uil-setting"></i>Settings
+                </a>
+            </div>
+        </div>
+        
+        {% for r in requests %}
+        <div class="request-container">
+            <div class="job">
+                <p class="job-title">{{ r.query }}</p>
+                <p class="user"><span><i class="uil uil-user"></i>{{ r.user.username }} ({{ r.created_at|timesince}} ago)</span></p>
+                
+                {% with r.user as user %}
+                    {% if user.customerprofile %}
+                        <p class="location"><span><i class="uil uil-location-point"></i>{{ user.customerprofile.state }} {{ user.customerprofile.city }}</span></p>
+                    {% elif user.electricianprofile %}
+                        <p class="location"><span><i class="uil uil-location-point"></i>{{ user.electricianprofile.state }} {{ user.electricianprofile.city }}</span></p>
+                    {% else %}
+                        <p class="location"><span><i class="uil uil-location-point"></i>Location not available</span></p>
+                    {% endif %}
+                {% endwith %}
+                
+                <p class="when"><span><i class="uil uil-calendar-alt"></i>{{ r.job_start }}</span></p>
+                <p class="description"><span><i class="uil uil-edit"></i>{{ r.service_description }}</span></p>
+            </div>
+            <div class="view-button">
+                <a href="{% url 'ojm_core:request_detail' request_id=r.id %}">View Request</a>
+            </div>
+        </div>
+        {% endfor %}
+
+    
+
+</body>
+
+</html>

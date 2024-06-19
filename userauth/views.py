@@ -3,7 +3,7 @@ from django.shortcuts import render,redirect,get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-from userauth.models import User, ElectricianProfile, CustomerProfile
+from userauth.models import User, ElectricianProfile, CustomerProfile,Identity
 from django.core.mail import send_mail
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.utils.encoding import force_bytes, force_str
@@ -19,7 +19,7 @@ from django.contrib.auth import update_session_auth_hash
 
 from django.contrib.auth.views import PasswordResetView, PasswordResetDoneView, PasswordResetConfirmView, PasswordResetCompleteView
 from django.urls import reverse_lazy
-from .forms import CustomPasswordResetForm, CustomSetPasswordForm
+from .forms import CustomPasswordResetForm, CustomSetPasswordForm,IdentityForm
 
 
 from .forms import ElectricianSignUpForm,CustomerSignUpForm,UpdatePicture,UpdateBusinessInfo,UpdateLocation,UpdatePrices,UpdateQualification,UserUpdateForm,UpdateCustomerPicture,UpdateCustomerLocation
@@ -374,12 +374,32 @@ def update_customer_picture(request):
     return render(request, 'userdash.html',context)
 
 
+def id_verification(request):
+    user = request.user
+    electrician = ElectricianProfile.objects.filter(user=user)
+    
+
 def cac_verification(request):
     user = request.user
     electrician = ElectricianProfile.objects.filter(user=user)
     if request.method == 'POST':
         cac = request.POST['cac']
         electrician.update(cac=cac)
-        messages.success(request, 'Verification requested')
+        messages.success(request, 'Business Verification requested')
         return redirect('ojm_core:dashboard')
     return render(request, 'profdash.html')
+
+def id_verification(request):
+    user = request.user
+    if request.method == 'POST':
+        form = IdentityForm(request.POST, request.FILES)
+        if form.is_valid():
+            identity = form.save(commit=False)
+            identity.user = user
+            identity.save()
+            messages.success(request, "Identity Verification Requested")
+            return redirect('ojm_core:dashboard')  
+    else:
+        form = IdentityForm(instance=Identity.objects.filter(user=user).first())
+
+    return render(request, 'profdash.html', {'id_form': form})

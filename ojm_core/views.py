@@ -1,8 +1,8 @@
 from django.shortcuts import render,redirect,get_object_or_404
 from django.contrib.auth.models import Group
 from django.contrib.auth.decorators import login_required
-from userauth.models import User, ElectricianProfile, CustomerProfile
-from userauth.forms import ElectricianSignUpForm,CustomerSignUpForm,UpdatePicture,UpdateBusinessInfo,UpdateLocation,UpdatePrices,UpdateQualification,UserUpdateForm,UpdateCustomerLocation
+from userauth.models import User, ElectricianProfile, CustomerProfile,Identity
+from userauth.forms import ElectricianSignUpForm,CustomerSignUpForm,UpdatePicture,UpdateBusinessInfo,UpdateLocation,UpdatePrices,UpdateQualification,UserUpdateForm,UpdateCustomerLocation,IdentityForm
 from django.contrib.auth.tokens import default_token_generator
 from django.contrib.sites.shortcuts import get_current_site
 from django.utils.http import urlsafe_base64_encode
@@ -13,7 +13,7 @@ from django.core.mail import send_mail
 from django.contrib.auth.models import Group
 
 from django.http import JsonResponse
-from .models import Request, Notification
+from .models import Request, Notification, Quote
 from django.core.exceptions import ValidationError
 from datetime import datetime
 from payment.models import Wallet,Payment,Subscription
@@ -84,6 +84,7 @@ def prof_dashboard(request):
     notifications = Notification.objects.filter(user=user)
     electrician = ElectricianProfile.objects.filter(user=user)
     user_profile = ElectricianProfile.objects.get(user=request.user)
+    id_form = IdentityForm(instance=user)
     
     
     context = {
@@ -99,7 +100,8 @@ def prof_dashboard(request):
         'payments':payments,
         'notifications': notifications,
         'electrician':electrician,
-        'user_profile': user_profile
+        'user_profile': user_profile,
+        'id_form':id_form,
     }
     return render(request, 'profdash.html',context)
 
@@ -267,9 +269,52 @@ def all_requests(request):
     # requests = Request.objects.filter(user__groups=customers_group)
     requests = Request.objects.all()
     context = {
-        'requests':requests
+        'requests':requests,
     }
-    return render(request, 'request.html', context)
+    return render(request, 'requests.html', context)
+
+def request_detail(request, request_id):
+    req = get_object_or_404(Request, id=request_id)
+    
+    user_profile = None
+    if hasattr(req.user, 'customerprofile'):
+        user_profile = req.user.customerprofile
+    elif hasattr(req.user, 'electricianprofile'):
+        user_profile = req.user.electricianprofile
+
+    context = {
+        'request': req,
+        'user': user_profile,
+    }
+    return render(request, 'request_detail.html', context)
+
+
+def send_quote(request, request_id):
+    request_obj = get_object_or_404(Request, id=request_id)
+    electrician_profile = get_object_or_404(ElectricianProfile, user=request.user)
+
+    if not electrician_profile.id_verified:
+        messages.error(request, "You cannot send a quote without verifying your ID. Visit settings to verify your ID")
+        return redirect('ojm_core:dashboard')
+
+    if request.method == 'POST':
+        price = request.POST.get('price')
+        price_type = request.POST.get('price_type')
+        price_details = request.POST.get('price_details')
+
+        Quote.objects.create(
+            request=request_obj,
+            electrician=request.user,
+            price=price,
+            price_type=price_type,
+            price_details=price_details
+        )
+
+        messages.success(request, "Quote sent successfully.")
+        # return redirect('request_detail')
+
+    return redirect('request_detail', request_id=request_id)
+
 
 
 @login_required

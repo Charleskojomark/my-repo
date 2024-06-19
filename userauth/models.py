@@ -99,7 +99,8 @@ class ElectricianProfile(models.Model):
     prices = models.TextField(blank=True, null=True)
     qualification = models.TextField(blank=True, null=True)
     
-    verified = models.BooleanField(default=False)
+    cac_verified = models.BooleanField(default=False)
+    id_verified = models.BooleanField(default=False)
     cac = models.CharField(max_length=200, blank=True, null=True)
     
     
@@ -123,3 +124,20 @@ class CustomerProfile(models.Model):
     def __str__(self):
         return self.user.username
         
+        
+class Identity(models.Model):
+    ID_TYPE_CHOICES = [
+        ('National Identity Card', 'National Identity Card'),
+        ('Driver\'s License', 'Driver\'s License'),
+        ('Voter\'s Card', 'Voter\'s Card'),
+        ('International Passport', 'International Passport'),
+    ]
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    id_type = models.CharField(max_length=50, choices=ID_TYPE_CHOICES)
+    full_name = models.CharField(max_length=100)
+    expiry_date = models.DateField(null=True, blank=True)
+    id_front_page = models.ImageField(upload_to='id_front_pages/')
+    id_back_page = models.ImageField(upload_to='id_back_pages/', null=True, blank=True)
+
+    def __str__(self):
+        return self.full_name

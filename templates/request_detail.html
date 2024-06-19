@@ -1,0 +1,132 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css" />
+    <link rel="stylesheet" href="{% static 'Css/request_detail.css' %}">
+    <title>Account</title>
+</head>
+
+<body>
+    <section>
+        <div class="heading">
+            <a href="{% url 'ojm_core:index' %}" class="nav_logo"><img src="{% static 'Assest/Img/ojm.png' %}" alt="Ojm" /></a>
+            <div class="nav">
+                <a href="{%url 'ojm_core:requests'%}" class="">
+                    <i class="uil uil-comment-add"></i> Requests
+                </a>
+                <a href="{%url 'chatapp:messages'%}" class="">
+                    <i class="uil uil-envelopes"></i> Messages
+                </a>
+
+                <a href="{% url 'payment:pay' %}" class="">
+                    <i class="uil uil-money-bill"></i>Pricing
+                </a>
+                <a href="{% url 'ojm_core:dashboard' %}" class="">
+                    <i class="uil uil-setting"></i>Settings
+                </a>
+            </div>
+        </div>
+        
+        <div class="request-container">
+            <div class="details">
+                <div class="quote">
+                    {% if request.user.first_name %}
+                    <p class="username">{{ request.user.first_name }} {{ request.user.last_name }}</p>
+                    {% else %}
+                    <p class="username">{{ request.user.username|title }}</p>
+                    {% endif %}
+                    <p class="location">{{ user_profile.city|title }}, {{ user_profile.state|title }} State, {{ user_profile.country|title }}</p>
+                    <div class="quote-detail">
+                        <div class="pros-contacted">
+                            <p>0</p>
+                            <p>Pros Contacted</p>
+                        </div>
+                        <div class="request-expiry">
+                            <p>1h 56m</p>
+                            <p>request expires</p>
+                        </div>
+                        <div class="cost-quote">
+                            <p>₦645</p>
+                            <p>cost to quote</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="request-title">
+                    <h3>Request title</h3>
+                    <p>{{ request.query }}</p>
+                </div>
+                <div class="request-description">
+                    <h3>Description</h3>
+                    <p>{{ request.service_description }}</p>
+                </div>
+                <div class="start-date">
+                    <h3>Preferred Start Date</h3>
+                    {% if request.start_date %}
+                    <p>{{ request.start_date }}</p>
+                    {% else %}
+                    <p>{{ request.job_start }}</p>
+                    {% endif %}
+                </div>
+                <div class="readiness">
+                    <h3>Readiness To Hire</h3>
+                    <p>{{ request.readiness }}</p>
+                </div>
+                <div class="contact-method">
+                    <h3>Contact Method</h3>
+                    <p>Phone number</p>
+                </div>
+                <div class="request-date">
+                    <h3>Request Posted Date</h3>
+                    <p>{{ request.created_at }}</p>
+                </div>
+                <div class="contact-us">
+                    <h3>Need Help?</h3>
+                    <a href="">Contact Us</a>
+                </div>
+            </div>
+            <form action="{% url 'ojm_core:send_quote' request.id %}" method="post">
+                {% csrf_token %}
+                <div class="price">
+                    <div class="set-price">
+                        <h3><i class="uil uil-check-circle"></i>You will get {{ request.user.username|title }}'s verified phone number after you send a quote.</h3>
+                        <h2>Set Your Price</h2>
+                        <div class="set">
+                            <div class="number"><span>₦</span><input type="number" name="price" required></div>
+                            <select name="price_type" id="" required>
+                                <option value="">Select A Price Type</option>
+                                <option value="Negotiable">Negotiable</option>
+                                <option value="Fixed Price">Fixed Price</option>
+                                <option value="Starting Fee">Starting Fee</option>
+                                <option value="Per hour">Per hour</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="price-details">
+                        <h3>Give details about your price to {{ request.user.username|title }}</h3>
+                        <div class="detail">
+                            <textarea name="price_details" id="price-box" required></textarea>
+                            <label for="price-box"></label>
+                        </div>
+                    </div>
+                    <div class="send-quote">
+                        <input type="submit" value="Send Quote">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Include your popup or redirection logic here -->
+    {% if messages %}
+    <div class="popup">
+        {% for message in messages %}
+        <p>{{ message }}</p>
+        {% endfor %}
+    </div>
+    {% endif %}
+</body>
+</html>

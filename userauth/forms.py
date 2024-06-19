@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
-from .models import User, ElectricianProfile, CustomerProfile
+from .models import User, ElectricianProfile, CustomerProfile, Identity
 from django.contrib.auth.forms import PasswordResetForm, SetPasswordForm
 
 
@@ -185,3 +185,23 @@ class UserUpdateForm(forms.ModelForm):
     class Meta:
         model = User
         fields = ['first_name', 'last_name', 'phone_number', 'whatsapp_number']
+        
+
+class IdentityForm(forms.ModelForm):
+    class Meta:
+        model = Identity
+        fields = ['id_type', 'full_name', 'expiry_date', 'id_front_page', 'id_back_page']
+        labels = {
+            'id_type': 'ID TYPE',
+            'full_name': 'Full Name',
+            'expiry_date': 'Expiry Date (If Applicable)',
+            'id_front_page': 'ID Front Page',
+            'id_back_page': 'ID Back Page (If Applicable)',
+        }
+        widgets = {
+            'id_type': forms.Select(attrs={'required': True}),
+            'full_name': forms.TextInput(attrs={'required': True}),
+            'expiry_date': forms.DateInput(attrs={'type': 'date'}),
+            'id_front_page': forms.FileInput(attrs={'required': True}),
+            'id_back_page': forms.FileInput(),
+        }

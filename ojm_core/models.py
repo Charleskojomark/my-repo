@@ -15,6 +15,24 @@ class Request(models.Model):
     def __str__(self):
         return self.query
     
+class Quote(models.Model):
+    PRICE_TYPE_CHOICES = [
+        ('Negotiable', 'Negotiable'),
+        ('Fixed Price', 'Fixed Price'),
+        ('Starting Fee', 'Starting Fee'),
+        ('Per hour', 'Per hour'),
+    ]
+    
+    request = models.ForeignKey(Request, on_delete=models.CASCADE)
+    electrician = models.ForeignKey(User, on_delete=models.CASCADE)
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+    price_type = models.CharField(max_length=50, choices=PRICE_TYPE_CHOICES)
+    price_details = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Quote by {self.electrician.username} for {self.request.query}"
+
     
 class Notification(models.Model):
     TYPE_CHOICES = [

@@ -1,21 +1,98 @@
-{%load static%}
+{% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Conversations</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        :root {
+            --main-color-one: rgb(243, 182, 18);
+            --main-color-two: rgb(22, 31, 59);
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: #fff;
+            width: 90%;
+            max-width: 600px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            margin: 0;
+            color: var(--main-color-two);
+        }
+
+        .conversations-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .conversations-list li {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+
+        .conversations-list li:last-child {
+            border-bottom: none;
+        }
+
+        .conversations-list a {
+            text-decoration: none;
+            color: var(--main-color-two);
+            font-size: 16px;
+            margin-left: 10px;
+        }
+
+        .conversations-list a:hover {
+            text-decoration: underline;
+        }
+
+        .icon {
+            color: var(--main-color-one);
+            font-size: 24px;
+        }
+    </style>
 </head>
 <body>
-    <h1>My Conversations</h1>
-    <ul>
-        {% for conversation, other_user in conversations_with_participants %}
-        {%if other_user.username %}
-        <li>
+    <div class="container">
+        <div class="header">
+            <h1>My Conversations</h1>
+        </div>
+        <ul class="conversations-list">
+            {% for conversation, other_user in conversations_with_participants %}
+            {% if other_user.username %}
+            <li>
+                <i class="fas fa-comments icon"></i>
                 <a href="{% url 'chatapp:chat_conversation' conversation_id=conversation.conversation_id %}">
                     Conversation with {{ other_user.username }}
                 </a>
-        </li>
-        {% endif %}
-        {% endfor %}
-    </ul>
+            </li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
 </body>
 </html>
