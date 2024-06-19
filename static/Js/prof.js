@@ -124,7 +124,10 @@ var fileInput = document.getElementById('id_profile_picture');
         event.preventDefault();
         detailsModal.style.display = "block";
     }
-    
+    bankLink.onclick = function(event) {
+        event.preventDefault();
+        bankModal.style.display = "block";
+    }
     
     verificationLink.onclick = function(event) {
         event.preventDefault();

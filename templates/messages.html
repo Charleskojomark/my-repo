@@ -8,11 +8,13 @@
     <h1>My Conversations</h1>
     <ul>
         {% for conversation, other_user in conversations_with_participants %}
-            <li>
+        {%if other_user.username %}
+        <li>
                 <a href="{% url 'chatapp:chat_conversation' conversation_id=conversation.conversation_id %}">
                     Conversation with {{ other_user.username }}
                 </a>
-            </li>
+        </li>
+        {% endif %}
         {% endfor %}
     </ul>
 </body>

@@ -153,10 +153,15 @@
                         <i class="uil uil-angle-right-b"></i>
                     </div>
                 </a>
-                
+                <a href="#" id="bankLink">
+                    <div class="flex">
+                        <p>Identity Verification</p>
+                        <i class="uil uil-angle-right-b"></i>
+                    </div>
+                </a>
                 <a href="#" id="verificationLink">
                     <div class="flex">
-                        <p>Verification</p>
+                        <p>Business Verification</p>
                         <i class="uil uil-angle-right-b"></i>
                     </div>
                 </a>
@@ -423,12 +428,29 @@
     <div id="bankModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h2>Bank Details</h2>
+            <h2>Identity Verification</h2>
             <form id="businessInfoForm" >
                 {% csrf_token %}
-                <input type="text" id="cac" name="cac" value="">
+                <label for="id">ID TYPE</label>
+                <select name="" id="id" required>
+                    <option value="">Select an option</option>
+                    <option value="">National Identity Card</option>
+                    <option value="">Driver's License</option>
+                    <option value="">Voter's Card</option>
+                    <option value="">International Passport</option>
+                </select>
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname" name="" value="" required>
+                <label for="date">Expiry Date(If Applicable)</label>
+                <input type="date" id="date" name="date">
+                <label for="front">ID Front Page</label>
+                <input type="file" id="front" name="" required>
+                <label for="back">ID Back Page(If Applicable)</label>
+                <input type="file" id="back" name="">
                 <button class="btn" type="submit">Request Verification</button>
+                <small>Verifications might take up to 2 days</small>
             </form>
+
         </div>
     </div>
 
@@ -449,7 +471,7 @@
                 {% csrf_token %}
                 <input type="text" id="cac" name="cac" value="" placeholder="Enter Your RC/BN for verification">
                 <button class="btn" type="button" onclick="validateForm(event)">Request Verification</button>
-                <small>Verifications might take up to 2 to 3 working days</small>
+                <small>Verifications might take up to 2 days</small>
                 <div id="error-message"></div>
             </form>
             {%endif%}

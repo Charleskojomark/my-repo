@@ -255,7 +255,7 @@ ul {
     border-radius: 50%;
     margin-bottom: 20px;
 }
-input[type="file"] {
+#uploadForm input[type="file"] {
     display: none;
 }
 
