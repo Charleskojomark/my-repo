@@ -63,8 +63,8 @@ class Subscription(models.Model):
     
     DURATION_CHOICES = [
         ("1 month", "1 month"),
-        ("2 months", "2 months"),
         ("3 months", "3 months"),
+        ("6 months", "6 months"),
     ]
 
     name = models.CharField(max_length=20, choices=DURATION_CHOICES)
@@ -72,21 +72,23 @@ class Subscription(models.Model):
     created_at = models.DateTimeField(default=timezone.now)
     expiry = models.DateTimeField()
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='inactive')
+    remaining_quotes = models.IntegerField(default=0)
 
     def save(self, *args, **kwargs):
         if not self.pk:  # Only update expiry if it's a new subscription
             self.expiry = self.calculate_expiry()
-            self.status = 'active'  # Set status to active when creating a new subscription
+            self.status = 'Inactive'  # Set status to active when creating a new subscription
         super().save(*args, **kwargs)
 
     def calculate_expiry(self):
-        duration_mapping = {
-            "1 month": 30,
-            "2 months": 60,
-            "3 months": 90,
-        }
-        duration = duration_mapping.get(self.name, 30)
-        return self.created_at + timedelta(days=duration)
+        # logic to calculate expiry based on the subscription name
+        if self.name == "1 month":
+            return self.created_at + timedelta(days=30)
+        elif self.name == "3 months":
+            return self.created_at + timedelta(days=90)
+        elif self.name == "6 months":
+            return self.created_at + timedelta(days=180)
+        return self.created_at
     
     def check_and_update_expiry(self):
         if timezone.now() > self.expiry:
@@ -103,17 +105,17 @@ class Subscription(models.Model):
 
     def get_price(self):
         price_mapping = {
-            "1 month": 1000.00,
-            "2 months": 2000.00,
-            "3 months": 3000.00,
+            "1 month": 10500.00,
+            "3 months": 29500.00,
+            "6 months": 59500.00,
         }
         return price_mapping.get(self.name, 0)
 
     def get_old_price(self):
         old_price_mapping = {
-            "1 month": 1200.00,
-            "2 months": 2400.00,
-            "3 months": 3600.00,
+            "1 month": 15000.00,
+            "3 months": 45000.00,
+            "6 months": 80000.00,
         }
         return old_price_mapping.get(self.name, 0)
 

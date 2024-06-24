@@ -26,8 +26,8 @@ pusher = Pusher(
 
 def pay(request):
     plan1 = Subscription.objects.filter(name="1 month")
-    plan2 = Subscription.objects.filter(name="2 months")
-    plan3 = Subscription.objects.filter(name="3 months")
+    plan2 = Subscription.objects.filter(name="3 months")
+    plan3 = Subscription.objects.filter(name="6 months")
     
     for p in plan1:
         p.calc = p.get_old_price() - p.get_price()  
@@ -84,7 +84,6 @@ def verify_payment(request, ref):
     return redirect('ojm_core:dashboard')
 
 
-
 @csrf_exempt
 def paystack_webhook(request):
     if request.method == 'POST':
@@ -92,6 +91,8 @@ def paystack_webhook(request):
         payment_type = data.get('payment_type')
         amount = data.get('amount')
         user = request.user
+        response_data = {}
+
         if payment_type == 'payg':
             wallet = get_object_or_404(Wallet, user=user)
             wallet.balance += int(amount)
@@ -113,35 +114,36 @@ def paystack_webhook(request):
         elif payment_type == 'subscription':
             subscription, created = Subscription.objects.get_or_create(user=user, defaults={'status': 'Inactive'})
 
-            if created or subscription.status != 'Active' or subscription.status == 'Active'  :
-                # Activate the subscription based on the price paid
-                price_ranges = {
-                    1000: "1 month",
-                    2000: "2 months",
-                    3000: "3 months",
-                }
-                subscription_name = price_ranges.get(int(amount))
+            price_ranges = {
+                10500: ("1 month", 100),
+                29500: ("3 months", 350),
+                59500: ("6 months", 1000),
+            }
+            subscription_info = price_ranges.get(int(amount))
 
-                if subscription_name:
-                    subscription.name = subscription_name
-                    subscription.status = 'Active'
-                    subscription.created_at = timezone.now()
-                    subscription.expiry = subscription.calculate_expiry()
-                    subscription.save()
-                    Notification.objects.create(
-                        user=user,
-                        message=f'Subscription activated for {subscription_name}',
-                        notification_type='account'
-                    )
-                    pusher.trigger(f'private-user-{user.id}', 'new-notification', {
-                        'message': f'Subscription activated for {subscription_name}',
-                        'notification_type': 'account'
-                    })
-                    response_data = {
-                        'message': 'Subscription activated successfully',
-                        'subscription_status': subscription.status
-                    }
-                    return JsonResponse(response_data, status=200)
+            if subscription_info:
+                subscription_name, quote_limit = subscription_info
+                subscription.name = subscription_name
+                subscription.status = 'Active'
+                subscription.created_at = timezone.now()
+                subscription.expiry = subscription.calculate_expiry()
+                subscription.remaining_quotes = quote_limit
+                subscription.save()
+                Notification.objects.create(
+                    user=user,
+                    message=f'Subscription activated for {subscription_name}',
+                    notification_type='account'
+                )
+                pusher.trigger(f'private-user-{user.id}', 'new-notification', {
+                    'message': f'Subscription activated for {subscription_name}',
+                    'notification_type': 'account'
+                })
+                response_data = {
+                    'message': 'Subscription activated successfully',
+                    'subscription_status': subscription.status
+                }
+                return JsonResponse(response_data, status=200)
+
         return JsonResponse(response_data, status=200)
 
 

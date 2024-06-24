@@ -11,12 +11,17 @@ from django.template.loader import render_to_string
 from django.contrib import messages
 from django.core.mail import send_mail
 from django.contrib.auth.models import Group
-
+from django.views.decorators.csrf import csrf_exempt
+from django.urls import reverse
 from django.http import JsonResponse
 from .models import Request, Notification, Quote
 from django.core.exceptions import ValidationError
 from datetime import datetime
 from payment.models import Wallet,Payment,Subscription
+import json
+from django.utils import timezone
+import logging
+from chatapp.models import Conversation, Message
 
 from django.conf import settings
 from pusher import Pusher
@@ -28,6 +33,12 @@ pusher = Pusher(
     cluster=settings.PUSHER_CLUSTER,
     ssl=True
 )
+
+SUBSCRIPTION_TOTAL_QUOTES = {
+    "1 month": 100,
+    "3 months": 350,
+    "6 months": 1000,
+}
 
 def index(request):
     if request.user.is_authenticated:
@@ -67,12 +78,14 @@ def user_dashboard(request):
     }
     return render(request, 'userdash.html',context)
 
+
+
 @login_required
 def prof_dashboard(request):
     profile = get_object_or_404(ElectricianProfile, user=request.user)
     user = request.user
     wallet, created = Wallet.objects.get_or_create(user=user)
-    subscription = Subscription.objects.filter(user=user).first()
+    # subscription = Subscription.objects.filter(user=user).first()
     payments = Payment.objects.filter(user=user,verified=True)
     # wallet = get_object_or_404(Wallet, user=user)
     profile_pic_form = UpdatePicture(instance=profile)
@@ -85,8 +98,35 @@ def prof_dashboard(request):
     electrician = ElectricianProfile.objects.filter(user=user)
     user_profile = ElectricianProfile.objects.get(user=request.user)
     id_form = IdentityForm(instance=user)
-    
-    
+    subscription, created = Subscription.objects.get_or_create(user=user)
+    # subscription = get_object_or_404(Subscription, user=request.user)
+    if subscription.name:
+        total_quotes = SUBSCRIPTION_TOTAL_QUOTES.get(subscription.name, 0)
+        remaining_quotes = subscription.remaining_quotes
+        used_quotes = total_quotes - remaining_quotes
+        subscribed = subscription.status == "Active"
+        context = {
+        'profile': profile,
+        'profile_pic_form':profile_pic_form,
+        'business_form':business_form,
+        'location_form':location_form,
+        'prices_form':prices_form,
+        'qualification_form':qualification_form,
+        'form':form,
+        'wallet':wallet,
+        'subscription':subscription,
+        'payments':payments,
+        'notifications': notifications,
+        'electrician':electrician,
+        'user_profile': user_profile,
+        'id_form':id_form,
+        'total_quotes': total_quotes,
+        'remaining_quotes': remaining_quotes,
+        'used_quotes': used_quotes,
+        'subscribed':subscribed
+        }
+        return render(request, 'profdash.html',context)
+        
     context = {
         'profile': profile,
         'profile_pic_form':profile_pic_form,
@@ -102,6 +142,7 @@ def prof_dashboard(request):
         'electrician':electrician,
         'user_profile': user_profile,
         'id_form':id_form,
+        
     }
     return render(request, 'profdash.html',context)
 
@@ -273,7 +314,38 @@ def all_requests(request):
     }
     return render(request, 'requests.html', context)
 
+
+@login_required
 def request_detail(request, request_id):
+    req = get_object_or_404(Request, id=request_id)
+    
+    # Get the appropriate profile
+    user_profile = None
+    if hasattr(req.user, 'customerprofile'):
+        user_profile = req.user.customerprofile
+    elif hasattr(req.user, 'electricianprofile'):
+        user_profile = req.user.electricianprofile
+
+    # Get the subscription details
+    subscription = get_object_or_404(Subscription, user=request.user)
+    total_quotes = SUBSCRIPTION_TOTAL_QUOTES.get(subscription.name, 0)
+    remaining_quotes = subscription.remaining_quotes
+    used_quotes = total_quotes - remaining_quotes
+    subscribed = subscription.status == "Active"
+    context = {
+        'req': req,
+        'user_profile': user_profile,
+        'total_quotes': total_quotes,
+        'used_quotes': used_quotes,
+        'remaining_quotes': remaining_quotes,
+        'subscribed':subscribed
+    }
+
+    return render(request, 'request_detail.html', context)
+
+
+@login_required
+def customer_info(request,request_id):
     req = get_object_or_404(Request, id=request_id)
     
     user_profile = None
@@ -281,39 +353,104 @@ def request_detail(request, request_id):
         user_profile = req.user.customerprofile
     elif hasattr(req.user, 'electricianprofile'):
         user_profile = req.user.electricianprofile
-
     context = {
-        'request': req,
-        'user': user_profile,
+        'req': req,
+        'user_profile': user_profile,
     }
-    return render(request, 'request_detail.html', context)
+
+    return render(request, 'customer_info.html', context)
 
 
+
+@login_required
+@csrf_exempt
 def send_quote(request, request_id):
     request_obj = get_object_or_404(Request, id=request_id)
     electrician_profile = get_object_or_404(ElectricianProfile, user=request.user)
 
     if not electrician_profile.id_verified:
-        messages.error(request, "You cannot send a quote without verifying your ID. Visit settings to verify your ID")
-        return redirect('ojm_core:dashboard')
+        messages.error(request, "You cannot send a quote without verifying your ID. Visit settings to verify your ID.")
+        return JsonResponse({'status': 'error', 'message': 'ID not verified', 'redirect_url': reverse('ojm_core:settings')})
 
     if request.method == 'POST':
-        price = request.POST.get('price')
-        price_type = request.POST.get('price_type')
-        price_details = request.POST.get('price_details')
+        try:
+            data = json.loads(request.body)
+            price = data.get('price')
+            price_type = data.get('price_type')
+            price_details = data.get('price_details')
 
-        Quote.objects.create(
-            request=request_obj,
-            electrician=request.user,
-            price=price,
-            price_type=price_type,
-            price_details=price_details
-        )
+            user = request.user
 
-        messages.success(request, "Quote sent successfully.")
-        # return redirect('request_detail')
+            # Check subscription or wallet balance
+            subscription = Subscription.objects.filter(user=user, status='Active', expiry__gt=timezone.now()).first()
+            wallet = Wallet.objects.filter(user=user).first()
 
-    return redirect('request_detail', request_id=request_id)
+            if subscription and subscription.remaining_quotes > 0:
+                # Deduct from subscription
+                subscription.remaining_quotes -= 1
+                subscription.save()
+            elif wallet and wallet.balance >= int(500):
+                # Deduct from wallet
+                wallet.balance -= int(500)
+                wallet.save()
+            else:
+                messages.error(request, "Insufficient funds or no active subscription")
+                return JsonResponse({'status': 'error', 'message': 'Insufficient funds or no active subscription', 'redirect_url': reverse('ojm_core:dashboard')})
+
+            # Create the quote
+            quote = Quote.objects.create(
+                request=request_obj,
+                electrician=user,
+                price=price,
+                price_type=price_type,
+                price_details=price_details,
+                created_at=timezone.now()
+            )
+
+            # Prepare the message content
+            message_content = (
+                f"New Quote from {quote.electrician.username}:\n"
+                f"Price: ₦{quote.price}\n"
+                f"Price Type: {quote.get_price_type_display()}\n"
+                f"Details: {quote.price_details}"
+            )
+
+            # Send notification and message to the request owner
+            recipient_user = request_obj.user
+            Notification.objects.create(
+                user=recipient_user,
+                message=f"New quote from {user.username}",
+                notification_type='quote'
+            )
+
+            # Find or create a conversation between the users
+            conversation = Conversation.objects.filter(participants=user).filter(participants=recipient_user).first()
+            if not conversation:
+                conversation = Conversation.objects.create()
+                conversation.participants.set([user, recipient_user])
+
+            # Create a new message in the conversation
+            Message.objects.create(
+                sender=user,
+                content=message_content,
+                conversation=conversation
+            )
+
+            # Trigger pusher event
+            pusher.trigger(f'private-user-{recipient_user.id}', 'new-notification', {
+                'message': f"New quote from {user.username}",
+                'notification_type': 'quote'
+            })
+
+            messages.success(request, "Your quote was successfully sent. Check your messages to follow up with the customer.")
+            return JsonResponse({'status': 'success', 'message': 'Quote sent', 'redirect_url': reverse('ojm_core:customer_info',kwargs={'request_id': request_obj.id})})
+
+        except Exception as e:
+            messages.error(request, f"An error occurred: {str(e)}")
+            return JsonResponse({'status': 'error', 'message': str(e), 'redirect_url': reverse('ojm_core:dashboard')})
+
+    messages.error(request, "Invalid request method.")
+    return JsonResponse({'status': 'error', 'message': 'Invalid request method', 'redirect_url': reverse('ojm_core:dashboard')})
 
 
 

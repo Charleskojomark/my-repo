@@ -23,14 +23,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Select a subscription plan and show details
-    window.selectSubscriptionPlan = function(id, priceText, discountedPrice, savings) {
+    window.selectSubscriptionPlan = function(id, priceText, discountedPrice) {
         const checkboxes = document.querySelectorAll('input[name="subscribe-plan"]');
         checkboxes.forEach(checkbox => {
             checkbox.checked = checkbox.id === id;
         });
         document.getElementById('selected-subscription').style.display = 'block';
         document.getElementById('selected-subscription-price').innerText = priceText;
-        document.getElementById('selected-subscription-save').innerText = `${discountedPrice} (${savings})`;
+        document.getElementById('selected-subscription-save').innerText = `${discountedPrice}`;
     };
 
     // Select a fund plan and show details
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         document.getElementById('selected-plan').style.display = 'block';
         document.getElementById('selected-plan-price').innerText = priceText;
-        document.getElementById('selected-plan-save').innerText = `${discountedPrice} (${savings})`;
+        document.getElementById('selected-plan-save').innerText = `${discountedPrice}`;
     };
     
 });

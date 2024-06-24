@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css" />
     <link rel="stylesheet" href="{% static 'Css/request_detail.css' %}">
-    <title>Account</title>
+    <title>Request Detail</title>
 </head>
 
 <body>
@@ -18,6 +18,8 @@
                 <a href="{%url 'ojm_core:requests'%}" class="">
                     <i class="uil uil-comment-add"></i> Requests
                 </a>
+
+
                 <a href="{%url 'chatapp:messages'%}" class="">
                     <i class="uil uil-envelopes"></i> Messages
                 </a>
@@ -25,6 +27,7 @@
                 <a href="{% url 'payment:pay' %}" class="">
                     <i class="uil uil-money-bill"></i>Pricing
                 </a>
+
                 <a href="{% url 'ojm_core:dashboard' %}" class="">
                     <i class="uil uil-setting"></i>Settings
                 </a>
@@ -34,10 +37,10 @@
         <div class="request-container">
             <div class="details">
                 <div class="quote">
-                    {% if request.user.first_name %}
-                    <p class="username">{{ request.user.first_name }} {{ request.user.last_name }}</p>
+                    {% if req.user.first_name %}
+                    <p class="username">{{ req.user.first_name }} {{ req.user.last_name }}</p>
                     {% else %}
-                    <p class="username">{{ request.user.username|title }}</p>
+                    <p class="username">{{ req.user.username|title }}</p>
                     {% endif %}
                     <p class="location">{{ user_profile.city|title }}, {{ user_profile.state|title }} State, {{ user_profile.country|title }}</p>
                     <div class="quote-detail">
@@ -50,30 +53,34 @@
                             <p>request expires</p>
                         </div>
                         <div class="cost-quote">
-                            <p>₦645</p>
+                            {%if subscribed%}
+                            <p>--</p>
+                            {%else%}
+                            <p>₦500</p>
+                            {% endif %}
                             <p>cost to quote</p>
                         </div>
                     </div>
                 </div>
                 <div class="request-title">
                     <h3>Request title</h3>
-                    <p>{{ request.query }}</p>
+                    <p>{{ req.query }}</p>
                 </div>
                 <div class="request-description">
                     <h3>Description</h3>
-                    <p>{{ request.service_description }}</p>
+                    <p>{{ req.service_description }}</p>
                 </div>
                 <div class="start-date">
                     <h3>Preferred Start Date</h3>
-                    {% if request.start_date %}
-                    <p>{{ request.start_date }}</p>
+                    {% if req.start_date %}
+                    <p>{{ req.start_date }}</p>
                     {% else %}
-                    <p>{{ request.job_start }}</p>
+                    <p>{{ req.job_start }}</p>
                     {% endif %}
                 </div>
                 <div class="readiness">
                     <h3>Readiness To Hire</h3>
-                    <p>{{ request.readiness }}</p>
+                    <p>{{ req.readiness }}</p>
                 </div>
                 <div class="contact-method">
                     <h3>Contact Method</h3>
@@ -81,18 +88,18 @@
                 </div>
                 <div class="request-date">
                     <h3>Request Posted Date</h3>
-                    <p>{{ request.created_at }}</p>
+                    <p>{{ req.created_at }}</p>
                 </div>
                 <div class="contact-us">
                     <h3>Need Help?</h3>
                     <a href="">Contact Us</a>
                 </div>
             </div>
-            <form action="{% url 'ojm_core:send_quote' request.id %}" method="post">
+            <form id="quote-form">
                 {% csrf_token %}
                 <div class="price">
                     <div class="set-price">
-                        <h3><i class="uil uil-check-circle"></i>You will get {{ request.user.username|title }}'s verified phone number after you send a quote.</h3>
+                        <h3><i class="uil uil-check-circle"></i>You will get {{ req.user.username|title }}'s verified phone number after you send a quote.</h3>
                         <h2>Set Your Price</h2>
                         <div class="set">
                             <div class="number"><span>₦</span><input type="number" name="price" required></div>
@@ -106,7 +113,7 @@
                         </div>
                     </div>
                     <div class="price-details">
-                        <h3>Give details about your price to {{ request.user.username|title }}</h3>
+                        <h3>Give details about your price to {{ req.user.username|title }}</h3>
                         <div class="detail">
                             <textarea name="price_details" id="price-box" required></textarea>
                             <label for="price-box"></label>
@@ -120,13 +127,46 @@
         </div>
     </section>
 
-    <!-- Include your popup or redirection logic here -->
-    {% if messages %}
-    <div class="popup">
-        {% for message in messages %}
-        <p>{{ message }}</p>
-        {% endfor %}
-    </div>
-    {% endif %}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('quote-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+        
+                const price = document.querySelector('input[name="price"]').value;
+                const priceType = document.querySelector('select[name="price_type"]').value;
+                const priceDetails = document.querySelector('textarea[name="price_details"]').value;
+                const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+        
+                fetch("{% url 'ojm_core:send_quote' req.id %}", {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': csrfToken
+                    },
+                    body: JSON.stringify({
+                        'price': price,
+                        'price_type': priceType,
+                        'price_details': priceDetails
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        window.location.href = data.redirect_url;
+                    } else {
+                        window.location.href = data.redirect_url;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('An error occurred. Please try again.');
+                    window.location.href = "{% url 'ojm_core:dashboard' %}";
+                });
+            });
+        });
+        
+    </script>
+    
 </body>
 </html>
+

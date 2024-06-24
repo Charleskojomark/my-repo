@@ -25,7 +25,7 @@
                 <div class="plans">
                     {% for p in plan1 %}
                         {% if forloop.first %}
-                            <div class="plan" onclick="selectSubscriptionPlan('subscribe-plan1', '{{ initial_amount1|floatformat:0 }}', 'Save ₦{{ p.calc|floatformat:0 }}')">
+                            <div class="plan" onclick="selectSubscriptionPlan('subscribe-plan1', '₦{{ initial_amount1|floatformat:0 }}', 'Save ₦{{ p.calc|floatformat:0 }}')">
                                 <input type="checkbox" id="subscribe-plan1" name="amount" value="{{ initial_amount1|floatformat:0 }}" hidden>
                                 <label for="subscribe-plan1">
                                     <h3>{{ p.name }}</h3>
@@ -37,7 +37,7 @@
                     {% endfor %}
                     {% for p in plan2 %}
                         {% if forloop.first %}
-                            <div class="plan" onclick="selectSubscriptionPlan('subscribe-plan2', '{{ initial_amount2|floatformat:0 }}', 'Save ₦{{ p.calc|floatformat:0 }}')">
+                            <div class="plan" onclick="selectSubscriptionPlan('subscribe-plan2', '₦{{ initial_amount2|floatformat:0 }}', 'Save ₦{{ p.calc|floatformat:0 }}')">
                                 <input type="checkbox" id="subscribe-plan2" name="amount" value="{{ initial_amount2|floatformat:0 }}" hidden>
                                 <label for="subscribe-plan2">
                                     <h3>{{ p.name }}</h3>
@@ -49,7 +49,7 @@
                     {% endfor %}
                     {% for p in plan3 %}
                         {% if forloop.first %}
-                            <div class="plan" onclick="selectSubscriptionPlan('subscribe-plan3', '{{ initial_amount3|floatformat:0 }}', 'Save ₦{{ p.calc|floatformat:0 }}')">
+                            <div class="plan" onclick="selectSubscriptionPlan('subscribe-plan3', '₦{{ initial_amount3|floatformat:0 }}', 'Save ₦{{ p.calc|floatformat:0 }}')">
                                 <input type="checkbox" id="subscribe-plan3" name="amount" value="{{ initial_amount3|floatformat:0 }}" hidden>
                                 <label for="subscribe-plan3">
                                     <h3>{{ p.name }}</h3>
@@ -77,25 +77,25 @@
                 <h2>Fund your wallet to start paying per quote</h2>
                 <input type="hidden" name="email" value="{{ request.user.email }}">
                 <div class="plans">
-                    <div class="plan" onclick="selectFundPlan('fund-plan1', '₦10,000', '₦8,500 (15% off)', 'Save ₦1,500')">
-                        <input type="checkbox" id="fund-plan1" name="amount" value="10000" hidden>
+                    <div class="plan" onclick="selectFundPlan('fund-plan1', '₦8,500', '₦10,000 (15% off)', 'Save ₦1,500')">
+                        <input type="checkbox" id="fund-plan1" name="amount" value="8500" hidden>
                         <label for="fund-plan1">
-                            <h3>₦10,000</h3>
-                            <p class="save">₦8,500 (15% off)</p>
+                            <h3>₦8,500</h3>
+                            <p class="save"><s>₦10,000</s> (15% off)</p>
                         </label>
                     </div>
-                    <div class="plan" onclick="selectFundPlan('fund-plan2', '₦20,000', '₦16,950 (15% off)', 'Save ₦3,050')">
-                        <input type="checkbox" id="fund-plan2" name="amount" value="20000" hidden>
+                    <div class="plan" onclick="selectFundPlan('fund-plan2', '₦16,950', '₦20,000 (15% off)', 'Save ₦3,050')">
+                        <input type="checkbox" id="fund-plan2" name="amount" value="16950" hidden>
                         <label for="fund-plan2">
-                            <h3>₦20,000</h3>
-                            <p class="save">₦16,950 (15% off)</p>
+                            <h3>₦16,950</h3>
+                            <p class="save"><s>₦20,000</s> (15% off)</p>
                         </label>
                     </div>
-                    <div class="plan" onclick="selectFundPlan('fund-plan3', '₦30,000', '₦25,500 (15% off)', 'Save ₦4,500')">
-                        <input type="checkbox" id="fund-plan3" name="amount" value="30000" hidden>
+                    <div class="plan" onclick="selectFundPlan('fund-plan3', '₦25,500', '₦30,000 (15% off)', 'Save ₦4,500')">
+                        <input type="checkbox" id="fund-plan3" name="amount" value="25500" hidden>
                         <label for="fund-plan3">
-                            <h3>₦30,000</h3>
-                            <p class="save">₦25,500 (15% off)</p>
+                            <h3>₦25,500</h3>
+                            <p class="save"><s>₦30,000</s> (15% off)</p>
                         </label>
                     </div>
                 </div>

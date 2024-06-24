@@ -4,11 +4,12 @@ from django.http import JsonResponse, HttpResponseForbidden
 from django.views.decorators.csrf import csrf_exempt
 import json
 from pusher import Pusher
+from django.utils import timezone
 from django.conf import settings
 import logging
 from .models import Conversation, Message
 from userauth.models import User
-from ojm_core.models import Notification
+from ojm_core.models import Notification,Request,Quote
 
 pusher = Pusher(
     app_id=settings.PUSHER_APP_ID,
@@ -94,3 +95,4 @@ def my_messages(request):
         'conversations_with_participants': conversations_with_participants
     }
     return render(request, 'messages.html', context)
+

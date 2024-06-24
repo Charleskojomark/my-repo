@@ -75,7 +75,12 @@
                         <div class="status">
                             <p>Subscription Status</p>
                             {% if subscription %}
-                            <span>{{ subscription.status }}</span>
+                            <div>
+                                <span>{{ subscription.status }} </span>
+                            {%if subscribed%}
+                            <span>{{used_quotes}}/{{total_quotes}}</span>
+                            {% endif %}
+                            </div>
                             {%else%}
                             <span>Inactive</span>
                             {%endif%}

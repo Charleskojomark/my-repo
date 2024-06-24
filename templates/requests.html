@@ -16,20 +16,20 @@
         <div class="heading">
             <a href="{%url 'ojm_core:index'%}" class="nav_logo"><img src="{% static 'Assest/Img/ojm.png' %}" alt="Ojm" /></a>
             <div class="nav">
-                <a href="index.html" class="">
-                    <i class="uil uil-comment-add"></i> <span class="newflex"><span>Post</span><span>Job</span></span>
+                <a href="{%url 'ojm_core:requests'%}" class="">
+                    <i class="uil uil-comment-add"></i> Requests
                 </a>
 
 
-                <a href="" class="">
+                <a href="{%url 'chatapp:messages'%}" class="">
                     <i class="uil uil-envelopes"></i> Messages
                 </a>
 
-                <a href="pay.html" class="">
-                    <i class="uil uil-user-md"></i><span class="newflex"><span>Find</span><span>Experts</span></span>
+                <a href="{% url 'payment:pay' %}" class="">
+                    <i class="uil uil-money-bill"></i>Pricing
                 </a>
 
-                <a href="new.html" class="">
+                <a href="{% url 'ojm_core:dashboard' %}" class="">
                     <i class="uil uil-setting"></i>Settings
                 </a>
             </div>

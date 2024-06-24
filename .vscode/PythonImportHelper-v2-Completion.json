@@ -9,6 +9,22 @@
         "documentation": {}
     },
     {
+        "label": "Conversation",
+        "importPath": "chatapp.models",
+        "description": "chatapp.models",
+        "isExtraImport": true,
+        "detail": "chatapp.models",
+        "documentation": {}
+    },
+    {
+        "label": "Message",
+        "importPath": "chatapp.models",
+        "description": "chatapp.models",
+        "isExtraImport": true,
+        "detail": "chatapp.models",
+        "documentation": {}
+    },
+    {
         "label": "django.db.models.deletion",
         "kind": 6,
         "isExtraImport": true,
@@ -122,59 +138,19 @@
         "documentation": {}
     },
     {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
         "isExtraImport": true,
-        "detail": "django.db",
+        "detail": "django.conf",
         "documentation": {}
     },
     {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
         "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
+        "detail": "django.conf",
         "documentation": {}
     },
     {
@@ -266,6 +242,30 @@
         "documentation": {}
     },
     {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "migrations",
         "importPath": "django.db",
         "description": "django.db",
@@ -291,6 +291,118 @@
     },
     {
         "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
         "importPath": "django.db",
         "description": "django.db",
         "isExtraImport": true,
@@ -596,6 +708,14 @@
         "documentation": {}
     },
     {
+        "label": "Identity",
+        "importPath": "userauth.models",
+        "description": "userauth.models",
+        "isExtraImport": true,
+        "detail": "userauth.models",
+        "documentation": {}
+    },
+    {
         "label": "User",
         "importPath": "userauth.models",
         "description": "userauth.models",
@@ -629,6 +749,14 @@
     },
     {
         "label": "CustomerProfile",
+        "importPath": "userauth.models",
+        "description": "userauth.models",
+        "isExtraImport": true,
+        "detail": "userauth.models",
+        "documentation": {}
+    },
+    {
+        "label": "Identity",
         "importPath": "userauth.models",
         "description": "userauth.models",
         "isExtraImport": true,
@@ -685,6 +813,14 @@
     },
     {
         "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "reverse",
         "importPath": "django.urls",
         "description": "django.urls",
         "isExtraImport": true,
@@ -916,6 +1052,14 @@
         "documentation": {}
     },
     {
+        "label": "csrf_exempt",
+        "importPath": "django.views.decorators.csrf",
+        "description": "django.views.decorators.csrf",
+        "isExtraImport": true,
+        "detail": "django.views.decorators.csrf",
+        "documentation": {}
+    },
+    {
         "label": "json",
         "kind": 6,
         "isExtraImport": true,
@@ -949,6 +1093,38 @@
         "documentation": {}
     },
     {
+        "label": "timezone",
+        "importPath": "django.utils",
+        "description": "django.utils",
+        "isExtraImport": true,
+        "detail": "django.utils",
+        "documentation": {}
+    },
+    {
+        "label": "timezone",
+        "importPath": "django.utils",
+        "description": "django.utils",
+        "isExtraImport": true,
+        "detail": "django.utils",
+        "documentation": {}
+    },
+    {
+        "label": "timezone",
+        "importPath": "django.utils",
+        "description": "django.utils",
+        "isExtraImport": true,
+        "detail": "django.utils",
+        "documentation": {}
+    },
+    {
+        "label": "timezone",
+        "importPath": "django.utils",
+        "description": "django.utils",
+        "isExtraImport": true,
+        "detail": "django.utils",
+        "documentation": {}
+    },
+    {
         "label": "logging",
         "kind": 6,
         "isExtraImport": true,
@@ -959,6 +1135,22 @@
     },
     {
         "label": "Notification",
+        "importPath": "ojm_core.models",
+        "description": "ojm_core.models",
+        "isExtraImport": true,
+        "detail": "ojm_core.models",
+        "documentation": {}
+    },
+    {
+        "label": "Request",
+        "importPath": "ojm_core.models",
+        "description": "ojm_core.models",
+        "isExtraImport": true,
+        "detail": "ojm_core.models",
+        "documentation": {}
+    },
+    {
+        "label": "Quote",
         "importPath": "ojm_core.models",
         "description": "ojm_core.models",
         "isExtraImport": true,
@@ -1088,6 +1280,14 @@
     },
     {
         "label": "UpdateCustomerLocation",
+        "importPath": "userauth.forms",
+        "description": "userauth.forms",
+        "isExtraImport": true,
+        "detail": "userauth.forms",
+        "documentation": {}
+    },
+    {
+        "label": "IdentityForm",
         "importPath": "userauth.forms",
         "description": "userauth.forms",
         "isExtraImport": true,
@@ -1345,22 +1545,6 @@
         "importPath": "secrets",
         "description": "secrets",
         "detail": "secrets",
-        "documentation": {}
-    },
-    {
-        "label": "timezone",
-        "importPath": "django.utils",
-        "description": "django.utils",
-        "isExtraImport": true,
-        "detail": "django.utils",
-        "documentation": {}
-    },
-    {
-        "label": "timezone",
-        "importPath": "django.utils",
-        "description": "django.utils",
-        "isExtraImport": true,
-        "detail": "django.utils",
         "documentation": {}
     },
     {
@@ -1665,6 +1849,15 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "ojm_core.migrations.0004_quote",
+        "description": "ojm_core.migrations.0004_quote",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('ojm_core', '0003_alter_notification_options_alter_request_options_and_more'),\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Quote',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),",
+        "detail": "ojm_core.migrations.0004_quote",
+        "documentation": {}
+    },
+    {
         "label": "OjmCoreConfig",
         "kind": 6,
         "importPath": "ojm_core.apps",
@@ -1679,6 +1872,15 @@
         "importPath": "ojm_core.models",
         "description": "ojm_core.models",
         "peekOfCode": "class Request(models.Model):\n    user = models.ForeignKey(User, on_delete=models.CASCADE)\n    query = models.CharField(max_length=255)\n    service_description = models.TextField()\n    additional_files = models.FileField(upload_to='additional_files/', blank=True, null=True)\n    job_start = models.CharField(max_length=20, blank=True, null=True)\n    readiness = models.CharField(max_length=20, blank=True, null=True)\n    start_date = models.DateField(blank=True, null=True)\n    created_at = models.DateTimeField(auto_now_add=True)\n    class Meta:",
+        "detail": "ojm_core.models",
+        "documentation": {}
+    },
+    {
+        "label": "Quote",
+        "kind": 6,
+        "importPath": "ojm_core.models",
+        "description": "ojm_core.models",
+        "peekOfCode": "class Quote(models.Model):\n    PRICE_TYPE_CHOICES = [\n        ('Negotiable', 'Negotiable'),\n        ('Fixed Price', 'Fixed Price'),\n        ('Starting Fee', 'Starting Fee'),\n        ('Per hour', 'Per hour'),\n    ]\n    request = models.ForeignKey(Request, on_delete=models.CASCADE)\n    electrician = models.ForeignKey(User, on_delete=models.CASCADE)\n    price = models.DecimalField(max_digits=10, decimal_places=2)",
         "detail": "ojm_core.models",
         "documentation": {}
     },
@@ -1732,7 +1934,7 @@
         "kind": 2,
         "importPath": "ojm_core.views",
         "description": "ojm_core.views",
-        "peekOfCode": "def prof_dashboard(request):\n    profile = get_object_or_404(ElectricianProfile, user=request.user)\n    user = request.user\n    wallet, created = Wallet.objects.get_or_create(user=user)\n    subscription = Subscription.objects.filter(user=user).first()\n    payments = Payment.objects.filter(user=user,verified=True)\n    # wallet = get_object_or_404(Wallet, user=user)\n    profile_pic_form = UpdatePicture(instance=profile)\n    business_form = UpdateBusinessInfo(instance=profile)\n    location_form = UpdateLocation(instance=profile)",
+        "peekOfCode": "def prof_dashboard(request):\n    profile = get_object_or_404(ElectricianProfile, user=request.user)\n    user = request.user\n    wallet, created = Wallet.objects.get_or_create(user=user)\n    # subscription = Subscription.objects.filter(user=user).first()\n    payments = Payment.objects.filter(user=user,verified=True)\n    # wallet = get_object_or_404(Wallet, user=user)\n    profile_pic_form = UpdatePicture(instance=profile)\n    business_form = UpdateBusinessInfo(instance=profile)\n    location_form = UpdateLocation(instance=profile)",
         "detail": "ojm_core.views",
         "documentation": {}
     },
@@ -1813,7 +2015,7 @@
         "kind": 2,
         "importPath": "ojm_core.views",
         "description": "ojm_core.views",
-        "peekOfCode": "def post_job(request):\n    return render(request, 'post_job.html')\ndef all_requests(request):\n    customers_group = Group.objects.get(name=\"customers\")\n    # requests = Request.objects.filter(user__groups=customers_group)\n    requests = Request.objects.all()\n    context = {\n        'requests':requests\n    }\n    return render(request, 'request.html', context)",
+        "peekOfCode": "def post_job(request):\n    return render(request, 'post_job.html')\ndef all_requests(request):\n    customers_group = Group.objects.get(name=\"customers\")\n    # requests = Request.objects.filter(user__groups=customers_group)\n    requests = Request.objects.all()\n    context = {\n        'requests':requests,\n    }\n    return render(request, 'requests.html', context)",
         "detail": "ojm_core.views",
         "documentation": {}
     },
@@ -1822,7 +2024,34 @@
         "kind": 2,
         "importPath": "ojm_core.views",
         "description": "ojm_core.views",
-        "peekOfCode": "def all_requests(request):\n    customers_group = Group.objects.get(name=\"customers\")\n    # requests = Request.objects.filter(user__groups=customers_group)\n    requests = Request.objects.all()\n    context = {\n        'requests':requests\n    }\n    return render(request, 'request.html', context)\n@login_required\ndef get_notifications(request):",
+        "peekOfCode": "def all_requests(request):\n    customers_group = Group.objects.get(name=\"customers\")\n    # requests = Request.objects.filter(user__groups=customers_group)\n    requests = Request.objects.all()\n    context = {\n        'requests':requests,\n    }\n    return render(request, 'requests.html', context)\n@login_required\ndef request_detail(request, request_id):",
+        "detail": "ojm_core.views",
+        "documentation": {}
+    },
+    {
+        "label": "request_detail",
+        "kind": 2,
+        "importPath": "ojm_core.views",
+        "description": "ojm_core.views",
+        "peekOfCode": "def request_detail(request, request_id):\n    req = get_object_or_404(Request, id=request_id)\n    # Get the appropriate profile\n    user_profile = None\n    if hasattr(req.user, 'customerprofile'):\n        user_profile = req.user.customerprofile\n    elif hasattr(req.user, 'electricianprofile'):\n        user_profile = req.user.electricianprofile\n    # Get the subscription details\n    subscription = get_object_or_404(Subscription, user=request.user)",
+        "detail": "ojm_core.views",
+        "documentation": {}
+    },
+    {
+        "label": "customer_info",
+        "kind": 2,
+        "importPath": "ojm_core.views",
+        "description": "ojm_core.views",
+        "peekOfCode": "def customer_info(request,request_id):\n    req = get_object_or_404(Request, id=request_id)\n    user_profile = None\n    if hasattr(req.user, 'customerprofile'):\n        user_profile = req.user.customerprofile\n    elif hasattr(req.user, 'electricianprofile'):\n        user_profile = req.user.electricianprofile\n    context = {\n        'req': req,\n        'user_profile': user_profile,",
+        "detail": "ojm_core.views",
+        "documentation": {}
+    },
+    {
+        "label": "send_quote",
+        "kind": 2,
+        "importPath": "ojm_core.views",
+        "description": "ojm_core.views",
+        "peekOfCode": "def send_quote(request, request_id):\n    request_obj = get_object_or_404(Request, id=request_id)\n    electrician_profile = get_object_or_404(ElectricianProfile, user=request.user)\n    if not electrician_profile.id_verified:\n        messages.error(request, \"You cannot send a quote without verifying your ID. Visit settings to verify your ID.\")\n        return JsonResponse({'status': 'error', 'message': 'ID not verified', 'redirect_url': reverse('ojm_core:settings')})\n    if request.method == 'POST':\n        try:\n            data = json.loads(request.body)\n            price = data.get('price')",
         "detail": "ojm_core.views",
         "documentation": {}
     },
@@ -1840,7 +2069,16 @@
         "kind": 5,
         "importPath": "ojm_core.views",
         "description": "ojm_core.views",
-        "peekOfCode": "pusher = Pusher(\n    app_id=settings.PUSHER_APP_ID,\n    key=settings.PUSHER_KEY,\n    secret=settings.PUSHER_SECRET,\n    cluster=settings.PUSHER_CLUSTER,\n    ssl=True\n)\ndef index(request):\n    if request.user.is_authenticated:\n        notifications = Notification.objects.filter(user=request.user)",
+        "peekOfCode": "pusher = Pusher(\n    app_id=settings.PUSHER_APP_ID,\n    key=settings.PUSHER_KEY,\n    secret=settings.PUSHER_SECRET,\n    cluster=settings.PUSHER_CLUSTER,\n    ssl=True\n)\nSUBSCRIPTION_TOTAL_QUOTES = {\n    \"1 month\": 100,\n    \"3 months\": 350,",
+        "detail": "ojm_core.views",
+        "documentation": {}
+    },
+    {
+        "label": "SUBSCRIPTION_TOTAL_QUOTES",
+        "kind": 5,
+        "importPath": "ojm_core.views",
+        "description": "ojm_core.views",
+        "peekOfCode": "SUBSCRIPTION_TOTAL_QUOTES = {\n    \"1 month\": 100,\n    \"3 months\": 350,\n    \"6 months\": 1000,\n}\ndef index(request):\n    if request.user.is_authenticated:\n        notifications = Notification.objects.filter(user=request.user)\n        unread_count = notifications.filter(read=False).count()\n        read_count = notifications.filter(read=True).count()",
         "detail": "ojm_core.views",
         "documentation": {}
     },
@@ -2268,6 +2506,24 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "payment.migrations.0007_alter_subscription_name",
+        "description": "payment.migrations.0007_alter_subscription_name",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('payment', '0006_alter_subscription_status'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='subscription',\n            name='name',\n            field=models.CharField(choices=[('1 month', '1 month'), ('3 months', '3 months'), ('6 months', '6 months')], max_length=20),\n        ),",
+        "detail": "payment.migrations.0007_alter_subscription_name",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "payment.migrations.0008_subscription_remaining_quotes",
+        "description": "payment.migrations.0008_subscription_remaining_quotes",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('payment', '0007_alter_subscription_name'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='subscription',\n            name='remaining_quotes',\n            field=models.IntegerField(default=0),\n        ),",
+        "detail": "payment.migrations.0008_subscription_remaining_quotes",
+        "documentation": {}
+    },
+    {
         "label": "PaymentConfig",
         "kind": 6,
         "importPath": "payment.apps",
@@ -2299,7 +2555,7 @@
         "kind": 6,
         "importPath": "payment.models",
         "description": "payment.models",
-        "peekOfCode": "class Subscription(models.Model):\n    STATUS_CHOICES = [\n        ('Inactive', 'Inactive'),\n        ('Active', 'Active'),\n        ('Expired', 'Expired'),\n    ]\n    DURATION_CHOICES = [\n        (\"1 month\", \"1 month\"),\n        (\"2 months\", \"2 months\"),\n        (\"3 months\", \"3 months\"),",
+        "peekOfCode": "class Subscription(models.Model):\n    STATUS_CHOICES = [\n        ('Inactive', 'Inactive'),\n        ('Active', 'Active'),\n        ('Expired', 'Expired'),\n    ]\n    DURATION_CHOICES = [\n        (\"1 month\", \"1 month\"),\n        (\"3 months\", \"3 months\"),\n        (\"6 months\", \"6 months\"),",
         "detail": "payment.models",
         "documentation": {}
     },
@@ -2326,7 +2582,7 @@
         "kind": 2,
         "importPath": "payment.views",
         "description": "payment.views",
-        "peekOfCode": "def pay(request):\n    plan1 = Subscription.objects.filter(name=\"1 month\")\n    plan2 = Subscription.objects.filter(name=\"2 months\")\n    plan3 = Subscription.objects.filter(name=\"3 months\")\n    for p in plan1:\n        p.calc = p.get_old_price() - p.get_price()  \n    for p in plan2:\n        p.calc = p.get_old_price() - p.get_price()  \n    for p in plan3:\n        p.calc = p.get_old_price() - p.get_price()  ",
+        "peekOfCode": "def pay(request):\n    plan1 = Subscription.objects.filter(name=\"1 month\")\n    plan2 = Subscription.objects.filter(name=\"3 months\")\n    plan3 = Subscription.objects.filter(name=\"6 months\")\n    for p in plan1:\n        p.calc = p.get_old_price() - p.get_price()  \n    for p in plan2:\n        p.calc = p.get_old_price() - p.get_price()  \n    for p in plan3:\n        p.calc = p.get_old_price() - p.get_price()  ",
         "detail": "payment.views",
         "documentation": {}
     },
@@ -2353,7 +2609,7 @@
         "kind": 2,
         "importPath": "payment.views",
         "description": "payment.views",
-        "peekOfCode": "def paystack_webhook(request):\n    if request.method == 'POST':\n        data = json.loads(request.body)\n        payment_type = data.get('payment_type')\n        amount = data.get('amount')\n        user = request.user\n        if payment_type == 'payg':\n            wallet = get_object_or_404(Wallet, user=user)\n            wallet.balance += int(amount)\n            wallet.save()",
+        "peekOfCode": "def paystack_webhook(request):\n    if request.method == 'POST':\n        data = json.loads(request.body)\n        payment_type = data.get('payment_type')\n        amount = data.get('amount')\n        user = request.user\n        response_data = {}\n        if payment_type == 'payg':\n            wallet = get_object_or_404(Wallet, user=user)\n            wallet.balance += int(amount)",
         "detail": "payment.views",
         "documentation": {}
     },
@@ -2380,7 +2636,7 @@
         "kind": 5,
         "importPath": "payment.views",
         "description": "payment.views",
-        "peekOfCode": "pusher = Pusher(\n    app_id=settings.PUSHER_APP_ID,\n    key=settings.PUSHER_KEY,\n    secret=settings.PUSHER_SECRET,\n    cluster=settings.PUSHER_CLUSTER,\n    ssl=True\n)\ndef pay(request):\n    plan1 = Subscription.objects.filter(name=\"1 month\")\n    plan2 = Subscription.objects.filter(name=\"2 months\")",
+        "peekOfCode": "pusher = Pusher(\n    app_id=settings.PUSHER_APP_ID,\n    key=settings.PUSHER_KEY,\n    secret=settings.PUSHER_SECRET,\n    cluster=settings.PUSHER_CLUSTER,\n    ssl=True\n)\ndef pay(request):\n    plan1 = Subscription.objects.filter(name=\"1 month\")\n    plan2 = Subscription.objects.filter(name=\"3 months\")",
         "detail": "payment.views",
         "documentation": {}
     },
@@ -2448,11 +2704,29 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "userauth.migrations.0008_rename_verified_electricianprofile_cac_verified_and_more",
+        "description": "userauth.migrations.0008_rename_verified_electricianprofile_cac_verified_and_more",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('userauth', '0007_electricianprofile_cac'),\n    ]\n    operations = [\n        migrations.RenameField(\n            model_name='electricianprofile',\n            old_name='verified',\n            new_name='cac_verified',\n        ),",
+        "detail": "userauth.migrations.0008_rename_verified_electricianprofile_cac_verified_and_more",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "userauth.migrations.0009_identity",
+        "description": "userauth.migrations.0009_identity",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('userauth', '0008_rename_verified_electricianprofile_cac_verified_and_more'),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Identity',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),\n                ('id_type', models.CharField(choices=[('National Identity Card', 'National Identity Card'), (\"Driver's License\", \"Driver's License\"), (\"Voter's Card\", \"Voter's Card\"), ('International Passport', 'International Passport')], max_length=50)),",
+        "detail": "userauth.migrations.0009_identity",
+        "documentation": {}
+    },
+    {
         "label": "ElectricianProfileAdmin",
         "kind": 6,
         "importPath": "userauth.admin",
         "description": "userauth.admin",
-        "peekOfCode": "class ElectricianProfileAdmin(admin.ModelAdmin):\n    list_display = ('user', 'business_name', 'country', 'state', 'city')\nclass CustomerProfileAdmin(admin.ModelAdmin):\n    list_display = ('user', 'country', 'state', 'city')\nclass CustomUserAdmin(UserAdmin):\n    # Define the list filters\n    list_filter = ('is_active', 'groups')\n    search_fields = ('username',)\n    list_display = ('username', 'email', 'first_name', 'last_name', 'is_active', 'is_staff')\nadmin.site.register(ElectricianProfile, ElectricianProfileAdmin)",
+        "peekOfCode": "class ElectricianProfileAdmin(admin.ModelAdmin):\n    list_display = ('user', 'business_name', 'country', 'state', 'city')\nclass CustomerProfileAdmin(admin.ModelAdmin):\n    list_display = ('user', 'country', 'state', 'city')\nclass CustomUserAdmin(UserAdmin):\n    # Define the list filters\n    list_filter = ('is_active', 'groups')\n    search_fields = ('username',)\n    list_display = ('username', 'email', 'first_name', 'last_name', 'is_active', 'is_staff')\nadmin.site.register(Identity)",
         "detail": "userauth.admin",
         "documentation": {}
     },
@@ -2461,7 +2735,7 @@
         "kind": 6,
         "importPath": "userauth.admin",
         "description": "userauth.admin",
-        "peekOfCode": "class CustomerProfileAdmin(admin.ModelAdmin):\n    list_display = ('user', 'country', 'state', 'city')\nclass CustomUserAdmin(UserAdmin):\n    # Define the list filters\n    list_filter = ('is_active', 'groups')\n    search_fields = ('username',)\n    list_display = ('username', 'email', 'first_name', 'last_name', 'is_active', 'is_staff')\nadmin.site.register(ElectricianProfile, ElectricianProfileAdmin)\nadmin.site.register(CustomerProfile, CustomerProfileAdmin)\nadmin.site.register(User, CustomUserAdmin)",
+        "peekOfCode": "class CustomerProfileAdmin(admin.ModelAdmin):\n    list_display = ('user', 'country', 'state', 'city')\nclass CustomUserAdmin(UserAdmin):\n    # Define the list filters\n    list_filter = ('is_active', 'groups')\n    search_fields = ('username',)\n    list_display = ('username', 'email', 'first_name', 'last_name', 'is_active', 'is_staff')\nadmin.site.register(Identity)\nadmin.site.register(ElectricianProfile, ElectricianProfileAdmin)\nadmin.site.register(CustomerProfile, CustomerProfileAdmin)",
         "detail": "userauth.admin",
         "documentation": {}
     },
@@ -2470,7 +2744,7 @@
         "kind": 6,
         "importPath": "userauth.admin",
         "description": "userauth.admin",
-        "peekOfCode": "class CustomUserAdmin(UserAdmin):\n    # Define the list filters\n    list_filter = ('is_active', 'groups')\n    search_fields = ('username',)\n    list_display = ('username', 'email', 'first_name', 'last_name', 'is_active', 'is_staff')\nadmin.site.register(ElectricianProfile, ElectricianProfileAdmin)\nadmin.site.register(CustomerProfile, CustomerProfileAdmin)\nadmin.site.register(User, CustomUserAdmin)",
+        "peekOfCode": "class CustomUserAdmin(UserAdmin):\n    # Define the list filters\n    list_filter = ('is_active', 'groups')\n    search_fields = ('username',)\n    list_display = ('username', 'email', 'first_name', 'last_name', 'is_active', 'is_staff')\nadmin.site.register(Identity)\nadmin.site.register(ElectricianProfile, ElectricianProfileAdmin)\nadmin.site.register(CustomerProfile, CustomerProfileAdmin)\nadmin.site.register(User, CustomUserAdmin)",
         "detail": "userauth.admin",
         "documentation": {}
     },
@@ -2578,7 +2852,7 @@
         "kind": 6,
         "importPath": "userauth.forms",
         "description": "userauth.forms",
-        "peekOfCode": "class UpdateQualification(forms.ModelForm):\n    qualification = forms.CharField(widget=forms.Textarea(attrs={'placeholder': '', 'id': 'qualification','rows':4}), label='Prices')\n    class Meta:\n        model = ElectricianProfile\n        fields = ['qualification']\nclass UserUpdateForm(forms.ModelForm):\n    class Meta:\n        model = User\n        fields = ['first_name', 'last_name', 'phone_number', 'whatsapp_number']",
+        "peekOfCode": "class UpdateQualification(forms.ModelForm):\n    qualification = forms.CharField(widget=forms.Textarea(attrs={'placeholder': '', 'id': 'qualification','rows':4}), label='Prices')\n    class Meta:\n        model = ElectricianProfile\n        fields = ['qualification']\nclass UserUpdateForm(forms.ModelForm):\n    class Meta:\n        model = User\n        fields = ['first_name', 'last_name', 'phone_number', 'whatsapp_number']\nclass IdentityForm(forms.ModelForm):",
         "detail": "userauth.forms",
         "documentation": {}
     },
@@ -2587,7 +2861,16 @@
         "kind": 6,
         "importPath": "userauth.forms",
         "description": "userauth.forms",
-        "peekOfCode": "class UserUpdateForm(forms.ModelForm):\n    class Meta:\n        model = User\n        fields = ['first_name', 'last_name', 'phone_number', 'whatsapp_number']",
+        "peekOfCode": "class UserUpdateForm(forms.ModelForm):\n    class Meta:\n        model = User\n        fields = ['first_name', 'last_name', 'phone_number', 'whatsapp_number']\nclass IdentityForm(forms.ModelForm):\n    class Meta:\n        model = Identity\n        fields = ['id_type', 'full_name', 'expiry_date', 'id_front_page', 'id_back_page']\n        labels = {\n            'id_type': 'ID TYPE',",
+        "detail": "userauth.forms",
+        "documentation": {}
+    },
+    {
+        "label": "IdentityForm",
+        "kind": 6,
+        "importPath": "userauth.forms",
+        "description": "userauth.forms",
+        "peekOfCode": "class IdentityForm(forms.ModelForm):\n    class Meta:\n        model = Identity\n        fields = ['id_type', 'full_name', 'expiry_date', 'id_front_page', 'id_back_page']\n        labels = {\n            'id_type': 'ID TYPE',\n            'full_name': 'Full Name',\n            'expiry_date': 'Expiry Date (If Applicable)',\n            'id_front_page': 'ID Front Page',\n            'id_back_page': 'ID Back Page (If Applicable)',",
         "detail": "userauth.forms",
         "documentation": {}
     },
@@ -2633,6 +2916,15 @@
         "importPath": "userauth.models",
         "description": "userauth.models",
         "peekOfCode": "class CustomerProfile(models.Model):\n    user = models.OneToOneField(User, on_delete=models.CASCADE)\n    profile_picture = models.ImageField(upload_to=user_directory_path, blank=True, null=True)\n    country = models.CharField(max_length=50, choices=WEST_AFRICAN_COUNTRIES)\n    state = models.CharField(max_length=50, choices=NIGERIAN_STATES)\n    city = models.CharField(max_length=255)\n    address = models.CharField(max_length=255)\n    terms = models.BooleanField(default=False)\n    class Meta:\n        verbose_name_plural = \"Customers\"",
+        "detail": "userauth.models",
+        "documentation": {}
+    },
+    {
+        "label": "Identity",
+        "kind": 6,
+        "importPath": "userauth.models",
+        "description": "userauth.models",
+        "peekOfCode": "class Identity(models.Model):\n    ID_TYPE_CHOICES = [\n        ('National Identity Card', 'National Identity Card'),\n        ('Driver\\'s License', 'Driver\\'s License'),\n        ('Voter\\'s Card', 'Voter\\'s Card'),\n        ('International Passport', 'International Passport'),\n    ]\n    user = models.OneToOneField(User, on_delete=models.CASCADE)\n    id_type = models.CharField(max_length=50, choices=ID_TYPE_CHOICES)\n    full_name = models.CharField(max_length=100)",
         "detail": "userauth.models",
         "documentation": {}
     },
@@ -2853,11 +3145,29 @@
         "documentation": {}
     },
     {
+        "label": "id_verification",
+        "kind": 2,
+        "importPath": "userauth.views",
+        "description": "userauth.views",
+        "peekOfCode": "def id_verification(request):\n    user = request.user\n    electrician = ElectricianProfile.objects.filter(user=user)\ndef cac_verification(request):\n    user = request.user\n    electrician = ElectricianProfile.objects.filter(user=user)\n    if request.method == 'POST':\n        cac = request.POST['cac']\n        electrician.update(cac=cac)\n        messages.success(request, 'Business Verification requested')",
+        "detail": "userauth.views",
+        "documentation": {}
+    },
+    {
         "label": "cac_verification",
         "kind": 2,
         "importPath": "userauth.views",
         "description": "userauth.views",
-        "peekOfCode": "def cac_verification(request):\n    user = request.user\n    electrician = ElectricianProfile.objects.filter(user=user)\n    if request.method == 'POST':\n        cac = request.POST['cac']\n        electrician.update(cac=cac)\n        messages.success(request, 'Verification requested')\n        return redirect('ojm_core:dashboard')\n    return render(request, 'profdash.html')",
+        "peekOfCode": "def cac_verification(request):\n    user = request.user\n    electrician = ElectricianProfile.objects.filter(user=user)\n    if request.method == 'POST':\n        cac = request.POST['cac']\n        electrician.update(cac=cac)\n        messages.success(request, 'Business Verification requested')\n        return redirect('ojm_core:dashboard')\n    return render(request, 'profdash.html')\ndef id_verification(request):",
+        "detail": "userauth.views",
+        "documentation": {}
+    },
+    {
+        "label": "id_verification",
+        "kind": 2,
+        "importPath": "userauth.views",
+        "description": "userauth.views",
+        "peekOfCode": "def id_verification(request):\n    user = request.user\n    if request.method == 'POST':\n        form = IdentityForm(request.POST, request.FILES)\n        if form.is_valid():\n            identity = form.save(commit=False)\n            identity.user = user\n            identity.save()\n            messages.success(request, \"Identity Verification Requested\")\n            return redirect('ojm_core:dashboard')  ",
         "detail": "userauth.views",
         "documentation": {}
     },

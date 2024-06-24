@@ -1,0 +1,121 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Info</title>
+    <style>
+        :root {
+            --main-color-one: rgb(243, 182, 18);
+            --main-color-two: rgb(22, 31, 59);
+        }
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        
+        }
+        .container{
+            width: 450px;
+            height: auto;
+            background: #f6f6f6;
+            border-radius: 10px;
+        }
+        .heading{
+            border-bottom: 1px solid #ccc8c8;
+        }
+        .heading p{
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--main-color-two);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .contact{
+            display: flex;
+            justify-content: space-between;
+            max-width: 90%;
+            margin: auto;
+            align-items: center;
+            font-size: .9rem;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        
+        a:hover{
+            cursor: pointer;
+        }
+        .next-steps p{
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--main-color-two);
+            font-weight: 700;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        ul{
+            list-style-type: circle;
+        }
+        li{
+            color: var(--main-color-two);
+            font-size: .9rem;
+            font-weight: 600;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        .btn{
+            align-items: center;
+            justify-content: center;
+            display: flex;
+        }
+        
+        button{
+            padding: 5px;
+            text-align: center;
+            font-size: large;
+            background: #fff;
+            margin-bottom: 15px;
+            border: 1px solid var(--main-color-two);
+            outline: none;
+            border-radius: 10px;
+        }
+        button:hover,button a:hover{
+            background: var(--main-color-two);
+            color: white;
+        }
+        a{
+            list-style-type: none;
+            color: var(--main-color-one);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="heading">
+            <p>{{req.user.username}} Contact Details</p>
+        </div>
+        <div class="contact">
+            <p>Contact Method</p>
+            <p>Through Phone Call</p>
+        </div>
+        <div class="contact">
+            <p>Phone Number</p>
+            <p>{{req.user.phone_number}}</p>
+        </div>
+        <div class="contact">
+            <p>Message</p>
+            <a href="{% url 'chatapp:chat' username=req.user.username %}">Send A Message to {{req.user.username}}</a>
+        </div>
+        <div class="next-steps">
+            <p>Next Steps</p>
+        </div>
+        <ul>
+            <li>Your quote and phone number has been sent to the client</li>
+            <li>Contact the client to find out more</li>
+            <li>The client may view your <a href="#">Profile</a> Make sure it's up to date</li>
+        </ul>
+        <div class="btn">
+            <button><a href="{%url 'ojm_core:requests'%}">More Clients</a></button>
+        </div>
+    </div>
+</body>
+</html>

@@ -20,6 +20,7 @@ urlpatterns = [
     path('requests', views.all_requests, name="requests"),
     path('request/<int:request_id>/', views.request_detail, name='request_detail'),
     path('request/<int:request_id>/send-quote/', views.send_quote, name='send_quote'),
+    path('customer-info/<int:request_id>/',views.customer_info,name="customer_info"),
     path('notifications/', views.get_notifications, name='notifications'),
 ]
 
