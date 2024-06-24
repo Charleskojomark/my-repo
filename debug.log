@@ -3591,3 +3591,116 @@ DEBUG 2024-06-24 13:23:23,012 autoreload File C:\Users\OWNER\AppData\Local\Progr
 DEBUG 2024-06-24 13:23:23,012 autoreload File C:\Users\OWNER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\sessions\backends\db.py first seen with mtime 1715158528.496392
 DEBUG 2024-06-24 13:23:23,017 autoreload File C:\Users\OWNER\Desktop\new\payment\migrations\0007_alter_subscription_name.py first seen with mtime 1718888172.240316
 DEBUG 2024-06-24 13:23:23,017 autoreload File C:\Users\OWNER\Desktop\new\payment\migrations\0007_alter_subscription_name.py first seen with mtime 1718888172.240316
+INFO 2024-06-24 13:29:20,754 basehttp "GET / HTTP/1.1" 200 24048
+INFO 2024-06-24 13:29:20,754 basehttp "GET / HTTP/1.1" 200 24048
+INFO 2024-06-24 13:29:21,291 basehttp "GET /static/Css/style.css HTTP/1.1" 200 57885
+INFO 2024-06-24 13:29:21,291 basehttp "GET /static/Css/style.css HTTP/1.1" 200 57885
+DEBUG 2024-06-24 13:29:21,744 autoreload File C:\Users\OWNER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\sessions\serializers.py first seen with mtime 1715158528.4873931
+DEBUG 2024-06-24 13:29:21,744 autoreload File C:\Users\OWNER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\sessions\serializers.py first seen with mtime 1715158528.4873931
+DEBUG 2024-06-24 13:29:21,748 autoreload File C:\Users\OWNER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\context_processors.py first seen with mtime 1715158521.736697
+DEBUG 2024-06-24 13:29:21,748 autoreload File C:\Users\OWNER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\auth\context_processors.py first seen with mtime 1715158521.736697
+DEBUG 2024-06-24 13:29:21,754 autoreload File C:\Users\OWNER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\context_processors.py first seen with mtime 1715158531.9416773
+DEBUG 2024-06-24 13:29:21,754 autoreload File C:\Users\OWNER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\template\context_processors.py first seen with mtime 1715158531.9416773
+DEBUG 2024-06-24 13:29:21,774 autoreload File C:\Users\OWNER\AppData\Local\Programs\Python\Python312\Lib\site-packages\whitenoise\compress.py first seen with mtime 1717713928.5607336
+DEBUG 2024-06-24 13:29:21,774 autoreload File C:\Users\OWNER\AppData\Local\Programs\Python\Python312\Lib\site-packages\whitenoise\compress.py first seen with mtime 1717713928.5607336
+DEBUG 2024-06-24 13:29:21,786 autoreload File C:\Users\OWNER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\messages\storage\session.py first seen with mtime 1715158526.8964565
+DEBUG 2024-06-24 13:29:21,786 autoreload File C:\Users\OWNER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\messages\storage\session.py first seen with mtime 1715158526.8964565
+DEBUG 2024-06-24 13:29:21,802 autoreload File C:\Users\OWNER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\messages\storage\cookie.py first seen with mtime 1715158526.8774612
+DEBUG 2024-06-24 13:29:21,802 autoreload File C:\Users\OWNER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\messages\storage\cookie.py first seen with mtime 1715158526.8774612
+DEBUG 2024-06-24 13:29:21,819 autoreload File C:\Users\OWNER\AppData\Local\Programs\Python\Python312\Lib\site-packages\whitenoise\storage.py first seen with mtime 1717713928.5687342
+DEBUG 2024-06-24 13:29:21,819 autoreload File C:\Users\OWNER\AppData\Local\Programs\Python\Python312\Lib\site-packages\whitenoise\storage.py first seen with mtime 1717713928.5687342
+DEBUG 2024-06-24 13:29:21,834 autoreload File C:\Users\OWNER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\messages\context_processors.py first seen with mtime 1715158526.8664587
+DEBUG 2024-06-24 13:29:21,834 autoreload File C:\Users\OWNER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\messages\context_processors.py first seen with mtime 1715158526.8664587
+DEBUG 2024-06-24 13:29:21,844 autoreload File C:\Users\OWNER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\messages\storage\fallback.py first seen with mtime 1715158526.8794587
+DEBUG 2024-06-24 13:29:21,844 autoreload File C:\Users\OWNER\AppData\Local\Programs\Python\Python312\Lib\site-packages\django\contrib\messages\storage\fallback.py first seen with mtime 1715158526.8794587
+INFO 2024-06-24 13:29:21,974 basehttp "GET /static/Assest/Img/maintenance3.png HTTP/1.1" 200 56082
+INFO 2024-06-24 13:29:21,974 basehttp "GET /static/Assest/Img/maintenance3.png HTTP/1.1" 200 56082
+INFO 2024-06-24 13:29:21,983 basehttp "GET /static/Assest/Img/installation6.png HTTP/1.1" 200 99090
+INFO 2024-06-24 13:29:21,983 basehttp "GET /static/Assest/Img/installation6.png HTTP/1.1" 200 99090
+INFO 2024-06-24 13:29:22,033 basehttp "GET /static/Assest/Img/repairs1.png HTTP/1.1" 200 81980
+INFO 2024-06-24 13:29:22,033 basehttp "GET /static/Assest/Img/repairs1.png HTTP/1.1" 200 81980
+INFO 2024-06-24 13:29:22,049 basehttp "GET /static/Assest/Img/conduit%20wiring.jpg HTTP/1.1" 200 161155
+INFO 2024-06-24 13:29:22,049 basehttp "GET /static/Assest/Img/conduit%20wiring.jpg HTTP/1.1" 200 161155
+INFO 2024-06-24 13:29:22,563 basehttp "GET /static/Assest/Img/faults1.png HTTP/1.1" 200 91215
+INFO 2024-06-24 13:29:22,563 basehttp "GET /static/Assest/Img/faults1.png HTTP/1.1" 200 91215
+INFO 2024-06-24 13:29:23,274 basehttp "GET /static/Assest/Img/consultation1.png HTTP/1.1" 200 190146
+INFO 2024-06-24 13:29:23,274 basehttp "GET /static/Assest/Img/consultation1.png HTTP/1.1" 200 190146
+INFO 2024-06-24 13:29:23,674 basehttp "GET /static/Assest/Img/advert2.jpg HTTP/1.1" 200 241231
+INFO 2024-06-24 13:29:23,674 basehttp "GET /static/Assest/Img/advert2.jpg HTTP/1.1" 200 241231
+INFO 2024-06-24 13:29:23,694 basehttp "GET /static/Assest/Img/solar1.jpeg HTTP/1.1" 200 210091
+INFO 2024-06-24 13:29:23,694 basehttp "GET /static/Assest/Img/solar1.jpeg HTTP/1.1" 200 210091
+INFO 2024-06-24 13:29:23,879 basehttp "GET /static/Assest/Img/cctv1.jpeg HTTP/1.1" 200 42806
+INFO 2024-06-24 13:29:23,879 basehttp "GET /static/Assest/Img/cctv1.jpeg HTTP/1.1" 200 42806
+INFO 2024-06-24 13:29:24,154 basehttp "GET /static/Assest/Img/flame5.jpeg HTTP/1.1" 200 112108
+INFO 2024-06-24 13:29:24,154 basehttp "GET /static/Assest/Img/flame5.jpeg HTTP/1.1" 200 112108
+INFO 2024-06-24 13:29:24,803 basehttp "GET /static/Assest/Img/ojmelectrical_background%209.jpg HTTP/1.1" 200 73165
+INFO 2024-06-24 13:29:24,803 basehttp "GET /static/Assest/Img/ojmelectrical_background%209.jpg HTTP/1.1" 200 73165
+INFO 2024-06-24 13:29:26,334 basehttp "GET /static/Assest/Img/hdmi1.jpeg HTTP/1.1" 200 211340
+INFO 2024-06-24 13:29:26,334 basehttp "GET /static/Assest/Img/hdmi1.jpeg HTTP/1.1" 200 211340
+INFO 2024-06-24 13:29:26,334 basehttp "GET /static/Assest/Img/switch1.jpeg HTTP/1.1" 200 96594
+INFO 2024-06-24 13:29:26,334 basehttp "GET /static/Assest/Img/switch1.jpeg HTTP/1.1" 200 96594
+INFO 2024-06-24 13:29:26,474 basehttp "GET /static/Assest/Img/cctv2.jpeg HTTP/1.1" 200 38691
+INFO 2024-06-24 13:29:26,474 basehttp "GET /static/Assest/Img/cctv2.jpeg HTTP/1.1" 200 38691
+INFO 2024-06-24 13:29:26,474 basehttp "GET /static/Assest/Img/ac2.jpeg HTTP/1.1" 200 44571
+INFO 2024-06-24 13:29:26,474 basehttp "GET /static/Assest/Img/ac2.jpeg HTTP/1.1" 200 44571
+INFO 2024-06-24 13:29:27,044 basehttp "GET /static/Assest/Img/solar2.jpeg HTTP/1.1" 200 302086
+INFO 2024-06-24 13:29:27,044 basehttp "GET /static/Assest/Img/solar2.jpeg HTTP/1.1" 200 302086
+INFO 2024-06-24 13:29:27,053 basehttp "GET /static/Assest/Img/electrical-troubleshooting.jpg HTTP/1.1" 200 52536
+INFO 2024-06-24 13:29:27,053 basehttp "GET /static/Assest/Img/electrical-troubleshooting.jpg HTTP/1.1" 200 52536
+INFO 2024-06-24 13:29:27,084 basehttp "GET /static/Assest/Img/electrical-maintenance.jpg HTTP/1.1" 200 200309
+INFO 2024-06-24 13:29:27,084 basehttp "GET /static/Assest/Img/electrical-maintenance.jpg HTTP/1.1" 200 200309
+INFO 2024-06-24 13:29:27,279 basehttp "GET /static/Assest/Img/expert1.jpg HTTP/1.1" 200 36803
+INFO 2024-06-24 13:29:27,279 basehttp "GET /static/Assest/Img/expert1.jpg HTTP/1.1" 200 36803
+INFO 2024-06-24 13:29:27,299 basehttp "GET /static/Assest/Img/wiring5.jpeg HTTP/1.1" 200 701339
+INFO 2024-06-24 13:29:27,299 basehttp "GET /static/Assest/Img/wiring5.jpeg HTTP/1.1" 200 701339
+INFO 2024-06-24 13:29:27,369 basehttp "GET /static/Js/index.js HTTP/1.1" 200 4091
+INFO 2024-06-24 13:29:27,369 basehttp "GET /static/Js/index.js HTTP/1.1" 200 4091
+INFO 2024-06-24 13:29:27,404 basehttp "GET /static/Assest/Img/expert2.jpg HTTP/1.1" 200 8742
+INFO 2024-06-24 13:29:27,404 basehttp "GET /static/Assest/Img/expert2.jpg HTTP/1.1" 200 8742
+INFO 2024-06-24 13:29:27,439 basehttp "GET /static/Assest/Img/expert3.png HTTP/1.1" 200 488746
+INFO 2024-06-24 13:29:27,439 basehttp "GET /static/Assest/Img/expert3.png HTTP/1.1" 200 488746
+INFO 2024-06-24 13:29:27,459 basehttp "GET /static/Assest/Img/custom.png HTTP/1.1" 200 54390
+INFO 2024-06-24 13:29:27,459 basehttp "GET /static/Assest/Img/custom.png HTTP/1.1" 200 54390
+INFO 2024-06-24 13:29:28,104 basehttp "GET /static/Assest/Img/pay.png HTTP/1.1" 200 11544
+INFO 2024-06-24 13:29:28,104 basehttp "GET /static/Assest/Img/pay.png HTTP/1.1" 200 11544
+INFO 2024-06-24 14:12:46,602 basehttp "GET / HTTP/1.1" 200 24048
+INFO 2024-06-24 14:12:46,602 basehttp "GET / HTTP/1.1" 200 24048
+INFO 2024-06-24 14:13:43,578 basehttp "GET /categories HTTP/1.1" 200 15822
+INFO 2024-06-24 14:13:43,578 basehttp "GET /categories HTTP/1.1" 200 15822
+INFO 2024-06-24 14:13:43,712 basehttp "GET /static/Css/services.css HTTP/1.1" 200 4272
+INFO 2024-06-24 14:13:43,712 basehttp "GET /static/Css/services.css HTTP/1.1" 200 4272
+INFO 2024-06-24 14:13:44,264 basehttp "GET /static/Assest/Img/electrical-repair.jpeg HTTP/1.1" 200 151576
+INFO 2024-06-24 14:13:44,264 basehttp "GET /static/Assest/Img/electrical-repair.jpeg HTTP/1.1" 200 151576
+INFO 2024-06-24 14:13:45,357 basehttp "GET /static/Js/services.js HTTP/1.1" 200 1886
+INFO 2024-06-24 14:13:45,357 basehttp "GET /static/Js/services.js HTTP/1.1" 200 1886
+DEBUG 2024-06-24 14:35:41,257 autoreload File C:\Users\OWNER\Desktop\new\templates\index.html previous mtime: 1719228508.9201338, current mtime: 1719236141.1300225
+DEBUG 2024-06-24 14:35:41,257 autoreload File C:\Users\OWNER\Desktop\new\templates\index.html previous mtime: 1719228508.9201338, current mtime: 1719236141.1300225
+DEBUG 2024-06-24 14:35:41,836 autoreload C:\Users\OWNER\Desktop\new\templates\index.html notified as changed. Signal results: [(<function template_changed at 0x000001AE3C5B80E0>, True), (<function translation_file_changed at 0x000001AE3D6CE020>, None)].
+DEBUG 2024-06-24 14:35:41,836 autoreload C:\Users\OWNER\Desktop\new\templates\index.html notified as changed. Signal results: [(<function template_changed at 0x000001AE3C5B80E0>, True), (<function translation_file_changed at 0x000001AE3D6CE020>, None)].
+DEBUG 2024-06-24 14:36:03,505 autoreload File C:\Users\OWNER\Desktop\new\templates\index.html previous mtime: 1719236141.1300225, current mtime: 1719236162.5116804
+DEBUG 2024-06-24 14:36:03,505 autoreload File C:\Users\OWNER\Desktop\new\templates\index.html previous mtime: 1719236141.1300225, current mtime: 1719236162.5116804
+DEBUG 2024-06-24 14:36:03,564 autoreload C:\Users\OWNER\Desktop\new\templates\index.html notified as changed. Signal results: [(<function template_changed at 0x000001AE3C5B80E0>, True), (<function translation_file_changed at 0x000001AE3D6CE020>, None)].
+DEBUG 2024-06-24 14:36:03,564 autoreload C:\Users\OWNER\Desktop\new\templates\index.html notified as changed. Signal results: [(<function template_changed at 0x000001AE3C5B80E0>, True), (<function translation_file_changed at 0x000001AE3D6CE020>, None)].
+INFO 2024-06-24 14:38:31,640 autoreload Watching for file changes with StatReloader
+INFO 2024-06-24 14:38:31,640 autoreload Watching for file changes with StatReloader
+DEBUG 2024-06-24 14:38:31,643 autoreload Waiting for apps ready_event.
+DEBUG 2024-06-24 14:38:31,643 autoreload Waiting for apps ready_event.
+DEBUG 2024-06-24 14:38:31,917 autoreload Apps ready_event triggered. Sending autoreload_started signal.
+DEBUG 2024-06-24 14:38:31,917 autoreload Apps ready_event triggered. Sending autoreload_started signal.
+DEBUG 2024-06-24 14:38:31,990 autoreload Watching dir C:\Users\OWNER\Desktop\new\templates with glob **/*.
+DEBUG 2024-06-24 14:38:31,990 autoreload Watching dir C:\Users\OWNER\Desktop\new\templates with glob **/*.
+DEBUG 2024-06-24 14:38:31,993 autoreload Watching dir C:\Users\OWNER\Desktop\new\locale with glob **/*.mo.
+DEBUG 2024-06-24 14:38:31,993 autoreload Watching dir C:\Users\OWNER\Desktop\new\locale with glob **/*.mo.
+DEBUG 2024-06-24 14:38:31,995 autoreload Watching dir C:\Users\OWNER\Desktop\new\ojm_core\locale with glob **/*.mo.
+DEBUG 2024-06-24 14:38:31,995 autoreload Watching dir C:\Users\OWNER\Desktop\new\ojm_core\locale with glob **/*.mo.
+DEBUG 2024-06-24 14:38:31,995 autoreload Watching dir C:\Users\OWNER\Desktop\new\userauth\locale with glob **/*.mo.
+DEBUG 2024-06-24 14:38:31,995 autoreload Watching dir C:\Users\OWNER\Desktop\new\userauth\locale with glob **/*.mo.
+DEBUG 2024-06-24 14:38:31,996 autoreload Watching dir C:\Users\OWNER\Desktop\new\chatapp\locale with glob **/*.mo.
+DEBUG 2024-06-24 14:38:31,996 autoreload Watching dir C:\Users\OWNER\Desktop\new\chatapp\locale with glob **/*.mo.
+DEBUG 2024-06-24 14:38:31,997 autoreload Watching dir C:\Users\OWNER\Desktop\new\payment\locale with glob **/*.mo.
+DEBUG 2024-06-24 14:38:31,997 autoreload Watching dir C:\Users\OWNER\Desktop\new\payment\locale with glob **/*.mo.
+DEBUG 2024-06-24 14:38:32,287 utils (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None; alias=default
+DEBUG 2024-06-24 14:38:32,295 utils (0.000) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=(); alias=default
