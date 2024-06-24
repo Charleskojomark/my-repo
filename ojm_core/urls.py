@@ -1,3 +1,4 @@
+from django.conf.urls import handler404, handler500
 from django.urls import path 
 from . import views
 app_name='ojm_core'
@@ -24,7 +25,8 @@ urlpatterns = [
     path('notifications/', views.get_notifications, name='notifications'),
 ]
 
-
+handler404 = 'ojm_core.views.custom_404'
+handler500 = 'ojm_core.views.custom_500'
 
 
 

@@ -1166,6 +1166,22 @@
         "documentation": {}
     },
     {
+        "label": "handler404",
+        "importPath": "django.conf.urls",
+        "description": "django.conf.urls",
+        "isExtraImport": true,
+        "detail": "django.conf.urls",
+        "documentation": {}
+    },
+    {
+        "label": "handler500",
+        "importPath": "django.conf.urls",
+        "description": "django.conf.urls",
+        "isExtraImport": true,
+        "detail": "django.conf.urls",
+        "documentation": {}
+    },
+    {
         "label": "django.contrib.auth.models",
         "kind": 6,
         "isExtraImport": true,
@@ -1903,6 +1919,24 @@
         "documentation": {}
     },
     {
+        "label": "handler404",
+        "kind": 5,
+        "importPath": "ojm_core.urls",
+        "description": "ojm_core.urls",
+        "peekOfCode": "handler404 = 'ojm_core.views.custom_404'\nhandler500 = 'ojm_core.views.custom_500'",
+        "detail": "ojm_core.urls",
+        "documentation": {}
+    },
+    {
+        "label": "handler500",
+        "kind": 5,
+        "importPath": "ojm_core.urls",
+        "description": "ojm_core.urls",
+        "peekOfCode": "handler500 = 'ojm_core.views.custom_500'",
+        "detail": "ojm_core.urls",
+        "documentation": {}
+    },
+    {
         "label": "index",
         "kind": 2,
         "importPath": "ojm_core.views",
@@ -2061,6 +2095,24 @@
         "importPath": "ojm_core.views",
         "description": "ojm_core.views",
         "peekOfCode": "def get_notifications(request):\n    user = request.user\n    notifications = Notification.objects.filter(user=user)\n    count = Notification.objects.filter(user=user).count()\n    # Update notifications to read=True\n    notifications.update(read=True)\n    context = {\n        'notifications': notifications,\n        'count':count\n    }",
+        "detail": "ojm_core.views",
+        "documentation": {}
+    },
+    {
+        "label": "custom_404",
+        "kind": 2,
+        "importPath": "ojm_core.views",
+        "description": "ojm_core.views",
+        "peekOfCode": "def custom_404(request, exception):\n    return render(request, '404.html', status=404)\ndef custom_500(request):\n    return render(request, '500.html', status=500)",
+        "detail": "ojm_core.views",
+        "documentation": {}
+    },
+    {
+        "label": "custom_500",
+        "kind": 2,
+        "importPath": "ojm_core.views",
+        "description": "ojm_core.views",
+        "peekOfCode": "def custom_500(request):\n    return render(request, '500.html', status=500)",
         "detail": "ojm_core.views",
         "documentation": {}
     },
